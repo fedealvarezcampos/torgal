@@ -1,6 +1,6 @@
 .container {
     /* width: 100vw; */
-    padding: 2rem;
+    padding: 1.5rem 1.2rem 1.5rem 1.2rem;
     height: 50vw;
     max-height: 30rem;
     display: flex;
@@ -16,13 +16,13 @@
     justify-content: flex-end;
     height: 100%;
     width: 100%;
-    /* filter: grayscale(100) opacity(70%); */
     background-size: cover;
     background-position: center center;
+    backdrop-filter: grayscale(100) opacity(70%);
 }
 
 .aboutText {
-    padding: 1rem;
+    padding: 1rem 1rem 0.4rem 0.8rem;
     width: clamp(15rem, 35vw, 60rem);
     font-weight: 700;
     font-style: italic;

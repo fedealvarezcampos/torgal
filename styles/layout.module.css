@@ -1,7 +1,8 @@
 .container {
     width: 60vw;
     padding: 0 1rem;
-    margin: 0 auto 6rem;
+    margin: 2.2rem auto 6rem;
+    z-index: 100;
 }
 
 .header {
