@@ -10,6 +10,28 @@
     background-position: center center;
 }
 
+.titleContainer {
+    padding-left: 7vw;
+    align-self: start;
+}
+
+.sideTitle {
+    padding-left: 0.1rem;
+    font-size: 1.8rem;
+    font-style: italic;
+    letter-spacing: 0.1em;
+    font-family: 'Cabin', sans-serif;
+    color: var(--base-font);
+}
+
+.mainTitle {
+    font-size: 6rem;
+    font-family: Adam;
+    letter-spacing: 0.005em;
+    margin-top: -3rem;
+    color: var(--base-font);
+}
+
 @media (max-width: 1500px) {
     .container {
         height: 58vw;

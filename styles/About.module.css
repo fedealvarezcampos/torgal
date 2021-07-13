@@ -1,18 +1,33 @@
 .container {
     /* width: 100vw; */
     padding: 2rem;
-    height: 30rem;
+    height: 50vw;
+    max-height: 30rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgb(34, 34, 34);
+    background-color: var(--dark-item);
 }
 
 .innerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     height: 100%;
     width: 100%;
-    filter: grayscale(100) opacity(80%);
+    /* filter: grayscale(100) opacity(70%); */
     background-size: cover;
     background-position: center center;
+}
+
+.aboutText {
+    padding: 1rem;
+    width: clamp(15rem, 35vw, 60rem);
+    font-weight: 700;
+    font-style: italic;
+    font-family: 'Cabin', sans-serif;
+    border-radius: 0 1.6rem 0 0;
+    color: var(--base-font);
+    background-color: var(--dark-item);
 }
