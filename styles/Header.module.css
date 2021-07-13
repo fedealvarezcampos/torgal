@@ -2,7 +2,7 @@
     display: grid;
     align-content: end;
     top: 0;
-    width: 60vw;
+    width: 65vw;
     margin-top: -5rem;
     height: 10rem;
     position: fixed;
@@ -25,6 +25,7 @@
 
 .navLinks li {
     padding: 1.2rem;
+    padding-left: 0.6rem;
     display: inline-block;
 }
 
@@ -33,7 +34,7 @@
     color: var(--base-font);
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1200px) {
     .header {
         width: 90vw;
     }

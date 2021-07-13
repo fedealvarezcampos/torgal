@@ -10,13 +10,13 @@
 }
 
 .titleContainer {
-    padding-left: 7vw;
+    padding-left: 4vw;
     align-self: start;
 }
 
 .sideTitle {
     padding-left: 0.1rem;
-    font-size: 1.8rem;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
     font-style: italic;
     letter-spacing: 0.1em;
     font-family: 'Cabin', sans-serif;
@@ -24,14 +24,14 @@
 }
 
 .mainTitle {
-    font-size: 6rem;
+    font-size: clamp(2rem, 10vw, 9rem);
     font-family: Adam;
+    line-height: 0.6;
     letter-spacing: 0.005em;
-    margin-top: -3rem;
     color: var(--base-font);
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1200px) {
     .container {
         height: 58vw;
     }

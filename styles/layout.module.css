@@ -1,5 +1,5 @@
 .container {
-    width: 60vw;
+    width: 65vw;
     padding: 0 1rem;
     margin: 2.2rem auto 6rem;
     z-index: 100;
@@ -15,7 +15,7 @@
     margin: 3rem 0 0;
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1200px) {
     .container {
         width: 90vw;
     }

@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     background-color: var(--dark-item);
 }
 
@@ -18,10 +18,12 @@
     width: 100%;
     background-size: cover;
     background-position: center center;
-    backdrop-filter: grayscale(100) opacity(70%);
+    filter: grayscale(100) opacity(70%);
 }
 
 .aboutText {
+    position: absolute;
+    align-self: flex-start;
     padding: 1rem 1rem 0.4rem 0.8rem;
     width: clamp(15rem, 35vw, 60rem);
     font-weight: 700;
