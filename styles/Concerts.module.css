@@ -1,0 +1,6 @@
+.container {
+    height: 20rem;
+    background-size: clamp(70rem, 130vw, 120%);
+    background-position: center center;
+    background-color: var(--wallpaper);
+}

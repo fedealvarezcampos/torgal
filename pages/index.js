@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Home from '../components/Home';
 import Header from '../components/Header';
 import About from '../components/About';
+import ConcertList from '../components/ConcertList';
 import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
 
@@ -27,6 +28,7 @@ export default function MainSite({ allPostsData }) {
             <Header />
             <Home />
             <About />
+            <ConcertList />
         </Layout>
     );
 }
