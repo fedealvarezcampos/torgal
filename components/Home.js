@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.css';
 function Home() {
     return (
         <>
-            <div className={styles.container}>Abuela</div>
+            <div className={styles.container} style={{ backgroundImage: `url(./images/back01.jpg)` }} />
         </>
     );
 }

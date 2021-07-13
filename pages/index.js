@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Date from '../components/date';
 import Head from 'next/head';
 import Home from '../components/Home';
+import About from '../components/About';
 import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
 
@@ -23,6 +24,7 @@ export default function MainSite({ allPostsData }) {
                 <title>{siteTitle}</title>
             </Head>
             <Home />
+            <About />
         </Layout>
     );
 }

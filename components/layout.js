@@ -4,15 +4,14 @@ import styles from '../styles/layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 
-const name = 'Torgal';
-export const siteTitle = 'Next.js Sample Website';
+export const siteTitle = 'Café & Pop Torgal';
 
-export default function Layout({ children, home }) {
+export default function Layout({ children }) {
     return (
-        <div>
+        <div className={styles.container}>
             <Head>
                 <link rel="icon" href="/favicon.ico" />
-                <meta name="description" content="Learn how to build a personal website using Next.js" />
+                <meta name="description" content="Café & Pop Torgal - Bar y sala de conciertos SON EG" />
                 <meta
                     property="og:image"
                     content={`https://og-image.vercel.app/${encodeURI(

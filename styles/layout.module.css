@@ -1,7 +1,7 @@
 .container {
-    max-width: 36rem;
+    width: 60vw;
     padding: 0 1rem;
-    margin: 3rem auto 6rem;
+    margin: 0 auto 6rem;
 }
 
 .header {
@@ -12,4 +12,10 @@
 
 .backToHome {
     margin: 3rem 0 0;
+}
+
+@media (max-width: 1500px) {
+    .container {
+        width: 90vw;
+    }
 }
