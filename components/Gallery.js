@@ -4,20 +4,20 @@ import Image from 'next/image';
 import styles from '../styles/Gallery.module.css';
 
 const settings = {
-    dots: true,
+    className: 'center',
+    centerMode: true,
     infinite: true,
-    speed: 500,
+    centerPadding: '20px',
     slidesToShow: 3,
-    slidesToScroll: 1,
-    initialSlide: 0,
+    speed: 500,
     responsive: [
         {
-            breakpoint: 1024,
+            breakpoint: 1400,
             settings: {
-                slidesToShow: 3,
+                slidesToShow: 2,
                 slidesToScroll: 2,
                 infinite: true,
-                dots: true,
+                dots: false,
             },
         },
         {
@@ -43,60 +43,48 @@ function Gallery() {
         <>
             <div className={styles.galleryContainer}>
                 <Slider {...settings}>
-                    <div>
-                        <Image
-                            src="/images/slide01.jpg" // Route of the image file
-                            layout="responsive"
-                            height={200} // Desired size with correct aspect ratio
-                            width={300} // Desired size with correct aspect ratio
-                            alt="Your Name"
-                        />
-                    </div>
-                    <div>
-                        <Image
-                            src="/images/slide02.jpg" // Route of the image file
-                            layout="responsive"
-                            height={200} // Desired size with correct aspect ratio
-                            width={300} // Desired size with correct aspect ratio
-                            alt="Your Name"
-                        />
-                    </div>
-                    <div>
-                        <Image
-                            src="/images/slide03.jpg" // Route of the image file
-                            layout="responsive"
-                            height={200} // Desired size with correct aspect ratio
-                            width={300} // Desired size with correct aspect ratio
-                            alt="Your Name"
-                        />
-                    </div>
-                    <div>
-                        <Image
-                            src="/images/slide04.jpg" // Route of the image file
-                            layout="responsive"
-                            height={200} // Desired size with correct aspect ratio
-                            width={300} // Desired size with correct aspect ratio
-                            alt="Your Name"
-                        />
-                    </div>
-                    <div>
-                        <Image
-                            src="/images/slide05.jpg" // Route of the image file
-                            layout="responsive"
-                            height={200} // Desired size with correct aspect ratio
-                            width={300} // Desired size with correct aspect ratio
-                            alt="Your Name"
-                        />
-                    </div>
-                    <div>
-                        <Image
-                            src="/images/slide06.jpg" // Route of the image file
-                            layout="responsive"
-                            height={200} // Desired size with correct aspect ratio
-                            width={300} // Desired size with correct aspect ratio
-                            alt="Your Name"
-                        />
-                    </div>
+                    <Image
+                        src="/images/slide01.jpg" // Route of the image file
+                        layout="responsive"
+                        height={200} // Desired size with correct aspect ratio
+                        width={300} // Desired size with correct aspect ratio
+                        alt="Your Name"
+                    />
+                    <Image
+                        src="/images/slide02.jpg" // Route of the image file
+                        layout="responsive"
+                        height={200} // Desired size with correct aspect ratio
+                        width={300} // Desired size with correct aspect ratio
+                        alt="Your Name"
+                    />
+                    <Image
+                        src="/images/slide03.jpg" // Route of the image file
+                        layout="responsive"
+                        height={200} // Desired size with correct aspect ratio
+                        width={300} // Desired size with correct aspect ratio
+                        alt="Your Name"
+                    />
+                    <Image
+                        src="/images/slide04.jpg" // Route of the image file
+                        layout="responsive"
+                        height={200} // Desired size with correct aspect ratio
+                        width={300} // Desired size with correct aspect ratio
+                        alt="Your Name"
+                    />
+                    <Image
+                        src="/images/slide05.jpg" // Route of the image file
+                        layout="responsive"
+                        height={200} // Desired size with correct aspect ratio
+                        width={300} // Desired size with correct aspect ratio
+                        alt="Your Name"
+                    />
+                    <Image
+                        src="/images/slide06.jpg" // Route of the image file
+                        layout="responsive"
+                        height={200} // Desired size with correct aspect ratio
+                        width={300} // Desired size with correct aspect ratio
+                        alt="Your Name"
+                    />
                 </Slider>
             </div>
         </>
