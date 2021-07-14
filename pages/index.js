@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Home from '../components/Home';
 import Header from '../components/Header';
 import About from '../components/About';
+import Gallery from '../components/Gallery';
 import ConcertList from '../components/ConcertList';
 import Layout, { siteTitle } from '../components/layout';
 import { getSortedGigsData } from '../lib/gigs';
@@ -27,6 +28,7 @@ export default function MainSite({ allGigsData }) {
             <Header />
             <Home />
             <About />
+            <Gallery />
             <ConcertList gigs={allGigsData} />
         </Layout>
     );

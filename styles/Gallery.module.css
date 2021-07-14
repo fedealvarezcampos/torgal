@@ -1,0 +1,13 @@
+.galleryContainer {
+    /* height: 10rem; */
+    margin: auto;
+    padding: 1.6rem;
+    width: 92%;
+}
+
+.imageContainer {
+    width: 20rem;
+    height: 10rem;
+    background-size: cover;
+    background-position: center center;
+}
