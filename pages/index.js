@@ -6,20 +6,19 @@ import Header from '../components/Header';
 import About from '../components/About';
 import ConcertList from '../components/ConcertList';
 import Layout, { siteTitle } from '../components/layout';
+import { getSortedGigsData } from '../lib/gigs';
 import utilStyles from '../styles/utils.module.css';
 
-import { getSortedPostsData } from '../lib/posts';
-
 export async function getStaticProps() {
-    const allPostsData = getSortedPostsData();
+    const allGigsData = getSortedGigsData();
     return {
         props: {
-            allPostsData,
+            allGigsData,
         },
     };
 }
 
-export default function MainSite({ allPostsData }) {
+export default function MainSite({ allGigsData }) {
     return (
         <Layout home>
             <Head>
@@ -28,7 +27,7 @@ export default function MainSite({ allPostsData }) {
             <Header />
             <Home />
             <About />
-            <ConcertList />
+            <ConcertList gigs={allGigsData} />
         </Layout>
     );
 }

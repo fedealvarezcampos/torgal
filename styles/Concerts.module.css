@@ -4,3 +4,17 @@
     background-position: center center;
     background-color: var(--wallpaper);
 }
+
+.gigList {
+    margin: 0;
+    display: grid;
+    place-content: center;
+    list-style: none;
+}
+
+.gigItem {
+    padding: 1rem;
+    margin: 0.6rem;
+    border-radius: 22px;
+    background-color: var(--dark-item);
+}

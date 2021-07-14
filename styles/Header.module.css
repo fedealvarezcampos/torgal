@@ -1,14 +1,16 @@
 .header {
+    position: fixed;
     display: grid;
     align-content: end;
-    top: 0;
-    width: 65vw;
+    top: -25px;
+    width: 76vw;
     margin-top: -5rem;
-    height: 10rem;
-    position: fixed;
-    transform: rotate(6deg);
+    height: clamp(13rem, 13vw, 16rem);
     background-color: var(--bg-color);
-    z-index: 50;
+    transform-origin: 50% 51%;
+    -webkit-transform-origin: 50% 51%;
+    transform: rotate(4deg);
+    z-index: 100;
 }
 
 .header nav {
@@ -18,13 +20,20 @@
 
 .navLinks {
     margin: 0;
-    margin-right: 1rem;
+    margin-right: 1.8rem;
     list-style: none;
+    font-size: clamp(1rem, 2.6vw, 2rem);
     font-family: Adam;
+    font-style: normal;
+    font-weight: normal;
+    font-feature-settings: 'kern' off;
+    letter-spacing: 0.025em;
+    transform-origin: 50% 51%;
+    -webkit-transform-origin: 50% 51%;
 }
 
 .navLinks li {
-    padding: 1.2rem;
+    padding: 1.2rem 0.8rem 0.8rem 1.2rem;
     padding-left: 0.6rem;
     display: inline-block;
 }
@@ -37,5 +46,13 @@
 @media (max-width: 1200px) {
     .header {
         width: 90vw;
+        /* height: 10rem; */
+    }
+
+    .navLinks {
+        margin: 0;
+        margin-right: 1.8rem;
+        list-style: none;
+        /* font-size: 1rem; */
     }
 }
