@@ -1,5 +1,5 @@
 ---
-artist: 'Los Vergasa'
+artist: 'Los Vergas'
 date: '2021-11-12'
 price: '12€'
 ---

@@ -1,12 +1,26 @@
 .galleryContainer {
     margin: auto;
-    padding: 1.6rem;
-    width: 95%;
+    padding: 1.2rem 1.8rem 1.2rem 1.8rem;
+    /* width: 95%; */
+    background-color: #d5a18e;
 }
 
 .imageContainer {
     width: 20rem;
-    height: 10rem;
+    /* height: 10rem; */
     background-size: cover;
     background-position: center center;
+}
+
+@media (max-width: 800px) {
+    .galleryContainer {
+        padding: 0.5rem 1.8rem 0.5rem 1.8rem;
+    }
+
+    .imageContainer {
+        width: 20rem;
+        /* height: 10rem; */
+        background-size: cover;
+        background-position: center center;
+    }
 }

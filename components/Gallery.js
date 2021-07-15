@@ -7,32 +7,37 @@ const settings = {
     className: 'center',
     centerMode: true,
     infinite: true,
-    centerPadding: '20px',
-    slidesToShow: 3,
+    centerPadding: '160px',
+    slidesToShow: 2,
     speed: 500,
     responsive: [
         {
-            breakpoint: 1400,
+            breakpoint: 1500,
             settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
+                centerPadding: '200px',
+                slidesToShow: 1,
+                slidesToScroll: 1,
                 infinite: true,
                 dots: false,
             },
         },
         {
-            breakpoint: 600,
+            breakpoint: 1000,
             settings: {
-                slidesToShow: 2,
+                centerPadding: '120px',
+                slidesToShow: 1,
                 slidesToScroll: 1,
-                initialSlide: 2,
+                infinite: true,
+                dots: false,
             },
         },
         {
-            breakpoint: 480,
+            breakpoint: 700,
             settings: {
+                centerPadding: '80px',
                 slidesToShow: 1,
                 slidesToScroll: 1,
+                initialSlide: 2,
             },
         },
     ],
@@ -46,44 +51,50 @@ function Gallery() {
                     <Image
                         src="/images/slide01.jpg" // Route of the image file
                         layout="responsive"
+                        quality={85}
                         height={200} // Desired size with correct aspect ratio
                         width={300} // Desired size with correct aspect ratio
-                        alt="Your Name"
+                        alt="nuria graham"
                     />
                     <Image
                         src="/images/slide02.jpg" // Route of the image file
                         layout="responsive"
+                        quality={85}
                         height={200} // Desired size with correct aspect ratio
                         width={300} // Desired size with correct aspect ratio
-                        alt="Your Name"
+                        alt="cupido"
                     />
                     <Image
                         src="/images/slide03.jpg" // Route of the image file
                         layout="responsive"
+                        quality={85}
                         height={200} // Desired size with correct aspect ratio
                         width={300} // Desired size with correct aspect ratio
-                        alt="Your Name"
+                        alt="omar apollo"
                     />
                     <Image
                         src="/images/slide04.jpg" // Route of the image file
                         layout="responsive"
+                        quality={85}
                         height={200} // Desired size with correct aspect ratio
                         width={300} // Desired size with correct aspect ratio
-                        alt="Your Name"
+                        alt="y la bamba"
                     />
                     <Image
                         src="/images/slide05.jpg" // Route of the image file
                         layout="responsive"
+                        quality={85}
                         height={200} // Desired size with correct aspect ratio
                         width={300} // Desired size with correct aspect ratio
-                        alt="Your Name"
+                        alt="niño de elche"
                     />
                     <Image
                         src="/images/slide06.jpg" // Route of the image file
                         layout="responsive"
+                        quality={85}
                         height={200} // Desired size with correct aspect ratio
                         width={300} // Desired size with correct aspect ratio
-                        alt="Your Name"
+                        alt="juan wauters"
                     />
                 </Slider>
             </div>
