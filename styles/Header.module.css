@@ -3,7 +3,8 @@
     display: grid;
     align-content: end;
     top: -25px;
-    width: 76vw;
+    /* width: 76vw; */
+    width: 60vw;
     margin-top: -5rem;
     height: clamp(13rem, 13vw, 16rem);
     background-color: var(--bg-color);
@@ -41,6 +42,15 @@
 .navLinks a {
     text-decoration: none;
     color: var(--base-font);
+    transition: all 150ms ease-in-out;
+    will-change: auto;
+}
+
+.navLinks a:hover {
+    display: block;
+    color: #d5a18e;
+    transform: translateY(-1px);
+    transition: all 200ms ease-in-out;
 }
 
 @media (max-width: 1200px) {
