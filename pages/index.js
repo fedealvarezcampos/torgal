@@ -24,6 +24,11 @@ export default function MainSite({ allGigsData }) {
         <Layout home>
             <Head>
                 <title>{siteTitle}</title>
+                <link
+                    rel="stylesheet"
+                    type="text/css"
+                    href="//use.fontawesome.com/releases/v5.7.2/css/all.css"
+                ></link>
             </Head>
             <Header />
             <Home />

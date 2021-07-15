@@ -12,6 +12,7 @@
     "date-fns": "^2.22.1",
     "gray-matter": "^4.0.3",
     "next": "10.x",
+    "next-images": "^1.8.1",
     "react": "17.x",
     "react-dom": "17.x",
     "react-slick": "^0.28.1",

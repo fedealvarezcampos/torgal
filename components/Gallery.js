@@ -1,6 +1,5 @@
 import Slider from 'react-slick';
 import Image from 'next/image';
-
 import styles from '../styles/Gallery.module.css';
 
 const settings = {
@@ -48,54 +47,68 @@ function Gallery() {
         <>
             <div className={styles.galleryContainer}>
                 <Slider {...settings}>
-                    <Image
-                        src="/images/slide01.jpg" // Route of the image file
-                        layout="responsive"
-                        quality={85}
-                        height={200} // Desired size with correct aspect ratio
-                        width={300} // Desired size with correct aspect ratio
-                        alt="nuria graham"
-                    />
-                    <Image
-                        src="/images/slide02.jpg" // Route of the image file
-                        layout="responsive"
-                        quality={85}
-                        height={200} // Desired size with correct aspect ratio
-                        width={300} // Desired size with correct aspect ratio
-                        alt="cupido"
-                    />
-                    <Image
-                        src="/images/slide03.jpg" // Route of the image file
-                        layout="responsive"
-                        quality={85}
-                        height={200} // Desired size with correct aspect ratio
-                        width={300} // Desired size with correct aspect ratio
-                        alt="omar apollo"
-                    />
-                    <Image
-                        src="/images/slide04.jpg" // Route of the image file
-                        layout="responsive"
-                        quality={85}
-                        height={200} // Desired size with correct aspect ratio
-                        width={300} // Desired size with correct aspect ratio
-                        alt="y la bamba"
-                    />
-                    <Image
-                        src="/images/slide05.jpg" // Route of the image file
-                        layout="responsive"
-                        quality={85}
-                        height={200} // Desired size with correct aspect ratio
-                        width={300} // Desired size with correct aspect ratio
-                        alt="niño de elche"
-                    />
-                    <Image
-                        src="/images/slide06.jpg" // Route of the image file
-                        layout="responsive"
-                        quality={85}
-                        height={200} // Desired size with correct aspect ratio
-                        width={300} // Desired size with correct aspect ratio
-                        alt="juan wauters"
-                    />
+                    <div className={styles.imageContainer}>
+                        <Image
+                            src="/images/slide01.jpg" // Route of the image file
+                            placeholder="blur"
+                            layout="responsive"
+                            quality={80}
+                            height={200} // Desired size with correct aspect ratio
+                            width={300} // Desired size with correct aspect ratio
+                            alt="nuria graham"
+                        />
+                    </div>
+                    <div className={styles.imageContainer}>
+                        <Image
+                            src="/images/slide02.jpg" // Route of the image file
+                            layout="responsive"
+                            quality={80}
+                            height={200} // Desired size with correct aspect ratio
+                            width={300} // Desired size with correct aspect ratio
+                            alt="cupido"
+                        />
+                    </div>
+                    <div className={styles.imageContainer}>
+                        <Image
+                            src="/images/slide03.jpg" // Route of the image file
+                            layout="responsive"
+                            quality={80}
+                            height={200} // Desired size with correct aspect ratio
+                            width={300} // Desired size with correct aspect ratio
+                            alt="omar apollo"
+                        />
+                    </div>
+                    <div className={styles.imageContainer}>
+                        <Image
+                            src="/images/slide04.jpg" // Route of the image file
+                            placeholder="blur"
+                            layout="responsive"
+                            quality={80}
+                            height={200} // Desired size with correct aspect ratio
+                            width={300} // Desired size with correct aspect ratio
+                            alt="y la bamba"
+                        />
+                    </div>
+                    <div className={styles.imageContainer}>
+                        <Image
+                            src="/images/slide05.jpg" // Route of the image file
+                            layout="responsive"
+                            quality={80}
+                            height={200} // Desired size with correct aspect ratio
+                            width={300} // Desired size with correct aspect ratio
+                            alt="niño de elche"
+                        />
+                    </div>
+                    <div className={styles.imageContainer}>
+                        <Image
+                            src="/images/slide06.jpg" // Route of the image file
+                            layout="responsive"
+                            quality={80}
+                            height={200} // Desired size with correct aspect ratio
+                            width={300} // Desired size with correct aspect ratio
+                            alt="juan wauters"
+                        />
+                    </div>
                 </Slider>
             </div>
         </>

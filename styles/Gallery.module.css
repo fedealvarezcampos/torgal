@@ -3,6 +3,9 @@
     padding: 1.2rem 1.8rem 1.2rem 1.8rem;
     /* width: 95%; */
     background-color: #d5a18e;
+    background: url('../public/images/patternpad.svg');
+    background-size: 130%;
+    background-position: center center;
 }
 
 .imageContainer {
@@ -10,6 +13,10 @@
     /* height: 10rem; */
     background-size: cover;
     background-position: center center;
+    /* border: 6px solid var(--base-font); */
+    /* filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.15)); */
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.555));
+    /* border-radius: 5px; */
 }
 
 @media (max-width: 800px) {
