@@ -69,7 +69,7 @@
 .slick-prev:before {
     /* content: '←'; */
     font-family: 'Font Awesome 5 Free';
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 900;
     color: black;
     content: '\f0d9';
@@ -83,7 +83,7 @@
 [dir='rtl'] .slick-prev:before {
     /* content: '→'; */
     font-family: 'Font Awesome 5 Free';
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 900;
     color: black;
     content: '\f0da';
