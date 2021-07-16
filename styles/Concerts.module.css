@@ -110,32 +110,24 @@
 
 @media (max-width: 500px) {
     .gigList {
-        padding: 1.6rem 0 1.6rem 0;
+        padding: 0.6rem 0 0.6rem 0;
     }
 
     .gigItem {
-        justify-items: center;
-        grid: auto auto auto auto / 1fr;
-        width: clamp(6rem, 40vw, 30rem);
+        grid: 1fr / 3.2rem auto auto 3.5rem;
+        width: clamp(13rem, 66vw, 30rem);
         gap: 5px;
-        margin: 0.6rem;
-        padding: 1rem 0.5rem 1rem 0.5rem;
-        font-size: 0.8rem;
-    }
-
-    .gigArtist {
-        justify-self: center;
-    }
-
-    .gigPrice {
-        justify-self: center;
+        margin: 0.25rem;
+        padding: 0.5rem 0.6rem 0.5rem 0.6rem;
+        font-size: 0.5rem;
+        border-radius: 12px;
     }
 
     .button {
-        font-size: clamp(0.6rem, 0.8vw, 1.2rem);
-        width: clamp(5.2rem, 2vw, 6.2rem);
-        padding: 0.5rem 0.2rem 0.4rem 0.2rem;
-        border-radius: 12px;
-        justify-self: center;
+        font-size: clamp(0.4rem, 0.5vw, 1rem);
+        width: clamp(3.2rem, 1.5vw, 5rem);
+        border: 3px solid #7a9e9c;
+        padding: 0.3rem 0.2rem 0.3rem 0.2rem;
+        border-radius: 10px;
     }
 }

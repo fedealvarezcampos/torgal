@@ -34,3 +34,29 @@
     color: var(--base-font);
     background-color: var(--dark-item);
 }
+
+@media (max-width: 500px) {
+    .container {
+        /* width: 100vw; */
+        padding: 0.8rem 0.6rem 0.8rem 0.6rem;
+        height: 50vw;
+        max-height: 35rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        background-color: var(--dark-item);
+    }
+
+    .aboutText {
+        padding: 0.5rem 1rem 0.4rem 0.8rem;
+        width: clamp(12rem, 35vw, 30rem);
+        font-weight: 700;
+        font-style: italic;
+        font-size: clamp(0.4rem, 1.8vw, 1.2rem);
+        font-family: 'Cabin', sans-serif;
+        border-radius: 0 1.6rem 0 0;
+        color: var(--base-font);
+        background-color: var(--dark-item);
+    }
+}
