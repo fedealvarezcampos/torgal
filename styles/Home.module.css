@@ -12,7 +12,8 @@
 }
 
 .titleContainer {
-    padding-top: 3vw;
+    display: grid;
+    grid: 0.2rem auto / auto;
     padding-left: 4vw;
     align-self: start;
 }
@@ -29,7 +30,6 @@
 .mainTitle {
     font-size: clamp(2rem, 10vw, 8rem);
     font-family: Adam;
-    margin-top: -0.55em;
     letter-spacing: 0.01em;
     color: var(--base-font);
 }
