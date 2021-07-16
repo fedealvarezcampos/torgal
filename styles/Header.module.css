@@ -69,7 +69,7 @@
 @media (max-width: 500px) {
     .header {
         width: 110vw;
-        top: -90px;
+        top: -100px;
         /* height: 10rem; */
     }
 

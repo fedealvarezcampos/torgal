@@ -10,8 +10,7 @@ function Home() {
                 style={{ backgroundImage: `url(./images/back01.jpg)` }}
             >
                 <div className={styles.titleContainer}>
-                    <div className={styles.sideTitle}>café & pop</div>
-                    <div className={styles.mainTitle}>TORGAL</div>
+                    <img src="./images/LOGO.svg" alt="Torgal logo" />
                 </div>
             </div>
         </>

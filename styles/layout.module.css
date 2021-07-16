@@ -26,5 +26,6 @@
     .container {
         width: 100vw;
         padding: 0;
+        margin: 1.4rem auto 6rem;
     }
 }

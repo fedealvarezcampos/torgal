@@ -12,31 +12,22 @@
 }
 
 .titleContainer {
-    display: grid;
-    grid: 0.2rem auto / auto;
+    padding-top: 3vw;
     padding-left: 4vw;
+    width: clamp(5rem, 35.5vw, 40rem);
     align-self: start;
-}
-
-.sideTitle {
-    padding-left: 0.1rem;
-    font-size: clamp(0.8rem, 3.5vw, 2.8rem);
-    font-style: italic;
-    letter-spacing: 0.1em;
-    font-family: 'Cabin', sans-serif;
-    color: var(--base-font);
-}
-
-.mainTitle {
-    font-size: clamp(2rem, 10vw, 8rem);
-    font-family: Adam;
-    letter-spacing: 0.01em;
-    color: var(--base-font);
 }
 
 @media (max-width: 1200px) {
     .container {
         height: 50vw;
         background-position-y: -10%;
+    }
+
+    .titleContainer {
+        padding-top: 3vw;
+        padding-left: 4vw;
+        width: clamp(5rem, 45.5vw, 30rem);
+        align-self: start;
     }
 }
