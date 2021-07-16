@@ -14,7 +14,7 @@
 .titleContainer {
     padding-top: 3vw;
     padding-left: 4vw;
-    width: clamp(5rem, 35.5vw, 40rem);
+    width: clamp(26rem, 30.5vw, 40rem);
     align-self: start;
 }
 
@@ -25,8 +25,8 @@
     }
 
     .titleContainer {
-        padding-top: 3vw;
-        padding-left: 4vw;
+        padding-top: 2vw;
+        padding-left: 5vw;
         width: clamp(5rem, 45.5vw, 30rem);
         align-self: start;
     }
