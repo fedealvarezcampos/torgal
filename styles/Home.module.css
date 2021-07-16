@@ -18,7 +18,7 @@
 
 .sideTitle {
     padding-left: 0.1rem;
-    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-size: clamp(0.8rem, 3.5vw, 2.8rem);
     font-style: italic;
     letter-spacing: 0.1em;
     font-family: 'Cabin', sans-serif;

@@ -1,6 +1,6 @@
 .container {
     height: auto;
-    background-size: clamp(70rem, 130vw, 120%);
+    background-size: clamp(40rem, 140vw, 120%);
     background-position: center center;
     background-color: var(--wallpaper);
 }

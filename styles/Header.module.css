@@ -38,6 +38,7 @@
 }
 
 .navLinks a {
+    cursor: pointer;
     text-decoration: none;
     color: var(--base-font);
     transition: all 150ms ease-in-out;
@@ -61,9 +62,7 @@
     .navLinks {
         margin: 0;
         margin-right: 1.8rem;
-        list-style: none;
         font-size: clamp(1rem, 2.6vw, 2rem);
-        cursor: pointer;
     }
 }
 
