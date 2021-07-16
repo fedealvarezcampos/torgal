@@ -12,6 +12,7 @@
 }
 
 .titleContainer {
+    padding-top: 3vw;
     padding-left: 4vw;
     align-self: start;
 }
@@ -26,12 +27,10 @@
 }
 
 .mainTitle {
-    display: inline-block;
     font-size: clamp(2rem, 10vw, 8rem);
     font-family: Adam;
-    padding-top: 5px;
-    line-height: 0.5;
-    letter-spacing: 0.005em;
+    margin-top: -0.55em;
+    letter-spacing: 0.01em;
     color: var(--base-font);
 }
 
