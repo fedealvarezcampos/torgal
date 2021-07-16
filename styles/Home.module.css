@@ -26,6 +26,7 @@
 }
 
 .mainTitle {
+    display: inline-block;
     font-size: clamp(2rem, 10vw, 8rem);
     font-family: Adam;
     line-height: 0.6;
