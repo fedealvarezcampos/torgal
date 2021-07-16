@@ -56,21 +56,21 @@
 @media (max-width: 1200px) {
     .header {
         width: 90vw;
-        top: -30px;
-        /* height: 10rem; */
+        top: -60px;
+        /* height: 30rem; */
     }
 
     .navLinks {
         margin: 0;
         margin-right: 1.8rem;
         list-style: none;
-        font-size: clamp(1.2rem, 2.6vw, 2rem);
+        font-size: clamp(1rem, 2.6vw, 2rem);
     }
 }
 
 @media (max-width: 500px) {
     .header {
-        width: 90vw;
+        width: 110vw;
         top: -90px;
         /* height: 10rem; */
     }
