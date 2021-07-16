@@ -14,6 +14,7 @@ function ConcertList({ gigs }) {
     return (
         <>
             <div
+                id="conciertos"
                 className={styles.container}
                 style={{ backgroundImage: `url(./images/wallpaperFeather.png)` }}
             >

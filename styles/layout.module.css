@@ -18,6 +18,12 @@
 
 @media (max-width: 1200px) {
     .container {
+        width: 90vw;
+    }
+}
+
+@media (max-width: 500px) {
+    .container {
         width: 100vw;
         padding: 0;
     }

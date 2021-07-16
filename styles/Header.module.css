@@ -8,9 +8,9 @@
     margin-top: -5rem;
     height: clamp(13rem, 13vw, 16rem);
     background-color: var(--bg-color);
-    transform-origin: 50% 51%;
-    -webkit-transform-origin: 50% 51%;
     transform: rotate(4deg);
+    transform-origin: 50% 52%;
+    -webkit-transform-origin: 50% 52%;
     z-index: 100;
 }
 
@@ -29,8 +29,6 @@
     font-weight: normal;
     font-feature-settings: 'kern' off;
     letter-spacing: 0.025em;
-    transform-origin: 50% 51%;
-    -webkit-transform-origin: 50% 51%;
 }
 
 .navLinks li {
@@ -65,6 +63,7 @@
         margin-right: 1.8rem;
         list-style: none;
         font-size: clamp(1rem, 2.6vw, 2rem);
+        cursor: pointer;
     }
 }
 
@@ -77,7 +76,7 @@
 
     .navLinks {
         margin: 0;
-        margin-right: 2rem;
+        margin-right: 10vw;
         list-style: none;
         font-size: clamp(0.6rem, 2vw, 2rem);
     }

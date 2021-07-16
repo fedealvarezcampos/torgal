@@ -9,6 +9,7 @@ import ConcertList from '../components/ConcertList';
 import Layout, { siteTitle } from '../components/layout';
 import { getSortedGigsData } from '../lib/gigs';
 import utilStyles from '../styles/utils.module.css';
+import { useRef } from 'react';
 
 export async function getStaticProps() {
     const allGigsData = getSortedGigsData();
@@ -20,6 +21,8 @@ export async function getStaticProps() {
 }
 
 export default function MainSite({ allGigsData }) {
+    const aboutRef = useRef();
+
     return (
         <Layout home>
             <Head>
@@ -27,7 +30,7 @@ export default function MainSite({ allGigsData }) {
                 <link
                     rel="stylesheet"
                     type="text/css"
-                    href="//use.fontawesome.com/releases/v5.7.2/css/all.css"
+                    href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
                 ></link>
             </Head>
             <Header />
