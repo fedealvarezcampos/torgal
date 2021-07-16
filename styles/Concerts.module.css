@@ -24,7 +24,7 @@
 .gigItem {
     display: grid;
     grid: 1fr / 12rem auto auto 10rem;
-    width: clamp(46rem, 60vw, 52rem);
+    width: clamp(46rem, 60vw, 48rem);
     align-items: center;
     margin: 0.6rem;
     padding: 1.5rem;
@@ -70,7 +70,7 @@
     .gigItem {
         display: grid;
         grid: 1fr / 8rem auto auto 8rem;
-        width: 40rem;
+        width: clamp(35rem, 70vw, 40rem);
         align-items: center;
         margin: 0.6rem;
         padding: 1.2rem;
@@ -82,5 +82,60 @@
         width: 6.6rem;
         padding: 0.5rem 0.7rem 0.5rem 0.7rem;
         border-radius: 12px;
+    }
+}
+
+@media (max-width: 800px) {
+    .gigList {
+        padding: 1.6rem 0 1.6rem 0;
+    }
+
+    .gigItem {
+        display: grid;
+        grid: 1fr / 5rem auto auto 5.5rem;
+        width: clamp(20rem, 60vw, 30rem);
+        gap: 10px;
+        margin: 0.6rem;
+        padding: 1rem;
+        font-size: 0.8rem;
+    }
+
+    .button {
+        font-size: clamp(0.6rem, 0.8vw, 1.2rem);
+        width: clamp(5.2rem, 2vw, 6.2rem);
+        padding: 0.5rem 0.2rem 0.4rem 0.2rem;
+        border-radius: 12px;
+    }
+}
+
+@media (max-width: 500px) {
+    .gigList {
+        padding: 1.6rem 0 1.6rem 0;
+    }
+
+    .gigItem {
+        justify-items: center;
+        grid: auto auto auto auto / 1fr;
+        width: clamp(6rem, 40vw, 30rem);
+        gap: 5px;
+        margin: 0.6rem;
+        padding: 1rem 0.5rem 1rem 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .gigArtist {
+        justify-self: center;
+    }
+
+    .gigPrice {
+        justify-self: center;
+    }
+
+    .button {
+        font-size: clamp(0.6rem, 0.8vw, 1.2rem);
+        width: clamp(5.2rem, 2vw, 6.2rem);
+        padding: 0.5rem 0.2rem 0.4rem 0.2rem;
+        border-radius: 12px;
+        justify-self: center;
     }
 }

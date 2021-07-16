@@ -1,6 +1,6 @@
 ---
 artist: 'Juan Poronga'
-date: '2022-01-05'
+date: '2022/01/05'
 price: '32€'
 ---
 

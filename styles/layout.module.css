@@ -1,6 +1,6 @@
 .container {
     /* width: 76vw; */
-    width: 60vw;
+    width: clamp(55rem, 60vw, 80rem);
     padding: 0 1rem;
     margin: 2.2rem auto 6rem;
     z-index: 100;

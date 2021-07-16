@@ -39,6 +39,15 @@ const settings = {
                 initialSlide: 2,
             },
         },
+        {
+            breakpoint: 500,
+            settings: {
+                centerPadding: '20px',
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                initialSlide: 2,
+            },
+        },
     ],
 };
 
