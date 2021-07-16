@@ -29,7 +29,8 @@
     display: inline-block;
     font-size: clamp(2rem, 10vw, 8rem);
     font-family: Adam;
-    line-height: 0.6;
+    padding-top: 5px;
+    line-height: 0.5;
     letter-spacing: 0.005em;
     color: var(--base-font);
 }
