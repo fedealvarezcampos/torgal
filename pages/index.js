@@ -5,6 +5,7 @@ import Home from '../components/Home';
 import Header from '../components/Header';
 import About from '../components/About';
 import Gallery from '../components/Gallery';
+import Socials from '../components/Socials';
 import ConcertList from '../components/ConcertList';
 import Layout, { siteTitle } from '../components/layout';
 import { getSortedGigsData } from '../lib/gigs';
@@ -38,6 +39,7 @@ export default function MainSite({ allGigsData }) {
             <About />
             <Gallery />
             <ConcertList gigs={allGigsData} />
+            <Socials />
         </Layout>
     );
 }

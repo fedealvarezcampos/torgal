@@ -1,6 +1,12 @@
 import Slider from 'react-slick';
 import Image from 'next/image';
 import styles from '../styles/Gallery.module.css';
+import slide01 from '../public/images/slide01.jpg';
+import slide02 from '../public/images/slide02.jpg';
+import slide03 from '../public/images/slide03.jpg';
+import slide04 from '../public/images/slide04.jpg';
+import slide05 from '../public/images/slide05.jpg';
+import slide06 from '../public/images/slide06.jpg';
 
 const settings = {
     className: 'center',
@@ -58,63 +64,58 @@ function Gallery() {
                 <Slider {...settings}>
                     <div className={styles.imageContainer}>
                         <Image
-                            src="/images/slide01.jpg" // Route of the image file
+                            src={slide01} // Route of the image file
                             placeholder="blur"
+                            priority="true"
                             layout="responsive"
                             quality={80}
-                            height={200} // Desired size with correct aspect ratio
-                            width={300} // Desired size with correct aspect ratio
                             alt="nuria graham"
                         />
                     </div>
                     <div className={styles.imageContainer}>
                         <Image
-                            src="/images/slide02.jpg" // Route of the image file
+                            src={slide02} // Route of the image file
+                            placeholder="blur"
+                            priority="true"
                             layout="responsive"
                             quality={80}
-                            height={200} // Desired size with correct aspect ratio
-                            width={300} // Desired size with correct aspect ratio
                             alt="cupido"
                         />
                     </div>
                     <div className={styles.imageContainer}>
                         <Image
-                            src="/images/slide03.jpg" // Route of the image file
+                            src={slide03} // Route of the image file
+                            placeholder="blur"
+                            priority="true"
                             layout="responsive"
                             quality={80}
-                            height={200} // Desired size with correct aspect ratio
-                            width={300} // Desired size with correct aspect ratio
                             alt="omar apollo"
                         />
                     </div>
                     <div className={styles.imageContainer}>
                         <Image
-                            src="/images/slide04.jpg" // Route of the image file
+                            src={slide04} // Route of the image file
                             placeholder="blur"
                             layout="responsive"
                             quality={80}
-                            height={200} // Desired size with correct aspect ratio
-                            width={300} // Desired size with correct aspect ratio
                             alt="y la bamba"
                         />
                     </div>
                     <div className={styles.imageContainer}>
                         <Image
-                            src="/images/slide05.jpg" // Route of the image file
+                            src={slide05} // Route of the image file
+                            placeholder="blur"
                             layout="responsive"
                             quality={80}
-                            height={200} // Desired size with correct aspect ratio
-                            width={300} // Desired size with correct aspect ratio
                             alt="niño de elche"
                         />
                     </div>
                     <div className={styles.imageContainer}>
                         <Image
-                            src="/images/slide06.jpg" // Route of the image file
+                            src={slide06} // Route of the image file
+                            placeholder="blur"
                             layout="responsive"
                             quality={80}
-                            height={200} // Desired size with correct aspect ratio
-                            width={300} // Desired size with correct aspect ratio
                             alt="juan wauters"
                         />
                     </div>
