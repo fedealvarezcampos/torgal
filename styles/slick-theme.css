@@ -48,6 +48,7 @@
     color: var(--base-font);
     transition: color 200ms ease-in-out;
 }
+
 .slick-next.slick-disabled:before,
 .slick-prev.slick-disabled:before {
     opacity: 0.25;
@@ -159,3 +160,19 @@
     opacity: 0.75;
     color: #000;
 } /*# sourceMappingURL=slick-theme.min.css.map */
+
+@media (max-width: 600px) {
+    .slick-next:hover:before,
+    .slick-prev:hover:before {
+        opacity: 1;
+        color: var(--dark-item);
+        transition: color 150ms ease-in-out;
+    }
+
+    .slick-next:active:before,
+    .slick-prev:active:before {
+        opacity: 1;
+        color: var(--base-font);
+        transition: color 200ms ease-in-out;
+    }
+}

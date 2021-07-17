@@ -13,14 +13,6 @@
     list-style: none;
 }
 
-.gigArtist {
-    justify-self: start;
-}
-
-.gigPrice {
-    justify-self: end;
-}
-
 .gigItem {
     display: grid;
     grid: 1fr / 12rem auto auto 10rem;
@@ -38,6 +30,16 @@
     background-color: var(--dark-item);
 }
 
+.gigArtist {
+    color: var(--pink);
+    font-weight: 800;
+    justify-self: start;
+}
+
+.gigPrice {
+    justify-self: end;
+}
+
 .button {
     cursor: pointer;
     justify-self: end;
@@ -51,13 +53,13 @@
     font-size: 1rem;
     letter-spacing: 0.075em;
     line-height: 1;
-    border: 5px solid #7a9e9c;
+    border: 5px solid var(--light-green);
     background: #1f1f1f;
     transition: border 150ms ease-in-out;
 }
 
 .button:hover {
-    border: 5px solid #d5a18e;
+    border: 5px solid var(--pink);
     transform: translateY(-1px);
     transition: all 200ms ease-in-out;
 }
@@ -91,7 +93,6 @@
     }
 
     .gigItem {
-        display: grid;
         grid: 1fr / 5rem auto auto 5.5rem;
         width: clamp(20rem, 60vw, 30rem);
         gap: 10px;
@@ -104,7 +105,6 @@
         font-size: clamp(0.6rem, 0.8vw, 1.2rem);
         width: clamp(5.2rem, 2vw, 6.2rem);
         padding: 0.5rem 0.2rem 0.4rem 0.2rem;
-        border-radius: 12px;
     }
 }
 
@@ -116,18 +116,30 @@
     .gigItem {
         grid: 1fr / 3.2rem auto auto 3.5rem;
         width: 80vw;
-        gap: 5px;
+        gap: 20px;
         margin: 0.25rem;
         padding: 0.5rem 0.6rem 0.5rem 0.6rem;
         font-size: 0.5rem;
-        border-radius: 12px;
+        border-radius: 10px;
     }
 
     .button {
         font-size: clamp(0.4rem, 0.5vw, 1rem);
         width: clamp(3.2rem, 1.5vw, 5rem);
-        border: 3px solid #7a9e9c;
+        border: 3px solid var(--light-green);
         padding: 0.3rem 0.2rem 0.3rem 0.2rem;
         border-radius: 10px;
+    }
+
+    .button:hover {
+        border: 3px solid var(--light-green);
+        transform: none;
+        transition: all 200ms ease-in-out;
+    }
+
+    .button:active {
+        border: 3px solid var(--pink);
+        transform: none;
+        transition: all 200ms ease-in-out;
     }
 }

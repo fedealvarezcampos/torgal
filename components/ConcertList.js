@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import styles from '../styles/Concerts.module.css';
+import Date from '../components/date';
 
 // export async function getStaticProps() {
 //     const allPostsData = getSortedGigsData();
@@ -21,7 +22,7 @@ function ConcertList({ gigs }) {
                 <ul className={styles.gigList}>
                     {gigs.map(({ id, date, artist, price }) => (
                         <li className={styles.gigItem} key={id}>
-                            <span>{date}</span>
+                            <Date dateString={date} />
                             <span className={styles.gigArtist}>{artist}</span>
                             <span className={styles.gigPrice}>{price}</span>
                             <button className={styles.button}>

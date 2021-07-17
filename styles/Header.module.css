@@ -49,7 +49,7 @@
 
 .navLinks a:hover {
     display: block;
-    color: #d5a18e;
+    color: var(--pink);
     transform: translateY(-1px);
     transition: all 200ms ease-in-out;
 }
