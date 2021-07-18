@@ -11,10 +11,10 @@ function Map() {
 
     const defaultProps = {
         center: {
-            lat: 42.34336976308472,
-            lng: -7.860704021601114,
+            lat: 42.344102994021265,
+            lng: -7.862004021601114,
         },
-        zoom: 15,
+        zoom: 14,
     };
 
     const mapStyles = [
@@ -151,7 +151,7 @@ function Map() {
             elementType: 'labels.text.fill',
             stylers: [
                 {
-                    color: '#9ca5b3',
+                    color: '#ffffff',
                 },
             ],
         },
@@ -247,8 +247,9 @@ function Map() {
                 bootstrapURLKeys={{ key: GOOGLE_MAPS_KEY }}
                 defaultCenter={defaultProps.center}
                 defaultZoom={defaultProps.zoom}
+                yesIWantToUseGoogleMapApiInternals
             >
-                <Marker lat={42.34336976308472} lng={-7.860704021601114} />
+                <Marker lat={42.343102994021265} lng={-7.860765971709848} />
             </GoogleMapReact>
         </div>
     );

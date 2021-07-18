@@ -1,8 +1,7 @@
 .marker {
-    height: 4rem;
-    width: 3rem;
-    background-size: cover;
-    background-position: center center;
+    /* height: 3rem; */
+    width: 2.8rem;
+    transform: translate(-50%, -100%);
 }
 
 .container {
@@ -19,15 +18,12 @@
 
 @media (max-width: 500px) {
     .container {
-        /* width: 100vw; */
-        padding: 0 1rem 1rem 1rem;
+        padding: 0 0 1rem 0;
         height: 50vw;
         max-height: 35rem;
     }
 
     .marker {
-        position: absolute;
-        height: 12vw;
-        width: auto;
+        height: 14vw;
     }
 }
