@@ -43,3 +43,17 @@ img {
     max-width: 100%;
     display: block;
 }
+
+/* Sorry, Google */
+
+.gmnoprint {
+    display: none !important;
+}
+
+.gm-style-cc {
+    display: none !important;
+}
+
+.gm-fullscreen-control {
+    background-color: #512424 !important;
+}
