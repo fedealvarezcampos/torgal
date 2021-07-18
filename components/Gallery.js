@@ -66,7 +66,6 @@ function Gallery() {
                         <Image
                             src={slide01} // Route of the image file
                             placeholder="blur"
-                            priority="true"
                             layout="responsive"
                             quality={80}
                             alt="nuria graham"
@@ -76,7 +75,6 @@ function Gallery() {
                         <Image
                             src={slide02} // Route of the image file
                             placeholder="blur"
-                            priority="true"
                             layout="responsive"
                             quality={80}
                             alt="cupido"
@@ -86,7 +84,6 @@ function Gallery() {
                         <Image
                             src={slide03} // Route of the image file
                             placeholder="blur"
-                            priority="true"
                             layout="responsive"
                             quality={80}
                             alt="omar apollo"

@@ -7,6 +7,7 @@ import About from '../components/About';
 import Gallery from '../components/Gallery';
 import Socials from '../components/Socials';
 import ConcertList from '../components/ConcertList';
+import Map from '../components/Map';
 import Layout, { siteTitle } from '../components/layout';
 import { getSortedGigsData } from '../lib/gigs';
 import utilStyles from '../styles/utils.module.css';
@@ -38,6 +39,7 @@ export default function MainSite({ allGigsData }) {
             <Header />
             <Home />
             <About />
+            <Map />
             <Gallery />
             <ConcertList gigs={allGigsData} />
             <Socials />

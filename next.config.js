@@ -11,4 +11,7 @@ module.exports = {
         locales: ['es'],
         defaultLocale: 'es',
     },
+    env: {
+        GOOGLE_MAPS_KEY: 'AIzaSyCvnrMU_chgALqHTBEGmB16Xdm1GII5yek',
+    },
 };

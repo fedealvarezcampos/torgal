@@ -2,7 +2,7 @@
     /* width: 76vw; */
     width: clamp(55rem, 60vw, 80rem);
     padding: 0 1rem;
-    margin: 2.2rem auto 2rem;
+    margin: 2.2rem auto 3rem;
     z-index: 100;
 }
 
@@ -26,6 +26,6 @@
     .container {
         width: 100vw;
         padding: 0;
-        margin: 1.4rem auto 6rem;
+        margin: 1.4rem auto 0;
     }
 }
