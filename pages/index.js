@@ -28,6 +28,7 @@ export default function MainSite({ allGigsData }) {
         <Layout home>
             <Head>
                 <title>{siteTitle}</title>
+                <meta property="og:title" content="Café & Pop Torgal" key="title" />
                 <link
                     rel="stylesheet"
                     type="text/css"

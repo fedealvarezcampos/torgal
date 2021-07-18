@@ -16,12 +16,12 @@ function Header() {
                             </Link>
                         </li>
                         <li>
-                            <Link activeClass="active" to="bar" offset={-50} spy={true} smooth={true}>
+                            <Link activeClass="active" to="bar" offset={-80} spy={true} smooth={true}>
                                 BAR
                             </Link>
                         </li>
                         <li>
-                            <Link activeClass="active" to="conciertos" offset={-50} spy={true} smooth={true}>
+                            <Link activeClass="active" to="conciertos" offset={-80} spy={true} smooth={true}>
                                 CONCIERTOS
                             </Link>
                         </li>
