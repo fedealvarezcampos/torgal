@@ -7,7 +7,7 @@
 .container {
     /* width: 100vw; */
     padding: 0 1.6rem 1.8rem 1.6rem;
-    height: 50vw;
+    height: 40vw;
     max-height: 35rem;
     display: flex;
     flex-direction: column;
@@ -18,7 +18,7 @@
 
 @media (max-width: 500px) {
     .container {
-        padding: 0 0 1rem 0;
+        padding: 0;
         height: 50vw;
         max-height: 35rem;
     }

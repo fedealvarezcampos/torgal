@@ -31,3 +31,15 @@
         align-self: start;
     }
 }
+
+@media (max-width: 600px) {
+    .container {
+        height: 65vw;
+        background-position-y: -15%;
+    }
+
+    .titleContainer {
+        padding-left: 6vw;
+        width: clamp(6rem, 50.5vw, 30rem);
+    }
+}
