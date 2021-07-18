@@ -35,9 +35,9 @@
 @media (max-width: 500px) {
     .container {
         height: auto;
-        padding: 1.2rem;
+        padding: 1rem;
         gap: 10px;
-        border: 0.8rem solid var(--dark-item);
+        border: unset;
     }
 
     .socialBG {

@@ -12,7 +12,7 @@ const settings = {
     className: 'center',
     centerMode: true,
     infinite: true,
-    centerPadding: '160px',
+    centerPadding: '100px',
     slidesToShow: 2,
     speed: 500,
     responsive: [
