@@ -11,23 +11,18 @@ function Header() {
                 <nav>
                     <ul className={styles.navLinks}>
                         <li>
-                            <Link activeClass="active" to="home" offset={-180} spy={true} smooth={true}>
+                            <Link activeClass="active" to="home" offset={-100} spy={true} smooth={true}>
                                 INICIO
                             </Link>
                         </li>
                         <li>
-                            <Link activeClass="active" to="bar" offset={-180} spy={true} smooth={true}>
+                            <Link activeClass="active" to="bar" offset={-50} spy={true} smooth={true}>
                                 BAR
                             </Link>
                         </li>
                         <li>
-                            <Link activeClass="active" to="conciertos" offset={-180} spy={true} smooth={true}>
+                            <Link activeClass="active" to="conciertos" offset={-50} spy={true} smooth={true}>
                                 CONCIERTOS
-                            </Link>
-                        </li>
-                        <li>
-                            <Link activeClass="active" to="about" spy={true} smooth={true}>
-                                TIENDA
                             </Link>
                         </li>
                     </ul>

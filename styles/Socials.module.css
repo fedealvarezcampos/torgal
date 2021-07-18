@@ -23,7 +23,7 @@
 }
 
 .socialBG:hover {
-    background-color: var(--bg-color);
+    background-color: var(--pink);
     transition: background-color 200ms ease-in-out;
 }
 
@@ -34,18 +34,32 @@
 
 @media (max-width: 500px) {
     .container {
+        height: auto;
+        padding: 1.2rem;
         gap: 10px;
-        border: 1rem solid var(--dark-item);
+        border: 0.8rem solid var(--dark-item);
     }
 
     .socialBG {
-        cursor: pointer;
-        display: grid;
-        place-content: center;
-        height: 6rem;
-        width: 6rem;
+        height: 3.8rem;
+        width: 3.8rem;
         padding: 0.6rem;
         border-radius: 20px;
         background-color: var(--dark-item);
+    }
+
+    .socialBG:hover {
+        background-color: var(--dark-item);
+        transition: background-color 200ms ease-in-out;
+    }
+
+    .socialBG:active {
+        background-color: var(--pink);
+        transition: background-color 200ms ease-in-out;
+    }
+
+    .socialBG img {
+        height: 1.9rem;
+        width: 2.2rem;
     }
 }
