@@ -13,6 +13,7 @@
     --light-green: #7a9e9c;
     --wallpaper: #1c4a47;
     --pink: #d5a18e;
+    --cream: #f4dba4;
 }
 
 html,
@@ -55,5 +56,5 @@ img {
 }
 
 .gm-fullscreen-control {
-    background-color: #512424 !important;
+    background-color: var(--cream) !important;
 }

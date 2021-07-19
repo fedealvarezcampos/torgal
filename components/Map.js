@@ -8,11 +8,11 @@ const Marker = () => (
 );
 
 function Map() {
-    const { GOOGLE_MAPS_KEY } = process.env;
+    const googleAPI = process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY;
 
     const defaultProps = {
         center: {
-            lat: 42.344102994021265,
+            lat: 42.343902994021265,
             lng: -7.860804021601114,
         },
         zoom: 15,
@@ -25,7 +25,7 @@ function Map() {
                 options={{
                     styles: mapStyles,
                 }}
-                bootstrapURLKeys={{ key: GOOGLE_MAPS_KEY }}
+                bootstrapURLKeys={{ key: googleAPI }}
                 defaultCenter={defaultProps.center}
                 defaultZoom={defaultProps.zoom}
                 yesIWantToUseGoogleMapApiInternals
