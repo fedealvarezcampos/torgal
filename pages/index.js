@@ -39,7 +39,6 @@ export default function MainSite({ allGigsData }) {
             <Header />
             <Home />
             <About />
-            <Map />
             <Gallery />
             <ConcertList gigs={allGigsData} />
             <Socials />
