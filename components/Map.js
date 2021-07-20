@@ -1,11 +1,32 @@
 import GoogleMapReact from 'google-map-react';
+import { useState } from 'react';
 import styles from '../styles/Map.module.css';
 import { mapStyles } from './mapStyles';
 
-const Marker = () => (
-    // <div className={styles.marker} style={{ backgroundImage: `url(./images/marker.svg)` }} />
-    <img className={styles.marker} src="./images/marker.svg" alt="" />
-);
+const InfoWindow = () => {
+    return (
+        <div className={styles.infoWindow}>
+            <div>Torgal</div>
+            <p>Av de la Verga 180</p>
+        </div>
+    );
+};
+
+function Marker() {
+    const [show, setShow] = useState(false);
+
+    return (
+        <>
+            {show && <InfoWindow />}
+            <img
+                className={styles.marker}
+                onClick={() => setShow(!show)}
+                src="./images/marker.svg"
+                alt="map marker"
+            />
+        </>
+    );
+}
 
 function Map() {
     const googleAPI = process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY;

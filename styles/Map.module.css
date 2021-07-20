@@ -20,6 +20,35 @@
     justify-content: flex-end;
 }
 
+.infoWindow {
+    position: absolute;
+    bottom: 75px;
+    left: -75px;
+    width: 10rem;
+    box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 0.3);
+    padding: 0.8rem;
+    font-size: 14px;
+    border-radius: 15px;
+    color: var(--base-font);
+    background-color: var(--dark-item);
+    z-index: 100;
+}
+
+.infoWindow div {
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: Adam;
+    letter-spacing: 0.1em;
+    font-feature-settings: 'kern' off;
+}
+
+.infoWindow p {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-family: 'Cabin', sans-serif;
+}
+
 @media (max-width: 500px) {
     .container {
         padding: 0;
