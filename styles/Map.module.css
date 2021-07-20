@@ -23,13 +23,14 @@
 .infoWindow {
     position: absolute;
     bottom: 75px;
-    left: -75px;
-    width: 10rem;
+    left: -80px;
+    width: 9rem;
     box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 0.3);
-    padding: 0.8rem;
+    padding: 0.6rem;
     font-size: 14px;
     border-radius: 15px;
     color: var(--base-font);
+    border: 5px solid var(--bg-color);
     background-color: var(--dark-item);
     z-index: 100;
 }
@@ -43,9 +44,16 @@
 }
 
 .infoWindow p {
-    margin-top: 0.5rem;
-    margin-bottom: 0;
-    font-size: 1rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.1rem;
+    font-size: 0.9rem;
+    font-family: 'Cabin', sans-serif;
+}
+
+.infoWindow a {
+    text-decoration: none;
+    font-style: italic;
+    color: var(--cream);
     font-family: 'Cabin', sans-serif;
 }
 
@@ -58,5 +66,30 @@
 
     .marker {
         height: 14vw;
+    }
+
+    .infoWindow {
+        position: absolute;
+        bottom: -20px;
+        left: -46vw;
+        width: 8rem;
+        box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 0.3);
+        padding: 0.6rem;
+        font-size: 14px;
+        border-radius: 15px;
+        color: var(--base-font);
+        border: 5px solid var(--bg-color);
+        background-color: var(--dark-item);
+        z-index: 100;
+    }
+
+    .infoWindow div {
+        font-size: 1rem;
+    }
+
+    .infoWindow p {
+        margin-top: 0.3rem;
+        margin-bottom: 0;
+        font-size: 0.8rem;
     }
 }
