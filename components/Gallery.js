@@ -65,7 +65,7 @@ function Gallery() {
                 <Slider {...settings}>
                     <div className={styles.imageContainer}>
                         <Image
-                            src={slide04} // Route of the image file
+                            src={slide04}
                             placeholder="blur"
                             layout="responsive"
                             quality={80}
@@ -74,7 +74,7 @@ function Gallery() {
                     </div>
                     <div className={styles.imageContainer}>
                         <Image
-                            src={slide02} // Route of the image file
+                            src={slide02}
                             placeholder="blur"
                             layout="responsive"
                             quality={80}
@@ -83,7 +83,7 @@ function Gallery() {
                     </div>
                     <div className={styles.imageContainer}>
                         <Image
-                            src={slide01} // Route of the image file
+                            src={slide01}
                             placeholder="blur"
                             layout="responsive"
                             quality={80}
@@ -92,7 +92,7 @@ function Gallery() {
                     </div>
                     <div className={styles.imageContainer}>
                         <Image
-                            src={slide05} // Route of the image file
+                            src={slide05}
                             placeholder="blur"
                             layout="responsive"
                             quality={80}
@@ -101,7 +101,7 @@ function Gallery() {
                     </div>
                     <div className={styles.imageContainer}>
                         <Image
-                            src={slide06} // Route of the image file
+                            src={slide06}
                             placeholder="blur"
                             layout="responsive"
                             quality={80}
@@ -110,7 +110,7 @@ function Gallery() {
                     </div>
                     <div className={styles.imageContainer}>
                         <Image
-                            src={slide03} // Route of the image file
+                            src={slide03}
                             placeholder="blur"
                             layout="responsive"
                             quality={80}
@@ -119,7 +119,7 @@ function Gallery() {
                     </div>
                     <div className={styles.imageContainer}>
                         <Image
-                            src={slide07} // Route of the image file
+                            src={slide07}
                             placeholder="blur"
                             layout="responsive"
                             quality={80}

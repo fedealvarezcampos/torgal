@@ -33,12 +33,8 @@
     z-index: 100;
 }
 
-.infoWindow div {
-    font-size: 1.2rem;
-    font-weight: 700;
-    font-family: Adam;
-    letter-spacing: 0.1em;
-    font-feature-settings: 'kern' off;
+.infoWindow img {
+    width: 5.5rem;
 }
 
 .infoWindow p {
@@ -91,8 +87,8 @@
         z-index: 100;
     }
 
-    .infoWindow div {
-        font-size: 1rem;
+    .infoWindow img {
+        width: 22vw;
     }
 
     .infoWindow p {
