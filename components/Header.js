@@ -1,7 +1,4 @@
-import Head from 'next/head';
-import Image from 'next/image';
 import styles from '../styles/Header.module.css';
-import utilStyles from '../styles/utils.module.css';
 import { Link } from 'react-scroll';
 
 function Header() {

@@ -3,7 +3,6 @@
     display: grid;
     align-content: end;
     top: -2.2vw;
-    /* width: 76vw; */
     width: clamp(55rem, 60vw, 80rem);
     margin-top: -5rem;
     height: clamp(13rem, 13vw, 16rem);
@@ -11,8 +10,6 @@
     transform: rotate(4deg);
     transform-origin: 50% 52%;
     -webkit-transform-origin: 50% 52%;
-    /* filter: drop-shadow(0px 3px 0px rgba(0, 0, 0, 0.555)); */
-    /* clip-path: polygon(0% 5%, 100% 10%, 98% 100%, 0% 100%); */
     z-index: 100;
 }
 
@@ -58,7 +55,6 @@
     .header {
         width: 90vw;
         top: -60px;
-        /* height: 30rem; */
     }
 
     .navLinks {
@@ -72,7 +68,6 @@
     .header {
         width: 110vw;
         top: -100px;
-        /* height: 10rem; */
     }
 
     .navLinks {

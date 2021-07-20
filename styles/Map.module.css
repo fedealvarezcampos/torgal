@@ -1,5 +1,4 @@
 .marker {
-    /* height: 3rem; */
     width: 2.8rem;
     transform: translate(-50%, -100%);
 }
@@ -10,7 +9,6 @@
 }
 
 .container {
-    /* width: 100vw; */
     padding: 0 1.6rem 1.8rem 1.6rem;
     height: 32vw;
     max-height: 32rem;
@@ -66,6 +64,16 @@
 
     .marker {
         height: 14vw;
+    }
+
+    .marker:hover {
+        cursor: pointer;
+        filter: none;
+    }
+
+    .marker:active {
+        cursor: pointer;
+        filter: hue-rotate(335deg) grayscale(20%);
     }
 
     .infoWindow {

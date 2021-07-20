@@ -5,7 +5,7 @@ import { mapStyles } from './mapStyles';
 
 const InfoWindow = () => {
     return (
-        <div className={styles.infoWindow}>
+        <div className={`${styles.infoWindow} fade-in`}>
             <div>Torgal</div>
             <p>Av de la Verga 180</p>
             <a

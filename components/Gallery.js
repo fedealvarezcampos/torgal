@@ -7,6 +7,7 @@ import slide03 from '../public/images/slide03.jpg';
 import slide04 from '../public/images/slide04.jpg';
 import slide05 from '../public/images/slide05.jpg';
 import slide06 from '../public/images/slide06.jpg';
+import slide07 from '../public/images/slide07.jpg';
 
 const settings = {
     className: 'center',
@@ -64,11 +65,11 @@ function Gallery() {
                 <Slider {...settings}>
                     <div className={styles.imageContainer}>
                         <Image
-                            src={slide01} // Route of the image file
+                            src={slide04} // Route of the image file
                             placeholder="blur"
                             layout="responsive"
                             quality={80}
-                            alt="nuria graham"
+                            alt="y la bamba"
                         />
                     </div>
                     <div className={styles.imageContainer}>
@@ -82,20 +83,11 @@ function Gallery() {
                     </div>
                     <div className={styles.imageContainer}>
                         <Image
-                            src={slide03} // Route of the image file
+                            src={slide01} // Route of the image file
                             placeholder="blur"
                             layout="responsive"
                             quality={80}
-                            alt="omar apollo"
-                        />
-                    </div>
-                    <div className={styles.imageContainer}>
-                        <Image
-                            src={slide04} // Route of the image file
-                            placeholder="blur"
-                            layout="responsive"
-                            quality={80}
-                            alt="y la bamba"
+                            alt="nuria graham"
                         />
                     </div>
                     <div className={styles.imageContainer}>
@@ -114,6 +106,24 @@ function Gallery() {
                             layout="responsive"
                             quality={80}
                             alt="juan wauters"
+                        />
+                    </div>
+                    <div className={styles.imageContainer}>
+                        <Image
+                            src={slide03} // Route of the image file
+                            placeholder="blur"
+                            layout="responsive"
+                            quality={80}
+                            alt="omar apollo"
+                        />
+                    </div>
+                    <div className={styles.imageContainer}>
+                        <Image
+                            src={slide07} // Route of the image file
+                            placeholder="blur"
+                            layout="responsive"
+                            quality={80}
+                            alt="lady lamb"
                         />
                     </div>
                 </Slider>

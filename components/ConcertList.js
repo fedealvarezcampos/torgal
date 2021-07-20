@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import styles from '../styles/Concerts.module.css';
 import Date from '../components/date';
 

@@ -1,5 +1,4 @@
 .container {
-    /* height: 32vw; */
     height: clamp(28rem, 38vw, 46rem);
     padding: 0;
     display: flex;
