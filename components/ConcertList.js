@@ -19,13 +19,25 @@ function ConcertList({ gigs }) {
                 style={{ backgroundImage: `url(./images/wallpaperFeather.png)` }}
             >
                 <ul className={styles.gigList}>
-                    {gigs.map(({ id, gigDate, artist, gigPrice }) => (
-                        <li className={styles.gigItem} key={id}>
-                            <Date dateString={gigDate} />
-                            <span className={styles.gigArtist}>{artist}</span>
-                            <span className={styles.gigPrice}>{gigPrice}€</span>
-                            <button className={styles.button}>
-                                <span>ENTRADAS</span>
+                    {gigs.map(gigs => (
+                        <li className={styles.gigItem} key={gigs.id}>
+                            <Date dateString={gigs.gigDate} />
+                            <span className={styles.gigArtist}>{gigs.artist}</span>
+                            <span className={styles.gigPrice}>{gigs.gigPrice}€</span>
+                            <button
+                                className={
+                                    gigs.gigLink === 'soldout'
+                                        ? `${styles.button} ${styles.gigSoldOut}`
+                                        : styles.button
+                                }
+                            >
+                                {gigs.gigLink === 'soldout' ? (
+                                    <span>SOLD OUT</span>
+                                ) : (
+                                    <a href={gigs.gigLink} target="_blank">
+                                        ENTRADAS
+                                    </a>
+                                )}
                             </button>
                         </li>
                     ))}

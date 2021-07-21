@@ -30,6 +30,11 @@
     background-color: var(--dark-item);
 }
 
+.gigItem a {
+    color: var(--base-font);
+    text-decoration: none;
+}
+
 .gigArtist {
     color: #e6c9b5;
     font-weight: 800;
@@ -62,6 +67,15 @@
     border: 5px solid var(--pink);
     transform: translateY(-1px);
     transition: all 200ms ease-in-out;
+}
+
+.button.gigSoldOut {
+    cursor: auto;
+    border: 5px solid var(--bg-color);
+}
+
+.button.gigSoldOut:hover {
+    transform: translateY(0px);
 }
 
 @media (max-width: 1200px) {
@@ -131,10 +145,18 @@
         border-radius: 10px;
     }
 
+    .button.gigSoldOut {
+        border: 3px solid var(--bg-color);
+    }
+
     .button:hover {
         border: 3px solid var(--light-green);
         transform: none;
         transition: all 200ms ease-in-out;
+    }
+
+    .button.gigSoldOut:hover {
+        border: 3px solid var(--bg-color);
     }
 
     .button:active {
