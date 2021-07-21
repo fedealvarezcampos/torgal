@@ -7,10 +7,11 @@ import Socials from '../components/Socials';
 import ConcertList from '../components/ConcertList';
 import Layout, { siteTitle } from '../components/layout';
 import { getSortedGigsData } from '../lib/gigs';
-import { useRef } from 'react';
 
 export async function getStaticProps() {
-    const allGigsData = getSortedGigsData();
+    const result = await getSortedGigsData();
+    const allGigsData = JSON.parse(JSON.stringify(result));
+
     return {
         props: {
             allGigsData,
@@ -19,8 +20,6 @@ export async function getStaticProps() {
 }
 
 export default function MainSite({ allGigsData }) {
-    const aboutRef = useRef();
-
     return (
         <Layout home>
             <Head>

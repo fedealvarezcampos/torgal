@@ -1,5 +1,20 @@
 {
     "files.associations": {
         "\"*.js\"": "Javascript React"
-    }
+    },
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "eu-cdbr-west-01.cleardb.com",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "torgalDB",
+            "database": "heroku_d69f969151954e6",
+            "username": "b4326ae78c99e9",
+            "password": "16688c44"
+        }
+    ]
 }

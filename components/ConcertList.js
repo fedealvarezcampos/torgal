@@ -19,11 +19,11 @@ function ConcertList({ gigs }) {
                 style={{ backgroundImage: `url(./images/wallpaperFeather.png)` }}
             >
                 <ul className={styles.gigList}>
-                    {gigs.map(({ id, date, artist, price }) => (
+                    {gigs.map(({ id, gigDate, artist, gigPrice }) => (
                         <li className={styles.gigItem} key={id}>
-                            <Date dateString={date} />
+                            <Date dateString={gigDate} />
                             <span className={styles.gigArtist}>{artist}</span>
-                            <span className={styles.gigPrice}>{price}</span>
+                            <span className={styles.gigPrice}>{gigPrice}€</span>
                             <button className={styles.button}>
                                 <span>ENTRADAS</span>
                             </button>
