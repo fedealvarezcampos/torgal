@@ -57,7 +57,7 @@ function Map() {
                 bootstrapURLKeys={{ key: googleAPI }}
                 defaultCenter={defaultProps.center}
                 defaultZoom={defaultProps.zoom}
-                yesIWantToUseGoogleMapApiInternals
+                // yesIWantToUseGoogleMapApiInternals
             >
                 <Marker lat={42.343102994021265} lng={-7.860765971709848} />
             </GoogleMapReact>
