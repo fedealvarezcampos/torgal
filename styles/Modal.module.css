@@ -96,20 +96,22 @@
 @media (max-width: 800px) {
     .contentContainer {
         display: grid;
-        grid: 25vw auto 2rem 22% auto / auto;
+        grid: 16vh auto 8rem auto / auto;
         gap: 12px;
         grid-column: 1 3;
         padding: 1rem;
         color: var(--base-font);
         font-family: 'Cabin' sans-serif;
         font-weight: 600;
-        /* height: auto; */
+        /* height: 80vh; */
         width: clamp(10rem, 90vw, 900px);
-        border: 4px solid var(--base-font);
+        border: 5px solid var(--base-font);
         border-radius: 60px 15px 15px 15px;
     }
 
     .image {
+        grid-row-start: 1;
+        grid-row-end: 1;
         justify-self: center;
         margin-top: 0;
         border-radius: 50px 20px 20px 20px;
@@ -122,19 +124,20 @@
     }
 
     .iconContainer img {
-        width: 30px;
-        height: 30px;
+        width: 25px;
+        height: 25px;
     }
 
     .artistName {
         margin: 0;
-        font-size: 1.4rem;
+        line-height: 1;
+        font-size: 1.2rem;
     }
 
     .bio {
         grid-area: unset;
         line-height: 1.2;
-        font-size: 0.8rem;
+        font-size: 0.75rem;
     }
 
     .youtube {
