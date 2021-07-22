@@ -1,17 +1,8 @@
+import { useEffect, useState } from 'react';
+import { useClosingKey } from '../helpers/useClosingKey';
 import styles from '../styles/Concerts.module.css';
 import Modal from '../components/Modal';
 import Date from '../components/date';
-import { useState } from 'react';
-import { useClosingKey } from '../helpers/useClosingKey';
-
-// export async function getStaticProps() {
-//     const allPostsData = getSortedGigsData();
-//     return {
-//         props: {
-//             allGigsData,
-//         },
-//     };
-// }
 
 function ConcertList({ gigs }) {
     const [modal, setModal] = useState(false);
@@ -22,7 +13,14 @@ function ConcertList({ gigs }) {
         setModalData(data);
     };
 
+    console.log(modal);
+
     useClosingKey('Escape', modal, setModal);
+
+    useEffect(() => {
+        modal && document.body.setAttribute('style', `overflow: hidden`);
+        !modal && document.body.removeAttribute('style', `overflow: hidden`);
+    }, [modal]);
 
     return (
         <>
@@ -40,21 +38,17 @@ function ConcertList({ gigs }) {
                                 {gigs.artist}
                             </span>
                             <span className={styles.gigPrice}>{gigs.gigPrice}€</span>
-                            <button
-                                className={
-                                    gigs.gigLink === 'soldout'
-                                        ? `${styles.button} ${styles.gigSoldOut}`
-                                        : styles.button
-                                }
-                            >
-                                {gigs.gigLink === 'soldout' ? (
-                                    <span>SOLD OUT</span>
-                                ) : (
-                                    <a href={gigs.gigLink} target="_blank">
-                                        ENTRADAS
-                                    </a>
-                                )}
-                            </button>
+                            <a href={gigs.gigLink !== 'soldout' ? gigs.gigLink : null} target="_blank">
+                                <button
+                                    className={
+                                        gigs.gigLink === 'soldout'
+                                            ? `${styles.button} ${styles.gigSoldOut}`
+                                            : styles.button
+                                    }
+                                >
+                                    {gigs.gigLink === 'soldout' ? <span>SOLD OUT</span> : 'ENTRADAS'}
+                                </button>
+                            </a>
                         </li>
                     ))}
                 </ul>

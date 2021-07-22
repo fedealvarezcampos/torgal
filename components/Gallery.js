@@ -1,5 +1,5 @@
-import Slider from 'react-slick';
 import Image from 'next/image';
+import Slider from 'react-slick';
 import styles from '../styles/Gallery.module.css';
 import slide01 from '../public/images/slide01.jpg';
 import slide02 from '../public/images/slide02.jpg';

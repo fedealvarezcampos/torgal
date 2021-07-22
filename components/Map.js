@@ -1,7 +1,7 @@
-import GoogleMapReact from 'google-map-react';
 import { useState } from 'react';
-import styles from '../styles/Map.module.css';
 import { mapStyles } from './mapStyles';
+import styles from '../styles/Map.module.css';
+import GoogleMapReact from 'google-map-react';
 
 const InfoWindow = () => {
     return (

@@ -13,6 +13,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
 /* .slick-loading .slick-list {
     background: url(ajax-loader.gif) center center no-repeat #fff;
 } */
@@ -96,13 +97,7 @@
 .slick-next {
     right: -25px;
 }
-/* [dir='rtl'] .slick-next {
-    right: auto;
-    left: -25px;
-}
-[dir='rtl'] .slick-next:before {
-    content: '←';
-} */
+
 .slick-dotted.slick-slider {
     margin-bottom: 30px;
 }

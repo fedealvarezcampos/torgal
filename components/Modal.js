@@ -1,25 +1,12 @@
 import styles from '../styles/Modal.module.css';
 
 function Modal({ gigs, setModal }) {
-    const opts = {
-        height: '100%',
-        width: '100%',
-        playerVars: {
-            playlist: gigs.videoIntro,
-            autoplay: 1,
-            mute: 1,
-            loop: 1,
-            origin: 'https://youtube.com',
-        },
-    };
-
     return (
         <>
             <div className={styles.modalContainer}>
                 <div className={styles.modalBG} onClick={() => setModal(false)} />
                 <div id="home" className={styles.contentContainer}>
                     <p className={styles.artistName}>{gigs.artist}</p>
-                    {/* <YouTube className={styles.youtube} videoId={gigs.videoIntro} opts={opts} /> */}
                     <iframe
                         src={`https://www.youtube.com/embed/${gigs.videoIntro}?autoplay=1&mute=1&loop=1&playlist=${gigs.videoIntro}`}
                         title="YouTube video player"

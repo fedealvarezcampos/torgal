@@ -1,7 +1,7 @@
-import Map from './Map';
+import Image from 'next/image';
 import styles from '../styles/About.module.css';
 import aboutImage from '../public/images/about.jpg';
-import Image from 'next/image';
+import Map from './Map';
 
 function About() {
     return (
