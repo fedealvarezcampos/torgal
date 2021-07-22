@@ -21,16 +21,16 @@
 .contentContainer {
     display: grid;
     /* grid: auto auto / 20rem auto; */
-    grid: 2rem 14rem 8rem 2rem / auto auto;
+    grid: 2rem 14rem auto / 1fr 1.2fr;
     gap: 25px;
     grid-column: 1 3;
-    padding: 1.5rem 1.6rem 2rem 1.6rem;
+    padding: 1.5rem 2.2rem 2.5rem 2.2rem;
     color: var(--base-font);
     font-family: 'Cabin' sans-serif;
     font-weight: 600;
-    height: auto;
-    width: 80vw;
-    border: 4px solid var(--base-font);
+    /* height: auto; */
+    width: clamp(10rem, 80vw, 850px);
+    border: 8px solid var(--base-font);
     border-radius: 80px 20px 20px 20px;
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' width='100%25'%3E%3Cdefs%3E%3Cpattern id='doodad' width='30' height='30' viewBox='0 0 40 40' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'%3E%3Crect width='100%25' height='100%25' fill='rgba(43, 43, 43,1)'/%3E%3Cpath d='M-10-10h60v60h-60zM2 2v36h36v-36z' fill='rgba(39, 39, 39,1)'/%3E%3Cpath d='M-22-22h90v90h-90zM20 20v16h16v-16zM-20-20v16h16v-16zM20-20v16h16v-16zM-20 20v16h16v-16z' fill='rgba(39, 39, 39,1)'/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23doodad)' height='200%25' width='200%25'/%3E%3C/svg%3E ");
     z-index: 1000;
@@ -42,13 +42,14 @@
 }
 
 .image {
+    justify-self: center;
     margin-top: 0.5rem;
     grid-row-start: 1;
     grid-row-end: 3;
     border-radius: 70px 20px 20px 20px;
     background-size: cover;
     background-position: center center;
-    width: 320px;
+    width: 100%;
     height: 450px;
     border: 5px solid var(--base-font);
     filter: grayscale(60%);
@@ -68,13 +69,13 @@
 
 .socials {
     display: flex;
-    margin-top: -1rem;
+    flex-wrap: wrap-reverse;
+    margin-top: 140px;
     gap: 20px;
     justify-self: center;
     justify-content: center;
-    grid-area: 4 / 1 / 4 / 2;
-    width: 300px;
-    height: 200px;
+    grid-area: 3 / 1 / 4 / 2;
+    width: clamp(5rem, 30vw, 320px);
 }
 
 .iconContainer {
@@ -82,12 +83,73 @@
 }
 
 .iconContainer img {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
 }
 
 .iconContainer img:hover {
     transform: translateY(-1px);
     filter: hue-rotate(85deg) opacity(60%) saturate(10);
     transition: all 200ms ease-in-out;
+}
+
+@media (max-width: 800px) {
+    .contentContainer {
+        display: grid;
+        grid: 25vw auto 2rem 22% auto / auto;
+        gap: 12px;
+        grid-column: 1 3;
+        padding: 1rem;
+        color: var(--base-font);
+        font-family: 'Cabin' sans-serif;
+        font-weight: 600;
+        /* height: auto; */
+        width: clamp(10rem, 90vw, 900px);
+        border: 4px solid var(--base-font);
+        border-radius: 60px 15px 15px 15px;
+    }
+
+    .image {
+        justify-self: center;
+        margin-top: 0;
+        border-radius: 50px 20px 20px 20px;
+        background-size: cover;
+        background-position: center center;
+        width: 100%;
+        height: auto;
+        border: 5px solid var(--base-font);
+        filter: grayscale(60%);
+    }
+
+    .iconContainer img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .artistName {
+        margin: 0;
+        font-size: 1.4rem;
+    }
+
+    .bio {
+        grid-area: unset;
+        line-height: 1.2;
+        font-size: 0.8rem;
+    }
+
+    .youtube {
+        grid-area: unset;
+        width: 100%;
+        height: 100%;
+    }
+
+    .socials {
+        grid-area: unset;
+        display: flex;
+        margin-top: 0;
+        gap: 20px;
+        justify-self: center;
+        justify-content: center;
+        width: 100%;
+    }
 }
