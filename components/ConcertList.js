@@ -2,6 +2,7 @@ import styles from '../styles/Concerts.module.css';
 import Modal from '../components/Modal';
 import Date from '../components/date';
 import { useState } from 'react';
+import { useClosingKey } from '../helpers/useClosingKey';
 
 // export async function getStaticProps() {
 //     const allPostsData = getSortedGigsData();
@@ -20,6 +21,8 @@ function ConcertList({ gigs }) {
         setModal(true);
         setModalData(data);
     };
+
+    useClosingKey('Escape', modal, setModal);
 
     return (
         <>

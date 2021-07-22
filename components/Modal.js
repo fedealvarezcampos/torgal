@@ -1,6 +1,4 @@
-import Image from 'next/image';
 import styles from '../styles/Modal.module.css';
-import YouTube from 'react-youtube';
 
 function Modal({ gigs, setModal }) {
     const opts = {
