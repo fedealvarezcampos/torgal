@@ -48,7 +48,7 @@
 .button {
     cursor: pointer;
     justify-self: end;
-    width: 8rem;
+    width: 7.9rem;
     padding: 0.6rem 0.7rem 0.6rem 0.7rem;
     border-radius: 12px;
     box-sizing: border-box;
@@ -95,7 +95,7 @@
 
     .button {
         font-size: 0.8rem;
-        width: 6.6rem;
+        width: 6.5rem;
         padding: 0.5rem 0.7rem 0.5rem 0.7rem;
         border-radius: 12px;
     }
@@ -128,7 +128,7 @@
     }
 
     .gigItem {
-        grid: 1fr / 3.2rem auto auto 3.2rem;
+        grid: 1fr / 2.7rem auto auto 3.2rem;
         width: clamp(15rem, 75vw, 16rem);
         gap: 15px;
         margin: 0.25rem;

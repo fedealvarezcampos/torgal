@@ -1,16 +1,19 @@
+import Image from 'next/image';
 import styles from '../styles/Modal.module.css';
-import { getData } from '../../lib/posts';
 
-function Modal() {
+function Modal({ gigs, setModal }) {
+    console.log(gigs.id);
     return (
         <>
-            <div
-                id="home"
-                className={styles.container}
-                style={{ backgroundImage: `url(./images/back01.jpg)` }}
-            >
-                <div className={styles.titleContainer}>
-                    <img src="./images/LOGO.svg" alt="Torgal logo" />
+            <div className={styles.modalContainer}>
+                <div className={styles.modalBG} onClick={() => setModal(false)} />
+                <div id="home" className={styles.contentContainer}>
+                    <p>{gigs.artist}</p>
+
+                    <div
+                        className={styles.imageContainer}
+                        style={{ backgroundImage: `url(images/artists/${gigs.id}.jpg)` }}
+                    />
                 </div>
             </div>
         </>

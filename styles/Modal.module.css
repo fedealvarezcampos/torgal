@@ -1,0 +1,41 @@
+.modalContainer {
+    position: absolute;
+    display: grid;
+    top: 0;
+    left: 0;
+    place-content: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2400;
+}
+
+.modalBG {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+}
+
+.contentContainer {
+    padding: 1rem 2rem 1rem 2rem;
+    color: var(--base-font);
+    font-family: 'Cabin' sans-serif;
+    font-weight: 600;
+    height: 900px;
+    width: 80vw;
+    border: 8px solid var(--base-font);
+    border-radius: 25px;
+    background-color: var(--dark-item);
+    z-index: 1000;
+}
+
+.imageContainer {
+    border: 5px solid var(--dark-item);
+    /* border-radius: 20px; */
+    background-size: cover;
+    background-position: center center;
+    width: 320px;
+    height: 450px;
+}

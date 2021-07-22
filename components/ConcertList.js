@@ -1,5 +1,7 @@
 import styles from '../styles/Concerts.module.css';
+import Modal from '../components/Modal';
 import Date from '../components/date';
+import { useState } from 'react';
 
 // export async function getStaticProps() {
 //     const allPostsData = getSortedGigsData();
@@ -11,8 +13,17 @@ import Date from '../components/date';
 // }
 
 function ConcertList({ gigs }) {
+    const [modal, setModal] = useState(false);
+    const [modalData, setModalData] = useState([]);
+
+    const handleModal = data => {
+        setModal(true);
+        setModalData(data);
+    };
+
     return (
         <>
+            {modal && <Modal gigs={modalData} setModal={setModal} />}
             <div
                 id="conciertos"
                 className={styles.container}
@@ -22,7 +33,9 @@ function ConcertList({ gigs }) {
                     {gigs.map(gigs => (
                         <li className={styles.gigItem} key={gigs.id}>
                             <Date dateString={gigs.gigDate} />
-                            <span className={styles.gigArtist}>{gigs.artist}</span>
+                            <span className={styles.gigArtist} onClick={() => handleModal(gigs)}>
+                                {gigs.artist}
+                            </span>
                             <span className={styles.gigPrice}>{gigs.gigPrice}€</span>
                             <button
                                 className={

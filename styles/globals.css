@@ -27,6 +27,18 @@ body {
     background-color: var(--bg-color) !important;
 }
 
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark-item);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--wallpaper);
+}
+
 * {
     box-sizing: border-box;
 }
