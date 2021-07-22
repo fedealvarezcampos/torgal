@@ -41,6 +41,15 @@
     justify-self: start;
 }
 
+.gigArtist:hover {
+    cursor: pointer;
+    color: var(--pink);
+    font-weight: 800;
+    justify-self: start;
+    transform: translateY(-1px);
+    transition: all 200ms ease-in-out;
+}
+
 .gigPrice {
     justify-self: end;
 }
