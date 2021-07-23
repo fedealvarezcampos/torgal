@@ -1,13 +1,13 @@
 import Image from 'next/image';
 import Slider from 'react-slick';
 import styles from '../styles/Gallery.module.css';
-import slide01 from '../public/images/slide01.jpg';
-import slide02 from '../public/images/slide02.jpg';
-import slide03 from '../public/images/slide03.jpg';
-import slide04 from '../public/images/slide04.jpg';
-import slide05 from '../public/images/slide05.jpg';
-import slide06 from '../public/images/slide06.jpg';
-import slide07 from '../public/images/slide07.jpg';
+import slide01 from '../public/images/gallery/slide01.jpg';
+import slide02 from '../public/images/gallery/slide02.jpg';
+import slide03 from '../public/images/gallery/slide03.jpg';
+import slide04 from '../public/images/gallery/slide04.jpg';
+import slide05 from '../public/images/gallery/slide05.jpg';
+import slide06 from '../public/images/gallery/slide06.jpg';
+import slide07 from '../public/images/gallery/slide07.jpg';
 
 const settings = {
     className: 'center',
