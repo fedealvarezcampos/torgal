@@ -67,7 +67,7 @@
 @media (max-width: 500px) {
     .header {
         width: 110vw;
-        top: -100px;
+        top: -110px;
     }
 
     .navLinks {
@@ -78,7 +78,7 @@
     }
 
     .navLinks li {
-        padding: 1rem 0.2rem 0.5rem 1rem;
+        padding: 1rem 0.2rem 0.3rem 1rem;
         padding-left: 0.4rem;
     }
 }
