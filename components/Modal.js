@@ -7,11 +7,7 @@ function Modal({ gigs, setModal }) {
     return (
         <>
             <div className={styles.modalContainer}>
-                {mobile && (
-                    <p className={styles.exitButton} onClick={() => setModal(false)}>
-                        cerrar
-                    </p>
-                )}
+                {mobile && <span className={styles.exitButton} onClick={() => setModal(false)} />}
                 <div className={styles.modalBG} onClick={() => setModal(false)} />
                 <div id="home" className={styles.contentContainer}>
                     <p className={styles.artistName}>{gigs.artist}</p>

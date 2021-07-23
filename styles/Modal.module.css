@@ -96,16 +96,16 @@
     position: relative;
     margin: auto;
     margin-bottom: 10px;
-    width: 3.9rem;
-    line-height: 1.2;
-    padding-bottom: 3px;
-    padding-right: 1px;
-    text-align: center;
-    font-style: italic;
-    color: var(--base-font);
-    border: 3px solid var(--base-font);
-    border-radius: 10px;
-    background-color: var(--bg-color);
+    line-height: 1;
+    color: var(--cream);
+    z-index: 2000;
+}
+
+.exitButton::before {
+    font-family: 'Font Awesome 5 Free';
+    font-size: 1.5rem;
+    font-weight: 800;
+    content: '\f057';
     z-index: 2000;
 }
 
