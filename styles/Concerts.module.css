@@ -146,6 +146,10 @@
         border-radius: 10px;
     }
 
+    .gigArtist {
+        font-size: 0.6rem;
+    }
+
     .button {
         font-size: clamp(0.4rem, 0.5vw, 1rem);
         width: clamp(3.2rem, 1.5vw, 5rem);
