@@ -2,7 +2,7 @@
     position: fixed;
     display: grid;
     align-content: end;
-    top: -2.2vw;
+    top: -2.8vw;
     width: clamp(55rem, 60vw, 80rem);
     margin-top: -5rem;
     height: clamp(13rem, 13vw, 16rem);
@@ -54,7 +54,7 @@
 @media (max-width: 1200px) {
     .header {
         width: 90vw;
-        top: -60px;
+        top: -65px;
     }
 
     .navLinks {

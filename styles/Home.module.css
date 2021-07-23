@@ -1,5 +1,5 @@
 .container {
-    height: clamp(28rem, 38vw, 46rem);
+    height: clamp(28rem, 35vw, 46rem);
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -7,7 +7,7 @@
     align-items: center;
     background-size: cover;
     background-position: center top;
-    background-position-y: 1.8vw;
+    background-position-y: 1vw;
     filter: contrast(95%);
 }
 
