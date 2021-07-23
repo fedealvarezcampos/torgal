@@ -96,9 +96,10 @@
     position: relative;
     margin: auto;
     margin-bottom: 10px;
-    width: 3.7rem;
+    width: 3.9rem;
     line-height: 1.2;
     padding-bottom: 3px;
+    padding-right: 1px;
     text-align: center;
     font-style: italic;
     color: var(--base-font);
