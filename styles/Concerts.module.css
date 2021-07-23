@@ -154,7 +154,7 @@
         font-size: clamp(0.4rem, 0.5vw, 1rem);
         width: clamp(3.2rem, 1.5vw, 5rem);
         border: 3px solid var(--light-green);
-        padding: 0.3rem 0.2rem 0.3rem 0.2rem;
+        padding: 0.3rem 0.2rem 0.28rem 0.2rem;
         border-radius: 10px;
     }
 
