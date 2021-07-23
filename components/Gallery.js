@@ -13,7 +13,7 @@ const settings = {
     className: 'center',
     centerMode: true,
     infinite: true,
-    centerPadding: '100px',
+    centerPadding: '80px',
     slidesToShow: 2,
     speed: 500,
     responsive: [
@@ -49,7 +49,7 @@ const settings = {
         {
             breakpoint: 500,
             settings: {
-                centerPadding: '20px',
+                centerPadding: '25px',
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 initialSlide: 2,

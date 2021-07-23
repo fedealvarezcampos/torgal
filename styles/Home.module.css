@@ -8,6 +8,7 @@
     background-size: cover;
     background-position: center top;
     background-position-y: 1.8vw;
+    filter: contrast(95%);
 }
 
 .titleContainer {
@@ -33,12 +34,12 @@
 
 @media (max-width: 500px) {
     .container {
-        height: 65vw;
-        background-position-y: -55%;
+        height: 58vw;
+        background-position-y: -2%;
     }
 
     .titleContainer {
-        padding-top: 4.8vw;
+        padding-top: 4vw;
         padding-left: 5vw;
         width: clamp(6rem, 50.5vw, 30rem);
     }
