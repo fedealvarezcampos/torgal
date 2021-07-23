@@ -13,8 +13,6 @@ function ConcertList({ gigs }) {
         setModalData(data);
     };
 
-    console.log(modal);
-
     useClosingKey('Escape', modal, setModal);
 
     useEffect(() => {

@@ -1,9 +1,17 @@
+import useCheckMobile from '../helpers/useCheckMobile';
 import styles from '../styles/Modal.module.css';
 
 function Modal({ gigs, setModal }) {
+    const mobile = useCheckMobile();
+
     return (
         <>
             <div className={styles.modalContainer}>
+                {mobile && (
+                    <p className={styles.exitButton} onClick={() => setModal(false)}>
+                        cerrar
+                    </p>
+                )}
                 <div className={styles.modalBG} onClick={() => setModal(false)} />
                 <div id="home" className={styles.contentContainer}>
                     <p className={styles.artistName}>{gigs.artist}</p>

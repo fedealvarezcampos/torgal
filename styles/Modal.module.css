@@ -92,6 +92,22 @@
     transition: all 200ms ease-in-out;
 }
 
+.exitButton {
+    position: relative;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 4rem;
+    line-height: 1.2;
+    padding-bottom: 3px;
+    text-align: center;
+    font-style: italic;
+    color: var(--base-font);
+    border: 3px solid var(--base-font);
+    border-radius: 10px;
+    background-color: var(--bg-color);
+    z-index: 2000;
+}
+
 @media (max-width: 800px) {
     .contentContainer {
         display: grid;
@@ -122,8 +138,8 @@
     }
 
     .iconContainer img {
-        width: 25px;
-        height: 25px;
+        width: 20px;
+        height: 20px;
     }
 
     .artistName {
@@ -135,7 +151,7 @@
     .bio {
         grid-area: unset;
         line-height: 1.2;
-        font-size: 0.75rem;
+        font-size: 0.7rem;
     }
 
     .youtube {
@@ -148,7 +164,7 @@
         grid-area: unset;
         display: flex;
         margin-top: 0;
-        gap: 20px;
+        gap: 15px;
         justify-self: center;
         justify-content: center;
         width: 100%;
