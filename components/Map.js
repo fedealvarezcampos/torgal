@@ -1,13 +1,14 @@
 import { useState } from 'react';
+import GoogleMapReact from 'google-map-react';
 import { mapStyles } from './mapStyles';
 import styles from '../styles/Map.module.css';
-import GoogleMapReact from 'google-map-react';
+import torgalLogo from '../public/images/TORGAL.svg';
 
 const InfoWindow = () => {
     return (
         <div className={`${styles.infoWindow} fade-in`}>
             <div>
-                <img src="images/TORGAL.svg" alt="torgal logo" />
+                <img src={torgalLogo} alt="torgal logo" />
             </div>
             <p>Av de la Verga 180</p>
             <a
