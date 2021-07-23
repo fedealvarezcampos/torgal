@@ -9,7 +9,7 @@ function Modal({ gigs, setModal }) {
             <div className={styles.modalContainer}>
                 {mobile && <span className={styles.exitButton} onClick={() => setModal(false)} />}
                 <div className={styles.modalBG} onClick={() => setModal(false)} />
-                <div id="home" className={styles.contentContainer}>
+                <div id="home" className={`${styles.contentContainer} fade-in`}>
                     <p className={styles.artistName}>{gigs.artist}</p>
                     <iframe
                         src={`https://www.youtube.com/embed/${gigs.videoIntro}?autoplay=1&mute=1&loop=1&playlist=${gigs.videoIntro}`}

@@ -48,7 +48,6 @@ function Map() {
     };
 
     return (
-        // Important! Always set the container height explicitly
         <div className={styles.container}>
             <GoogleMapReact
                 options={{
