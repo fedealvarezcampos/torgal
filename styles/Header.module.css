@@ -23,7 +23,7 @@
 
 .navLinks {
     margin: 0;
-    margin-right: 1.8rem;
+    margin-right: 2.2rem;
     list-style: none;
     font-size: clamp(1.2rem, 1.6vw, 2rem);
     font-family: Adam;
@@ -61,7 +61,7 @@
 
     .navLinks {
         margin: 0;
-        margin-right: 1.8rem;
+        margin-right: 2rem;
         font-size: clamp(1rem, 2.6vw, 2rem);
     }
 
