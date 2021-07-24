@@ -2,15 +2,18 @@ import { useState } from 'react';
 import GoogleMapReact from 'google-map-react';
 import { mapStyles } from './mapStyles';
 import styles from '../styles/Map.module.css';
-import torgalLogo from '../public/images/TORGAL.svg';
 
 const InfoWindow = () => {
     return (
         <div className={`${styles.infoWindow} fade-in`}>
             <div>
-                <img src={torgalLogo} alt="torgal logo" />
+                <img src="../images/TORGAL.svg" alt="torgal logo" />
             </div>
-            <p>Av de la Verga 180</p>
+            <p>
+                Celso Emilio Ferreiro 20
+                <br />
+                Ourense
+            </p>
             <a
                 href="https://www.google.es/maps/dir//Caf%C3%A9+%26+Pop+Torgal,+R%C3%BAa+Celso+Emilio+Ferreiro,+20,+32004+Ourense/@42.3430345,-7.8614488,18z/data=!4m16!1m6!3m5!1s0x0:0xe625fff7b1f28632!2sCaf%C3%A9+%26+Pop+Torgal!8m2!3d42.3431071!4d-7.8607438!4m8!1m0!1m5!1m1!1s0xd2ffeb9d18f8a4f:0xe625fff7b1f28632!2m2!1d-7.8607438!2d42.3431071!3e2"
                 target="_blank"
