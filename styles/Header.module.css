@@ -3,14 +3,16 @@
     display: grid;
     align-content: end;
     top: -2.8vw;
-    width: clamp(55rem, 60vw, 80rem);
+    /* width: clamp(55rem, 60vw, 80rem); */
+    left: 0;
+    width: 100vw;
     margin-top: -5rem;
-    height: clamp(13rem, 13vw, 16rem);
-    background-color: var(--bg-color);
-    transform: rotate(4deg);
+    height: clamp(13rem, 11vw, 16rem);
+    transform: rotate(3deg);
     transform-origin: 50% 52%;
     -webkit-transform-origin: 50% 52%;
-    /* filter: drop-shadow(30px 10px 4px #4444dd); */
+    filter: drop-shadow(0 2px 4px #0000004d);
+    background-color: var(--wallpaper);
     z-index: 100;
 }
 
@@ -54,8 +56,7 @@
 
 @media (max-width: 1200px) {
     .header {
-        width: 90vw;
-        top: -65px;
+        top: -75px;
     }
 
     .navLinks {
@@ -77,13 +78,12 @@
 
     .navLinks {
         margin: 0;
-        margin-right: 11vw;
+        margin-right: 10vw;
         list-style: none;
         font-size: clamp(0.6rem, 2vw, 2rem);
     }
 
     .navLinks li {
-        padding: 1rem 0.2rem 0.3rem 1rem;
-        padding-left: 0.4rem;
+        padding: 1rem 0.5rem 0.3rem 0;
     }
 }
