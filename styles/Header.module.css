@@ -6,8 +6,8 @@
     /* width: clamp(55rem, 60vw, 80rem); */
     left: 0;
     width: 100vw;
-    margin-top: -5rem;
-    height: clamp(13rem, 11vw, 16rem);
+    margin-top: -4.8rem;
+    height: clamp(11.8rem, 11vw, 16rem);
     transform: rotate(3deg);
     transform-origin: 50% 52%;
     -webkit-transform-origin: 50% 52%;
@@ -56,7 +56,8 @@
 
 @media (max-width: 1200px) {
     .header {
-        top: -75px;
+        top: -80px;
+        height: clamp(13rem, 11vw, 16rem);
     }
 
     .navLinks {

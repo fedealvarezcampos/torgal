@@ -15,12 +15,12 @@
 
 .gigItem {
     display: grid;
-    grid: 1fr / 12rem auto auto 10rem;
-    width: clamp(46rem, 60vw, 48rem);
+    grid: 1fr / 9.5rem auto auto 8rem;
+    width: clamp(43rem, 58vw, 44rem);
     align-items: center;
     margin: 0.6rem;
     padding: 1.5rem;
-    gap: 40px;
+    gap: 35px;
     border-radius: 22px;
     color: var(--base-font);
     font-family: 'Cabin', sans-serif;
@@ -94,11 +94,11 @@
 
     .gigItem {
         display: grid;
-        grid: 1fr / 8rem auto auto 8rem;
-        width: clamp(35rem, 70vw, 40rem);
+        grid: 1fr / 7rem auto auto 6.4rem;
+        width: clamp(35rem, 70vw, 36rem);
         align-items: center;
         margin: 0.6rem;
-        padding: 1.2rem;
+        padding: 1.2rem 1.5rem 1.2rem 1.5rem;
         font-size: 1.2rem;
     }
 
