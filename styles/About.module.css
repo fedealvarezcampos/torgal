@@ -82,7 +82,7 @@
     }
 
     .subContainer {
-        padding: 0 1rem 1rem 1rem;
+        padding: 0 1rem 0.8rem 1rem;
         display: grid;
         grid: auto / 1.1fr 1fr;
         gap: 5vw;
