@@ -11,7 +11,7 @@
     transform: rotate(3deg);
     transform-origin: 50% 52%;
     -webkit-transform-origin: 50% 52%;
-    filter: drop-shadow(0 2px 4px #0000004d);
+    filter: drop-shadow(0 2px 3px #00000036);
     background-color: var(--wallpaper);
     z-index: 100;
 }

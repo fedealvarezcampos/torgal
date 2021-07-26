@@ -57,6 +57,15 @@
     font-family: 'Cabin', sans-serif;
     color: var(--base-font);
 }
+@media (max-width: 1200px) {
+    .container {
+        padding: 1.5rem 1.6rem 1.4rem 1.6rem;
+    }
+
+    .subContainer {
+        padding: 0 2rem 1.5rem 2rem;
+    }
+}
 
 @media (max-width: 500px) {
     .container {

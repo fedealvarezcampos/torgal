@@ -8,6 +8,7 @@ import slide04 from '../public/images/gallery/slide04.jpg';
 import slide05 from '../public/images/gallery/slide05.jpg';
 import slide06 from '../public/images/gallery/slide06.jpg';
 import slide07 from '../public/images/gallery/slide07.jpg';
+import slide08 from '../public/images/gallery/slide08.jpg';
 
 const settings = {
     className: 'center',
@@ -124,6 +125,15 @@ function Gallery() {
                             layout="responsive"
                             quality={80}
                             alt="lady lamb"
+                        />
+                    </div>
+                    <div className={styles.imageContainer}>
+                        <Image
+                            src={slide08}
+                            placeholder="blur"
+                            layout="responsive"
+                            quality={95}
+                            alt="will johnson"
                         />
                     </div>
                 </Slider>
