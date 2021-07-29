@@ -20,7 +20,7 @@ function About() {
                 <div id="bar" className={styles.subContainer}>
                     <div className={styles.imageContainer}>
                         <Image
-                            src={aboutImage} // Route of the image file
+                            src={aboutImage}
                             placeholder="blur"
                             layout="responsive"
                             quality={90}
