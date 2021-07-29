@@ -8,6 +8,7 @@ function Socials() {
                     <a
                         href="https://twitter.com/PopTorgal"
                         target="_blank"
+                        rel="noreferrer"
                         className={styles.socialBG}
                         alt="torgal twitter"
                     >
@@ -16,6 +17,7 @@ function Socials() {
                     <a
                         href="https://www.instagram.com/cafepoptorgal/"
                         target="_blank"
+                        rel="noreferrer"
                         className={styles.socialBG}
                         alt="torgal instagram"
                     >
@@ -24,6 +26,7 @@ function Socials() {
                     <a
                         href="https://www.youtube.com/channel/UCCTFJXW-mOGoV2RWRvI6CvQ"
                         target="_blank"
+                        rel="noreferrer"
                         className={styles.socialBG}
                         alt="torgal youtube"
                     >
