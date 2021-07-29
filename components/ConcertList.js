@@ -36,7 +36,11 @@ function ConcertList({ gigs }) {
                                 {gigs.artist}
                             </span>
                             <span className={styles.gigPrice}>{gigs.gigPrice}€</span>
-                            <a href={gigs.gigLink !== 'soldout' ? gigs.gigLink : null} target="_blank">
+                            <a
+                                href={gigs.gigLink !== 'soldout' ? gigs.gigLink : null}
+                                target="_blank"
+                                rel="noreferrer"
+                            >
                                 <button
                                     className={
                                         gigs.gigLink === 'soldout'
