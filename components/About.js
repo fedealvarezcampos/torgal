@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import styles from '../styles/About.module.css';
-import aboutImage from '../public/images/about.jpg';
+import aboutImage from '../public/images/bar.jpg';
 import Map from './Map';
 
 function About() {
@@ -18,7 +18,7 @@ function About() {
                     </div>
                 </div>
                 <div id="bar" className={styles.subContainer}>
-                    <div className={styles.imageContainer}>
+                    {/* <div className={styles.imageContainer}>
                         <Image
                             src={aboutImage}
                             placeholder="blur"
@@ -26,7 +26,11 @@ function About() {
                             quality={90}
                             alt="about torgal"
                         />
-                    </div>
+                    </div> */}
+                    <div
+                        className={styles.imageContainer}
+                        style={{ backgroundImage: `url(./images/bar.jpg)` }}
+                    ></div>
                     {/* <img className={styles.imgContainer} src="/images/about.jpg" alt="torgal foto" /> */}
                     <div className={styles.aboutText2}>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus qui veritatis

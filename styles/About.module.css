@@ -21,10 +21,6 @@
     gap: 35px;
 }
 
-.imageContainer img {
-    border-radius: 15px;
-}
-
 .innerContainer {
     display: flex;
     flex-direction: column;
@@ -34,6 +30,15 @@
     background-size: cover;
     background-position: center center;
     filter: grayscale(100) brightness(75%) contrast(88%);
+}
+
+.imageContainer {
+    max-width: 100%;
+    height: clamp(5rem, 24vw, 16rem);
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center center;
+    filter: grayscale(100) brightness(85%) contrast(76%);
 }
 
 .aboutText {
@@ -57,6 +62,7 @@
     font-family: 'Cabin', sans-serif;
     color: var(--base-font);
 }
+
 @media (max-width: 1200px) {
     .container {
         padding: 1.5rem 1.6rem 1.4rem 1.6rem;
