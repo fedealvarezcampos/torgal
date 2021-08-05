@@ -49,3 +49,23 @@
         opacity: 1;
     }
 }
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translate3d(-10%, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.fadeInLeft {
+    animation: fadeInLeft 550ms;
+    -webkit-animation: fadeInLeft 550ms;
+    -moz-animation: fadeInLeft 550ms;
+    -o-animation: fadeInLeft 550ms;
+    -ms-animation: fadeInLeft 550ms;
+}
