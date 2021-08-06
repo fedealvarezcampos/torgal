@@ -5,7 +5,7 @@ function Home() {
         <>
             <div
                 id="home"
-                className={`${styles.container} fade-in`}
+                className={styles.container}
                 style={{ backgroundImage: `url(./images/back01.jpg)` }}
             >
                 <div className={`${styles.titleContainer} fadeInLeft`}>
