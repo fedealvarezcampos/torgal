@@ -8,7 +8,6 @@ function Home() {
                 <div
                     id="home"
                     className={`${styles.container} fade-in`}
-                    // style={{ backgroundImage: `url(./images/back01.jpg)` }}
                     style={{ backgroundImage: `url(${background.src})` }}
                 >
                     <div className={`${styles.titleContainer} fadeInLeft`}>
