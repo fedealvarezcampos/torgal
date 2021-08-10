@@ -1,9 +1,9 @@
 .fade-in {
-    animation: fadeIn 350ms;
-    -webkit-animation: fadeIn 350ms;
-    -moz-animation: fadeIn 350ms;
-    -o-animation: fadeIn 350ms;
-    -ms-animation: fadeIn 350ms;
+    animation: fadeIn 550ms;
+    -webkit-animation: fadeIn 550ms;
+    -moz-animation: fadeIn 550ms;
+    -o-animation: fadeIn 550ms;
+    -ms-animation: fadeIn 550ms;
 }
 @keyframes fadeIn {
     0% {

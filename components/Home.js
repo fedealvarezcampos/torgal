@@ -1,17 +1,21 @@
 import styles from '../styles/Home.module.css';
+import background from '../public/images/back01.jpg';
 
 function Home() {
     return (
         <>
-            <div
-                id="home"
-                className={styles.container}
-                style={{ backgroundImage: `url(./images/back01.jpg)` }}
-            >
-                <div className={`${styles.titleContainer} fadeInLeft`}>
-                    <img src="./images/LOGO.svg" alt="Torgal logo" />
+            {background && (
+                <div
+                    id="home"
+                    className={`${styles.container} fade-in`}
+                    // style={{ backgroundImage: `url(./images/back01.jpg)` }}
+                    style={{ backgroundImage: `url(${background.src})` }}
+                >
+                    <div className={`${styles.titleContainer} fadeInLeft`}>
+                        <img src="./images/LOGO.svg" alt="Torgal logo" />
+                    </div>
                 </div>
-            </div>
+            )}
         </>
     );
 }
