@@ -6,9 +6,10 @@ import styles from '../styles/Map.module.css';
 const InfoWindow = () => {
     return (
         <div className={`${styles.infoWindow} fade-in`}>
-            <div>
+            {/* <div>
                 <img src="../images/TORGAL.svg" alt="torgal logo" />
-            </div>
+            </div> */}
+            <p>TORGAL</p>
             <p>
                 Celso Emilio Ferreiro 20
                 <br />

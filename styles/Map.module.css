@@ -38,10 +38,18 @@
 }
 
 .infoWindow p {
-    margin-top: 0.3rem;
+    margin-top: 0.1rem;
     margin-bottom: 0.1rem;
     font-size: 0.9rem;
     font-family: 'Cabin', sans-serif;
+}
+
+.infoWindow p:first-child {
+    margin: 0;
+    letter-spacing: 0.08rem;
+    font-size: 1.4rem;
+    font-weight: 800;
+    font-feature-settings: 'kern' off;
 }
 
 .infoWindow a {
@@ -78,7 +86,7 @@
         left: -40vw;
         width: 6.5rem;
         box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 0.3);
-        padding: 0.6rem;
+        padding: 0.45rem 0.5rem 0.5rem 0.5rem;
         font-size: 0.6rem;
         border-radius: 15px;
         color: var(--base-font);
@@ -92,8 +100,11 @@
     }
 
     .infoWindow p {
-        margin-top: 0.3rem;
-        margin-bottom: 0;
         font-size: 0.62rem;
+    }
+
+    .infoWindow p:first-child {
+        font-size: 1rem;
+        font-weight: 600;
     }
 }
