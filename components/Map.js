@@ -1,14 +1,11 @@
 import { useState } from 'react';
 import GoogleMapReact from 'google-map-react';
-import { mapStyles } from './mapStyles';
+import { mapStyles } from '../styles/mapStyles';
 import styles from '../styles/Map.module.css';
 
 const InfoWindow = () => {
     return (
         <div className={`${styles.infoWindow} fade-in`}>
-            {/* <div>
-                <img src="../images/TORGAL.svg" alt="torgal logo" />
-            </div> */}
             <p>TORGAL</p>
             <p>
                 Celso Emilio Ferreiro 20
