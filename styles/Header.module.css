@@ -43,7 +43,6 @@
     cursor: pointer;
     text-decoration: none;
     color: var(--base-font);
-    transition: all 150ms ease-in-out;
     will-change: auto;
 }
 

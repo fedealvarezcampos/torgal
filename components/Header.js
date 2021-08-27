@@ -24,6 +24,7 @@ function Header() {
                         </li>
                     </ul>
                 </nav>
+                <script type="text/javascript"> </script>
             </header>
         </>
     );
