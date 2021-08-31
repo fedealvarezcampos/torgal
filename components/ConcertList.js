@@ -32,9 +32,10 @@ function ConcertList({ gigs }) {
                     {gigs.map(gigs => (
                         <li className={styles.gigItem} key={gigs.id}>
                             <Date dateString={gigs.gigDate} />
-                            <span className={styles.gigArtist} onClick={() => handleModal(gigs)}>
-                                {gigs.artist}
-                            </span>
+                            <span className={styles.gigArtist}>{gigs.artist}</span>
+                            <button className={styles.button} onClick={() => handleModal(gigs)}>
+                                + INFO
+                            </button>
                             <span className={styles.gigPrice}>{gigs.gigPrice}€</span>
                             <a
                                 href={gigs.gigLink !== 'soldout' ? gigs.gigLink : null}
