@@ -11,6 +11,7 @@ function Home() {
                     style={{ backgroundImage: `url(${background.src})` }}
                 >
                     <div className={`${styles.titleContainer} fadeInLeft`}>
+                        <img src="./images/stairs.png" alt="Torgal logo" />
                         <img src="./images/LOGO.svg" alt="Torgal logo" />
                     </div>
                 </div>
