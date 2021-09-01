@@ -9,17 +9,8 @@
     background-position: center top;
     background-position-y: 1vw;
     filter: contrast(95%);
+    /* overflow: hidden; */
 }
-
-/* .container::after {
-    content: '';
-    position: absolute;
-    bottom: -2rem;
-    height: 6rem;
-    width: 100%;
-    background-color: aqua;
-    transform: rotate(2deg);
-} */
 
 .titleContainer {
     display: grid;
@@ -38,7 +29,7 @@
     }
 
     .titleContainer {
-        padding-top: 2.4vw;
+        padding-top: 0;
         padding-left: 2.5vw;
         width: clamp(5rem, 54.5vw, 35rem);
         align-self: start;
@@ -52,8 +43,8 @@
     }
 
     .titleContainer {
-        padding-top: 3vw;
-        padding-left: 2.6vw;
+        padding-top: 0.4vw;
+        padding-left: 3.6vw;
         width: clamp(6rem, 58.5vw, 30rem);
     }
 

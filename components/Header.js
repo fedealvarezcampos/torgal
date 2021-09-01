@@ -4,7 +4,7 @@ import { Link } from 'react-scroll';
 function Header() {
     return (
         <>
-            <header className={styles.header}>
+            <div className={styles.header}>
                 <nav>
                     <ul className={styles.navLinks}>
                         <li>
@@ -25,7 +25,7 @@ function Header() {
                     </ul>
                 </nav>
                 <script type="text/javascript"> </script>
-            </header>
+            </div>
         </>
     );
 }

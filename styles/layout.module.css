@@ -1,7 +1,7 @@
 .container {
     width: clamp(55rem, 60vw, 80rem);
     padding: 0 1rem;
-    margin: 2.2rem auto 3rem;
+    margin: 2.2rem auto 0;
 }
 
 @media (max-width: 1200px) {

@@ -32,12 +32,18 @@ export default function MainSite({ allGigsData }) {
                     href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
                 ></link>
             </Head>
-            <Header />
-            <Home />
-            <About />
-            <Gallery />
-            <ConcertList gigs={allGigsData} />
-            <Socials />
+            <header>
+                <Header />
+                <Home />
+            </header>
+            <main>
+                <About />
+                <Gallery />
+                <ConcertList gigs={allGigsData} />
+            </main>
+            <footer>
+                <Socials />
+            </footer>
         </Layout>
     );
 }

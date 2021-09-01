@@ -30,18 +30,6 @@ body {
     background-attachment: fixed !important;
 }
 
-::-webkit-scrollbar {
-    width: 15px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--dark-item);
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: var(--wallpaper);
-}
-
 * {
     box-sizing: border-box;
 }
@@ -58,6 +46,18 @@ a:hover {
 img {
     max-width: 100%;
     display: block;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark-item);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--wallpaper);
 }
 
 /* Sorry, Google */
