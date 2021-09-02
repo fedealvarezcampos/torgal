@@ -27,6 +27,7 @@ function About() {
                         corporis? Natus qui ipsum, modi reprehenderit amet asperiores hic.
                     </div>
                 </div>
+                <button className={`button ${styles.menuButton}`}>VER CARTA</button>
                 <Map />
             </div>
         </>

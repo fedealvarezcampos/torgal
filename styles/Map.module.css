@@ -9,7 +9,7 @@
 }
 
 .container {
-    padding: 0 1.6rem 1.8rem 1.6rem;
+    padding: 1.8rem 1.6rem 1.8rem 1.6rem;
     height: 32vw;
     max-height: 32rem;
     display: flex;

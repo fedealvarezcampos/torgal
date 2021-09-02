@@ -33,7 +33,7 @@ function ConcertList({ gigs }) {
                         <li className={styles.gigItem} key={gigs.id}>
                             <Date dateString={gigs.gigDate} />
                             <span className={styles.gigArtist}>{gigs.artist}</span>
-                            <button className={styles.button} onClick={() => handleModal(gigs)}>
+                            <button className="button" onClick={() => handleModal(gigs)}>
                                 + INFO
                             </button>
                             <span className={styles.gigPrice}>{gigs.gigPrice}€</span>
@@ -44,9 +44,7 @@ function ConcertList({ gigs }) {
                             >
                                 <button
                                     className={
-                                        gigs.gigLink === 'soldout'
-                                            ? `${styles.button} ${styles.gigSoldOut}`
-                                            : styles.button
+                                        gigs.gigLink === 'soldout' ? `button ${styles.gigSoldOut}` : 'button'
                                     }
                                 >
                                     {gigs.gigLink === 'soldout' ? <span>SOLD OUT</span> : 'ENTRADAS'}

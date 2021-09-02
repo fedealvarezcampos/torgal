@@ -45,30 +45,6 @@
     justify-self: end;
 }
 
-.button {
-    cursor: pointer;
-    justify-self: end;
-    width: auto;
-    padding: 0.6rem 0.7rem 0.6rem 0.7rem;
-    border-radius: 12px;
-    box-sizing: border-box;
-    color: var(--base-font);
-    font-family: 'Cabin', sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    letter-spacing: 0.075em;
-    line-height: 1;
-    border: 5px solid var(--light-green);
-    background: #1f1f1f;
-    transition: border 150ms ease-in-out;
-}
-
-.button:hover {
-    border: 5px solid var(--pink);
-    transform: translateY(-1px);
-    transition: all 200ms ease-in-out;
-}
-
 .button.gigSoldOut {
     cursor: auto;
     border: 5px solid var(--bg-color);
@@ -93,13 +69,6 @@
         padding: 1.2rem 1.5rem 1.2rem 1.5rem;
         font-size: 1.2rem;
     }
-
-    .button {
-        font-size: 0.8rem;
-        width: auto;
-        padding: 0.5rem 0.7rem 0.5rem 0.7rem;
-        border-radius: 12px;
-    }
 }
 
 @media (max-width: 900px) {
@@ -114,12 +83,6 @@
         margin: 0.6rem;
         padding: 1rem;
         font-size: 0.8rem;
-    }
-
-    .button {
-        font-size: clamp(0.6rem, 0.8vw, 1.2rem);
-        width: auto;
-        padding: 0.5rem 0.3rem 0.4rem 0.3rem;
     }
 }
 
@@ -142,31 +105,11 @@
         font-size: 0.6rem;
     }
 
-    .button {
-        font-size: clamp(0.4rem, 0.5vw, 1rem);
-        width: auto;
-        border: 3px solid var(--light-green);
-        padding: 0.3rem 0.3rem 0.28rem 0.3rem;
-        border-radius: 10px;
-    }
-
     .button.gigSoldOut {
         border: 3px solid var(--bg-color);
     }
 
-    .button:hover {
-        border: 3px solid var(--light-green);
-        transform: none;
-        transition: all 200ms ease-in-out;
-    }
-
     .button.gigSoldOut:hover {
         border: 3px solid var(--bg-color);
-    }
-
-    .button:active {
-        border: 3px solid var(--pink);
-        transform: none;
-        transition: all 200ms ease-in-out;
     }
 }
