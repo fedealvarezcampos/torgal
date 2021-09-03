@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Home from '../components/Home';
 import Header from '../components/Header';
 import About from '../components/About';
@@ -27,6 +27,11 @@ export async function getStaticProps() {
 
 export default function MainSite({ allGigsData, cocktails }) {
     const [showMenu, setShowMenu] = useState(false);
+
+    useEffect(() => {
+        showMenu && document.body.setAttribute('style', `overflow: hidden; margin-right: 15px;`);
+        !showMenu && document.body.removeAttribute('style', `overflow: hidden; margin-right: 15px;`);
+    }, [showMenu]);
 
     return (
         <Layout home>

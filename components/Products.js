@@ -9,22 +9,30 @@ function Products({ products, showMenu, setShowMenu }) {
                 <div className="modalContainer">
                     <div className="modalBG" onClick={() => setShowMenu(false)} />
                     <div className={styles.contentContainer}>
-                        <h2>Cocktails</h2>
-                        <ul className={`${styles.productList} fade-in`}>
-                            {products.map(
-                                product =>
-                                    product.type === 'cocktail' && (
-                                        <li className={styles.productItem} key={product.id}>
-                                            <div>
-                                                <p>{product.product}</p>
-                                                <p>{product.description}</p>
-                                                <p>{product.price}€</p>
-                                            </div>
-                                            <img src={`/images/products/${product.id}.jpg`} alt="" />
-                                        </li>
-                                    )
-                            )}
-                        </ul>
+                        <nav>
+                            <button className="button">COCKTAILS</button>
+                            <button className="button">CERVEZAS</button>
+                            <button className="button">COPAS</button>
+                            <button className="button">CAFÉ</button>
+                            <button className="button">ESPECIAL</button>
+                        </nav>
+                        <div className={styles.listContainer}>
+                            <ul className={`${styles.productList} fade-in`}>
+                                {products.map(
+                                    product =>
+                                        product.type === 'cocktail' && (
+                                            <li className={styles.productItem} key={product.id}>
+                                                <div>
+                                                    <p>{product.product}</p>
+                                                    <p>{product.description}</p>
+                                                    <p>{product.price}€</p>
+                                                </div>
+                                                <img src={`/images/products/${product.id}.jpg`} alt="" />
+                                            </li>
+                                        )
+                                )}
+                            </ul>
+                        </div>
                     </div>
                 </div>
             )}

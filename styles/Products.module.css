@@ -1,34 +1,71 @@
 .contentContainer {
-    display: grid;
-    /* grid: 2rem 14rem auto / 1fr 1.2fr; */
     gap: 25px;
-    grid-column: 1 3;
-    padding: 1.5rem 1.8rem 2rem 1.8rem;
+    padding: 1rem 0 1rem 0;
     color: var(--base-font);
     font-family: 'Cabin' sans-serif;
     font-weight: 600;
-    width: clamp(10rem, 80vw, 850px);
+    width: clamp(10rem, 60vw, 850px);
     border: 8px solid var(--base-font);
-    border-radius: 80px 20px 20px 20px;
+    transform: translate3d(0, 0, 0);
+    border-radius: 20px 20px 20px 20px;
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' width='100%25'%3E%3Cdefs%3E%3Cpattern id='doodad' width='30' height='30' viewBox='0 0 40 40' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'%3E%3Crect width='100%25' height='100%25' fill='rgba(43, 43, 43,1)'/%3E%3Cpath d='M-10-10h60v60h-60zM2 2v36h36v-36z' fill='rgba(39, 39, 39,1)'/%3E%3Cpath d='M-22-22h90v90h-90zM20 20v16h16v-16zM-20-20v16h16v-16zM20-20v16h16v-16zM-20 20v16h16v-16z' fill='rgba(39, 39, 39,1)'/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23doodad)' height='200%25' width='200%25'/%3E%3C/svg%3E ");
+    display: inline-block;
     z-index: 1000;
 }
 
+.contentContainer nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem 1rem 2rem;
+}
+
 .productList {
-    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    height: 50vh;
     padding: 0;
+    overflow-y: overlay;
     list-style: none;
 }
 
 .productItem {
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 1.8rem 0 1.8rem;
+    padding: 1rem 0.2rem 1rem 1.6rem;
+    border-radius: 15px;
     color: var(--dark-item);
-    background-color: var(--cream);
+    opacity: 1;
+    background-size: 7px 7px;
+    background-image: repeating-linear-gradient(
+        45deg,
+        #ffe7b4 0,
+        #ffe7b4 0.7000000000000001px,
+        #f4dba4 0,
+        #f4dba4 50%
+    );
 }
 
 .productItem img {
     max-height: 100px;
     mix-blend-mode: multiply;
+}
+
+.productItem p {
+    margin: 0;
+}
+
+.productItem div :first-child {
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+.productItem div :nth-child(2) {
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1rem;
+    padding-left: 0.1rem;
 }
