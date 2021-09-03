@@ -1,18 +1,24 @@
+import { useState } from 'react';
 import useCheckMobile from '../helpers/useCheckMobile';
 import styles from '../styles/Products.module.css';
 
-function Products({ gigs, setModal }) {
-    const mobile = useCheckMobile();
+function Products({ products }) {
+    const [showMenu, setShowMenu] = useState(false);
 
     return (
         <>
-            <div>
-                <div>Mojito Jäger</div>
-                <div>Jäger, soda, hierbabuena y lima</div>
-                <div>5,00€</div>
-            </div>
+            <ul className={styles.productList}>
+                {products.map(
+                    product =>
+                        product.type === 'cocktail' && (
+                            <li className={styles.productItem} key={product.id}>
+                                <div>{product.product}</div>
+                            </li>
+                        )
+                )}
+            </ul>
         </>
     );
 }
 
-export default Modal;
+export default Products;

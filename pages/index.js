@@ -4,23 +4,30 @@ import Header from '../components/Header';
 import About from '../components/About';
 import Gallery from '../components/Gallery';
 import Socials from '../components/Socials';
+import Products from '../components/Products';
 import ConcertList from '../components/ConcertList';
 
 import Layout, { siteTitle } from '../components/layout';
 import { getSortedGigsData } from '../lib/gigs';
+import { getCocktails } from '../lib/products';
 
 export async function getStaticProps() {
     const result = await getSortedGigsData();
+    const rescocktails = await getCocktails();
     const allGigsData = JSON.parse(JSON.stringify(result));
+    const cocktails = JSON.parse(JSON.stringify(rescocktails));
 
     return {
         props: {
             allGigsData,
+            cocktails,
         },
     };
 }
 
-export default function MainSite({ allGigsData }) {
+export default function MainSite({ allGigsData, cocktails }) {
+    console.log(cocktails);
+
     return (
         <Layout home>
             <Head>
@@ -38,6 +45,7 @@ export default function MainSite({ allGigsData }) {
             </header>
             <main>
                 <About />
+                <Products products={cocktails} />
                 <Gallery />
                 <ConcertList gigs={allGigsData} />
             </main>
