@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { useState } from 'react';
 import Home from '../components/Home';
 import Header from '../components/Header';
 import About from '../components/About';
@@ -6,7 +7,6 @@ import Gallery from '../components/Gallery';
 import Socials from '../components/Socials';
 import Products from '../components/Products';
 import ConcertList from '../components/ConcertList';
-
 import Layout, { siteTitle } from '../components/layout';
 import { getSortedGigsData } from '../lib/gigs';
 import { getCocktails } from '../lib/products';
@@ -26,7 +26,7 @@ export async function getStaticProps() {
 }
 
 export default function MainSite({ allGigsData, cocktails }) {
-    console.log(cocktails);
+    const [showMenu, setShowMenu] = useState(false);
 
     return (
         <Layout home>
@@ -44,8 +44,8 @@ export default function MainSite({ allGigsData, cocktails }) {
                 <Home />
             </header>
             <main>
-                <About />
-                <Products products={cocktails} />
+                <About setShowMenu={setShowMenu} />
+                <Products products={cocktails} showMenu={showMenu} setShowMenu={setShowMenu} />
                 <Gallery />
                 <ConcertList gigs={allGigsData} />
             </main>

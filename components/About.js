@@ -3,7 +3,7 @@ import styles from '../styles/About.module.css';
 import aboutImage from '../public/images/bar.jpg';
 import Map from './Map';
 
-function About() {
+function About({ setShowMenu }) {
     return (
         <>
             <div className={styles.outerContainer}>
@@ -27,7 +27,9 @@ function About() {
                         corporis? Natus qui ipsum, modi reprehenderit amet asperiores hic.
                     </div>
                 </div>
-                <button className={`button ${styles.menuButton}`}>VER CARTA</button>
+                <button className={`button ${styles.menuButton}`} onClick={() => setShowMenu(true)}>
+                    VER CARTA
+                </button>
                 <Map />
             </div>
         </>
