@@ -23,13 +23,15 @@ function About({ setShowMenu }) {
                         style={{ backgroundImage: `url(./images/bar.jpg)` }}
                     ></div>
                     <div className={styles.aboutText2}>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus qui veritatis
-                        corporis? Natus qui ipsum, modi reprehenderit amet asperiores hic.
+                        <span>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus qui
+                            veritatis corporis? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </span>
+                        <button className={`button ${styles.menuButton}`} onClick={() => setShowMenu(true)}>
+                            VE NUESTRA CARTA
+                        </button>
                     </div>
                 </div>
-                <button className={`button ${styles.menuButton}`} onClick={() => setShowMenu(true)}>
-                    VER CARTA
-                </button>
                 <Map />
             </div>
         </>

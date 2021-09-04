@@ -99,8 +99,9 @@ button:active {
 
 @media (max-width: 900px) {
     button {
-        font-size: clamp(0.6rem, 0.8vw, 1.2rem);
+        font-size: clamp(0.4rem, 1.3vw, 1.2rem);
         width: auto;
+        border: 3px solid var(--light-green);
         padding: 0.5rem 0.3rem 0.4rem 0.3rem;
     }
 }
