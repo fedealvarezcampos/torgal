@@ -48,7 +48,7 @@ img {
     display: block;
 }
 
-.button {
+button {
     cursor: pointer;
     justify-self: end;
     width: auto;
@@ -66,14 +66,20 @@ img {
     transition: border 150ms ease-in-out;
 }
 
-.button:hover {
+button:hover {
     border: 5px solid var(--pink);
     transform: translateY(-1px);
     transition: all 200ms ease-in-out;
 }
 
+button:active {
+    border: 5px solid var(--pink);
+    transform: translateY(1px);
+    transition: all 20ms ease-in-out;
+}
+
 @media (max-width: 1200px) {
-    .button {
+    button {
         font-size: 0.8rem;
         width: auto;
         padding: 0.5rem 0.7rem 0.5rem 0.7rem;
@@ -82,29 +88,29 @@ img {
 }
 
 @media (max-width: 900px) {
-    .button {
+    button {
         font-size: clamp(0.6rem, 0.8vw, 1.2rem);
         width: auto;
         padding: 0.5rem 0.3rem 0.4rem 0.3rem;
     }
 }
 
-@media (max-width: 900px) {
-    .button {
+@media (max-width: 500px) {
+    button {
         font-size: clamp(0.4rem, 0.5vw, 1rem);
         width: auto;
         border: 3px solid var(--light-green);
         padding: 0.3rem 0.3rem 0.28rem 0.3rem;
-        border-radius: 10px;
+        border-radius: 8px;
     }
 
-    .button:hover {
+    button:hover {
         border: 3px solid var(--light-green);
         transform: none;
         transition: all 200ms ease-in-out;
     }
 
-    .button:active {
+    button:active {
         border: 3px solid var(--pink);
         transform: none;
         transition: all 200ms ease-in-out;

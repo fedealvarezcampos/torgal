@@ -5,12 +5,6 @@ import styles from '../styles/Products.module.css';
 function Products({ products, showMenu, setShowMenu }) {
     const [type, setType] = useState('cocktail');
 
-    // useEffect(() => {
-    //     setType('cocktail');
-    // }, [setType]);
-
-    console.log(type);
-
     return (
         <>
             {showMenu && (
@@ -40,10 +34,42 @@ function Products({ products, showMenu, setShowMenu }) {
                                     product =>
                                         product.type === type && (
                                             <li className={styles.productItem} key={product.id}>
-                                                <div>
+                                                <div className={styles.productInfo}>
                                                     <p>{product.product}</p>
                                                     <p>{product.description}</p>
-                                                    <p>{product.price}€</p>
+                                                    <div className={styles.prices}>
+                                                        {product.price && <span>{product.price}€</span>}
+                                                        {product.priceCaña && (
+                                                            <div>
+                                                                <p>Caña</p>
+                                                                <p>{product.priceCaña}€</p>
+                                                            </div>
+                                                        )}
+                                                        {product.priceBotella && (
+                                                            <div>
+                                                                <p>Botella</p>
+                                                                <p>{product.priceBotella}€</p>
+                                                            </div>
+                                                        )}
+                                                        {product.priceBock && (
+                                                            <div>
+                                                                <p>Bock</p>
+                                                                <p>{product.priceBock}€</p>
+                                                            </div>
+                                                        )}
+                                                        {product.priceShot && (
+                                                            <div>
+                                                                <p>Chupito</p>
+                                                                <p>{product.priceShot}€</p>
+                                                            </div>
+                                                        )}
+                                                        {product.priceCopa && (
+                                                            <div>
+                                                                <p>Copa</p>
+                                                                <p>{product.priceCopa}€</p>
+                                                            </div>
+                                                        )}
+                                                    </div>
                                                 </div>
                                                 <img src={`/images/products/${product.id}.jpg`} alt="" />
                                             </li>

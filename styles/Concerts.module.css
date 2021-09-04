@@ -45,12 +45,18 @@
     justify-self: end;
 }
 
-.button.gigSoldOut {
+button.gigSoldOut {
     cursor: auto;
     border: 5px solid var(--bg-color);
 }
 
-.button.gigSoldOut:hover {
+button.gigSoldOut:hover {
+    border: 5px solid var(--bg-color);
+    transform: translateY(0px);
+}
+
+button.gigSoldOut:active {
+    border: 5px solid var(--bg-color);
     transform: translateY(0px);
 }
 
@@ -105,11 +111,11 @@
         font-size: 0.6rem;
     }
 
-    .button.gigSoldOut {
+    button.gigSoldOut {
         border: 3px solid var(--bg-color);
     }
 
-    .button.gigSoldOut:hover {
+    button.gigSoldOut:hover {
         border: 3px solid var(--bg-color);
     }
 }
