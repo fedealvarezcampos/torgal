@@ -15,7 +15,7 @@
 .contentContainer nav {
     display: flex;
     justify-content: space-between;
-    padding: 1rem 2rem 1rem 2rem;
+    padding: 0.5rem 2rem 1rem 2rem;
 }
 
 .productList {
@@ -39,7 +39,7 @@
     margin: 0 1.8rem 0 1.8rem;
     padding: 1rem 1rem 1rem 1.8rem;
     border-radius: 20px;
-    border: solid 8px var(--bg-color);
+    border: solid 8px #dabc7d;
     color: var(--dark-item);
     background-size: 7px 7px;
     background-image: repeating-linear-gradient(45deg, #ffe7b4 0, #ffe7b4 0.7px, #f4dba4 0, #f4dba4 50%);

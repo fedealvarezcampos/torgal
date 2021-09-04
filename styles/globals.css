@@ -74,8 +74,18 @@ button:hover {
 
 button:active {
     border: 5px solid var(--pink);
-    transform: translateY(1px);
+    transform: translateY(2px);
     transition: all 20ms ease-in-out;
+}
+
+.current {
+    border: 5px solid var(--pink);
+    transform: translateY(2px);
+    transition: all 20ms ease-in-out;
+}
+
+.current:hover {
+    transform: translateY(2px);
 }
 
 @media (max-width: 1200px) {

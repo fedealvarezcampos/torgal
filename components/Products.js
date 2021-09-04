@@ -12,19 +12,34 @@ function Products({ products, showMenu, setShowMenu }) {
                     <div className="modalBG" onClick={() => setShowMenu(false)} />
                     <div className={styles.contentContainer}>
                         <nav>
-                            <button className="button" onClick={() => setType('cocktail')}>
+                            <button
+                                className={`button ${type === 'cocktail' && 'current'}`}
+                                onClick={() => setType('cocktail')}
+                            >
                                 COCKTAILS
                             </button>
-                            <button className="button" onClick={() => setType('cerveza')}>
+                            <button
+                                className={`button ${type === 'cerveza' && 'current'}`}
+                                onClick={() => setType('cerveza')}
+                            >
                                 CERVEZAS
                             </button>
-                            <button className="button" onClick={() => setType('copa')}>
+                            <button
+                                className={`button ${type === 'copa' && 'current'}`}
+                                onClick={() => setType('copa')}
+                            >
                                 COPAS
                             </button>
-                            <button className="button" onClick={() => setType('café')}>
+                            <button
+                                className={`button ${type === 'café' && 'current'}`}
+                                onClick={() => setType('café')}
+                            >
                                 CAFÉ
                             </button>
-                            <button className="button" onClick={() => setType('especial')}>
+                            <button
+                                className={`button ${type === 'especial' && 'current'}`}
+                                onClick={() => setType('especial')}
+                            >
                                 ESPECIAL
                             </button>
                         </nav>
