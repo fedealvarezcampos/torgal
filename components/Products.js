@@ -1,8 +1,16 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import useCheckMobile from '../helpers/useCheckMobile';
 import styles from '../styles/Products.module.css';
 
 function Products({ products, showMenu, setShowMenu }) {
+    const [type, setType] = useState('cocktail');
+
+    // useEffect(() => {
+    //     setType('cocktail');
+    // }, [setType]);
+
+    console.log(type);
+
     return (
         <>
             {showMenu && (
@@ -10,17 +18,27 @@ function Products({ products, showMenu, setShowMenu }) {
                     <div className="modalBG" onClick={() => setShowMenu(false)} />
                     <div className={styles.contentContainer}>
                         <nav>
-                            <button className="button">COCKTAILS</button>
-                            <button className="button">CERVEZAS</button>
-                            <button className="button">COPAS</button>
-                            <button className="button">CAFÉ</button>
-                            <button className="button">ESPECIAL</button>
+                            <button className="button" onClick={() => setType('cocktail')}>
+                                COCKTAILS
+                            </button>
+                            <button className="button" onClick={() => setType('cerveza')}>
+                                CERVEZAS
+                            </button>
+                            <button className="button" onClick={() => setType('copa')}>
+                                COPAS
+                            </button>
+                            <button className="button" onClick={() => setType('café')}>
+                                CAFÉ
+                            </button>
+                            <button className="button" onClick={() => setType('especial')}>
+                                ESPECIAL
+                            </button>
                         </nav>
                         <div className={styles.listContainer}>
                             <ul className={`${styles.productList} fade-in`}>
                                 {products.map(
                                     product =>
-                                        product.type === 'cocktail' && (
+                                        product.type === type && (
                                             <li className={styles.productItem} key={product.id}>
                                                 <div>
                                                     <p>{product.product}</p>

@@ -5,7 +5,7 @@
     top: -2.2vw;
     /* width: clamp(55rem, 60vw, 80rem); */
     left: 0;
-    width: 100vw;
+    width: 101vw;
     margin-top: -5.4rem;
     height: clamp(11.8rem, 12.2vw, 14.6rem);
     transform: rotate(1.8deg);
@@ -19,6 +19,7 @@
 .header nav {
     display: flex;
     justify-content: flex-end;
+    margin-right: 0.8rem;
 }
 
 .navLinks {
@@ -63,7 +64,7 @@
 
     .navLinks {
         margin: 0;
-        margin-right: 2rem;
+        margin-right: 2.2vw;
         font-size: clamp(1rem, 2.6vw, 2rem);
     }
 
