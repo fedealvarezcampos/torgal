@@ -41,6 +41,8 @@
     color: transparent;
     outline: 0;
     background: 0 0;
+    border: none;
+    transform: translateY(-10px);
 }
 
 .slick-next:hover:before,

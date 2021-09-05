@@ -110,6 +110,10 @@ button:active {
         transform: translateY(-1px);
         transition: all 200ms ease-in-out;
     }
+
+    .current {
+        border: 3px solid var(--pink);
+    }
 }
 
 @media (max-width: 500px) {

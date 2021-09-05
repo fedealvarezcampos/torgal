@@ -53,7 +53,9 @@ function Products({ products, showMenu, setShowMenu }) {
                                             <li className={styles.productItem} key={product.id}>
                                                 <div className={styles.productInfo}>
                                                     <p>{product.product}</p>
-                                                    <p>{product.description}</p>
+                                                    <p className={styles.productDescription}>
+                                                        {product.description}
+                                                    </p>
                                                     <div className={styles.prices}>
                                                         {product.price && <span>{product.price}€</span>}
                                                         {product.priceCaña && (
