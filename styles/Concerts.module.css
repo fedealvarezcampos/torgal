@@ -90,6 +90,18 @@ button.gigSoldOut:active {
         padding: 1rem;
         font-size: 0.8rem;
     }
+
+    button.gigSoldOut {
+        border: 3px solid var(--bg-color);
+    }
+
+    button.gigSoldOut:hover {
+        border: 3px solid var(--bg-color);
+    }
+
+    button.gigSoldOut:active {
+        border: 3px solid var(--bg-color);
+    }
 }
 
 @media (max-width: 650px) {

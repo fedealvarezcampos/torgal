@@ -3,7 +3,7 @@
     padding: 1rem 0 1rem 0;
     color: var(--base-font);
     font-weight: 600;
-    width: clamp(10rem, 60vw, 850px);
+    width: clamp(10rem, 65vw, 750px);
     border: 8px solid var(--base-font);
     transform: translate3d(0, 0, 0);
     border-radius: 20px 20px 20px 20px;

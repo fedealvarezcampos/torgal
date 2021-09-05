@@ -5,6 +5,8 @@ import styles from '../styles/Products.module.css';
 function Products({ products, showMenu, setShowMenu }) {
     const [type, setType] = useState('cocktail');
 
+    const randomId = new Date().getMilliseconds();
+
     return (
         <>
             {showMenu && (
@@ -44,7 +46,7 @@ function Products({ products, showMenu, setShowMenu }) {
                             </button>
                         </nav>
                         <div className={styles.listContainer}>
-                            <ul className={`${styles.productList} fade-in`}>
+                            <ul className={`${styles.productList} fade-in`} key={randomId}>
                                 {products.map(
                                     product =>
                                         product.type === type && (

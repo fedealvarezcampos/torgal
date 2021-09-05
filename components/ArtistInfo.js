@@ -1,7 +1,7 @@
 import useCheckMobile from '../helpers/useCheckMobile';
-import styles from '../styles/Modal.module.css';
+import styles from '../styles/ArtistInfo.module.css';
 
-function Modal({ gigs, setModal }) {
+function ArtistInfo({ gigs, setModal }) {
     const mobile = useCheckMobile();
 
     return (
@@ -63,4 +63,4 @@ function Modal({ gigs, setModal }) {
     );
 }
 
-export default Modal;
+export default ArtistInfo;

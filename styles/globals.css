@@ -104,11 +104,17 @@ button:active {
         border: 3px solid var(--light-green);
         padding: 0.5rem 0.3rem 0.4rem 0.3rem;
     }
+
+    button:hover {
+        border: 3px solid var(--pink);
+        transform: translateY(-1px);
+        transition: all 200ms ease-in-out;
+    }
 }
 
 @media (max-width: 500px) {
     button {
-        font-size: clamp(0.4rem, 0.5vw, 1rem);
+        font-size: clamp(0.38rem, 0.5vw, 1rem);
         width: auto;
         border: 3px solid var(--light-green);
         padding: 0.3rem 0.3rem 0.28rem 0.3rem;

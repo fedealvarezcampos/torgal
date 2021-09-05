@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useClosingKey } from '../helpers/useClosingKey';
 import styles from '../styles/Concerts.module.css';
-import Modal from '../components/Modal';
+import ArtistInfo from '../components/ArtistInfo';
 import Date from '../components/date';
 
 function ConcertList({ gigs }) {
@@ -22,7 +22,7 @@ function ConcertList({ gigs }) {
 
     return (
         <>
-            {modal && <Modal gigs={modalData} setModal={setModal} />}
+            {modal && <ArtistInfo gigs={modalData} setModal={setModal} />}
             <div
                 id="conciertos"
                 className={styles.container}
