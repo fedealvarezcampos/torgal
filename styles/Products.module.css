@@ -67,14 +67,15 @@
 
 .prices {
     display: flex;
-    gap: 14px;
+    gap: 15px;
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .prices div > p:first-child {
     font-style: italic;
     margin-bottom: -0.4rem;
+    font-size: 0.9rem;
 }
 
 .prices div > p:last-child {
@@ -89,7 +90,7 @@
 @media (max-width: 800px) {
     .contentContainer {
         gap: 8px;
-        padding: 1rem 0 0.8rem 0;
+        padding: 0.8rem 0 0.6rem 0;
         width: clamp(10rem, 92vw, 900px);
         border: 5px solid var(--base-font);
         border-radius: 15px;
@@ -98,7 +99,11 @@
     .contentContainer nav {
         display: flex;
         justify-content: space-between;
-        padding: 0 1rem 0.6rem 1rem;
+        padding: 0 1rem 0.4rem 1rem;
+    }
+
+    .productList::-webkit-scrollbar {
+        width: 8px;
     }
 
     .productItem {
@@ -111,15 +116,25 @@
     }
 
     .productInfo > p:first-child {
-        font-size: 0.9rem;
+        font-size: 0.7rem;
         margin-bottom: -0.2rem;
     }
 
     .productDescription {
-        font-size: 0.6rem;
+        font-size: 0.5rem;
     }
 
     .prices {
         font-size: 0.7rem;
+    }
+
+    .prices div > p:first-child {
+        margin-bottom: -0.3rem;
+        font-size: 0.6rem;
+    }
+
+    .prices:last-child {
+        margin-top: 0.2rem;
+        padding-left: 0.05rem;
     }
 }
