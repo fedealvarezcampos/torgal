@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react';
-import useCheckMobile from '../helpers/useCheckMobile';
+import { useState } from 'react';
 import styles from '../styles/Products.module.css';
 
 function Products({ products, showMenu, setShowMenu }) {
@@ -90,7 +89,10 @@ function Products({ products, showMenu, setShowMenu }) {
                                                         )}
                                                     </div>
                                                 </div>
-                                                <img src={`/images/products/${product.id}.jpg`} alt="" />
+                                                <img
+                                                    src={`/images/products/${product.id}.jpg`}
+                                                    alt="imagen producto"
+                                                />
                                             </li>
                                         )
                                 )}
