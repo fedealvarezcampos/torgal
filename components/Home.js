@@ -11,19 +11,17 @@ function Home() {
 
     return (
         <>
-            {BG && (
-                <div
-                    id="home"
-                    className={`${styles.container} fade-in`}
-                    // style={{ backgroundImage: `url(${background.src})` }}
-                    style={{ backgroundImage: `url('/images/back${BG}.jpg'` }}
-                >
-                    <div className={`${styles.titleContainer} fadeInLeft`}>
-                        <img src="./images/stairs.png" alt="Torgal logo" />
-                        <img src="./images/LOGO.svg" alt="Torgal logo" />
-                    </div>
+            <div
+                id="home"
+                className={`${styles.container} fade-in`}
+                // style={{ backgroundImage: `url(${background.src})` }}
+                style={{ backgroundImage: BG && `url('/images/back${BG}.webp'` }}
+            >
+                <div className={`${styles.titleContainer} fadeInLeft`}>
+                    <img src="./images/stairs.png" alt="Torgal logo" />
+                    <img src="./images/LOGO.svg" alt="Torgal logo" />
                 </div>
-            )}
+            </div>
         </>
     );
 }
