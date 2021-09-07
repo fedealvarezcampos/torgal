@@ -112,7 +112,7 @@ button:active {
     }
 
     .current {
-        border: 3px solid var(--pink);
+        border: 3px solid var(--pink) !important;
     }
 }
 
@@ -125,11 +125,11 @@ button:active {
         border-radius: 8px;
     }
 
-    /* button:hover {
+    button:hover {
         border: 3px solid var(--light-green);
         transform: none;
         transition: all 200ms ease-in-out;
-    } */
+    }
 
     button:active {
         border: 3px solid var(--pink);

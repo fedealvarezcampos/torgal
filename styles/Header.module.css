@@ -81,7 +81,7 @@
 
     .navLinks {
         margin: 0;
-        margin-right: 10vw;
+        margin-right: 6vw;
         list-style: none;
         font-size: clamp(0.6rem, 2vw, 2rem);
     }

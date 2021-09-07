@@ -27,18 +27,24 @@ const CustomForm = ({ status, message, onValidated }) => {
             {status === 'success' && (
                 <div className={styles.success} dangerouslySetInnerHTML={{ __html: message }} />
             )}
-            <form onSubmit={handleSubmit}>
-                <p>
-                    {status !== 'success' ? 'Suscríbete a nuestra newsletter' : '¡Gracias por suscribirte!'}
-                </p>
-                <input
-                    placeholder="email@email.com"
-                    type="email"
-                    value={email}
-                    onChange={e => setEmail(e.target.value)}
-                />
-                <button className="button register">ENVIAR</button>
-            </form>
+            <div className={styles.formContainer}>
+                <form onSubmit={handleSubmit}>
+                    <p>
+                        {status !== 'success'
+                            ? 'Suscríbete a nuestra newsletter'
+                            : '¡Gracias por suscribirte!'}
+                    </p>
+                    <div className={styles.inputContainer}>
+                        <input
+                            placeholder="email@email.com"
+                            type="email"
+                            value={email}
+                            onChange={e => setEmail(e.target.value)}
+                        />
+                    </div>
+                    <button className="button register">ENVIAR</button>
+                </form>
+            </div>
         </>
     );
 };
