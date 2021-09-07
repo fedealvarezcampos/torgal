@@ -7,6 +7,7 @@ import Gallery from '../components/Gallery';
 import Socials from '../components/Socials';
 import Products from '../components/Products';
 import ConcertList from '../components/ConcertList';
+import NewsletterForm from '../components/Newsletter';
 import Layout, { siteTitle } from '../components/layout';
 import { getSortedGigsData } from '../lib/gigs';
 import { getCocktails } from '../lib/products';
@@ -55,6 +56,7 @@ export default function MainSite({ allGigsData, cocktails }) {
                 <ConcertList gigs={allGigsData} />
             </main>
             <footer>
+                <NewsletterForm />
                 <Socials />
             </footer>
         </Layout>
