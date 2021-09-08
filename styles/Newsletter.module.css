@@ -1,7 +1,8 @@
 .container {
     display: flex;
-    place-content: center;
-    padding: 1.3rem 1.5rem 1.6rem 1.5rem;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 0 1.6rem 0;
     font-family: 'Cabin', sans-serif;
     font-style: italic;
     background-color: #dfb7a8;
@@ -21,10 +22,16 @@
     flex-direction: column;
     align-items: center;
     gap: 14px;
-    padding: 1.5rem 2rem 1.85rem 2rem;
-    border-radius: 15px;
-    border: 5px solid var(--light-green);
+    padding: 0.85rem 2rem 1.45rem 2rem;
+    border-radius: 25px;
+    border: 6px solid var(--light-green);
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' width='100%25'%3E%3Cdefs%3E%3Cpattern id='doodad' width='30' height='30' viewBox='0 0 40 40' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'%3E%3Crect width='100%25' height='100%25' fill='rgba(43, 43, 43,1)'/%3E%3Cpath d='M-10-10h60v60h-60zM2 2v36h36v-36z' fill='rgba(39, 39, 39,1)'/%3E%3Cpath d='M-22-22h90v90h-90zM20 20v16h16v-16zM-20-20v16h16v-16zM20-20v16h16v-16zM-20 20v16h16v-16z' fill='rgba(39, 39, 39,1)'/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23doodad)' height='200%25' width='200%25'/%3E%3C/svg%3E ");
+}
+
+.inputContainer {
+    display: flex;
+    align-items: center;
+    height: 45px;
 }
 
 .inputContainer input {
@@ -49,21 +56,25 @@
 }
 
 @media (max-width: 500px) {
+    .container {
+        padding: 0.7rem 1.5rem 0.8rem 1.5rem;
+    }
+
     .container p {
         font-size: 0.65rem;
         letter-spacing: 0.08rem;
-        margin: 0 0 -0.2rem 0;
+        margin: 0 0 -0.26rem 0;
     }
 
     .formContainer form {
-        gap: 6px;
-        padding: 0.7rem 1.3rem 0.9rem 1.3rem;
-        border-radius: 15px;
+        gap: 7px;
+        padding: 0.5rem 0.9rem 0.7rem 0.9rem;
+        border-radius: 22px;
         border: 5px solid var(--light-green);
     }
 
     .inputContainer input {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         padding: 0.2rem 0.35rem 0.2rem 0.35rem;
         border-radius: 10px;
         border: 3px solid var(--base-font);

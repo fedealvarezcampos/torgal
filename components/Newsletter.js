@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
+import Spinner from './spinner';
 import styles from '../styles/Newsletter.module.css';
 
 const CustomForm = ({ status, message, onValidated }) => {
@@ -20,13 +21,12 @@ const CustomForm = ({ status, message, onValidated }) => {
 
     return (
         <>
-            {status === 'sending' && <div className={styles.sending}>sending...</div>}
-            {status === 'error' && (
+            {/* {status === 'error' && (
                 <div className={styles.error} dangerouslySetInnerHTML={{ __html: message }} />
             )}
             {status === 'success' && (
                 <div className={styles.success} dangerouslySetInnerHTML={{ __html: message }} />
-            )}
+            )} */}
             <div className={styles.formContainer}>
                 <form onSubmit={handleSubmit}>
                     <p>
@@ -34,13 +34,18 @@ const CustomForm = ({ status, message, onValidated }) => {
                             ? 'Suscríbete a nuestra newsletter'
                             : '¡Gracias por suscribirte!'}
                     </p>
+
                     <div className={styles.inputContainer}>
-                        <input
-                            placeholder="email@email.com"
-                            type="email"
-                            value={email}
-                            onChange={e => setEmail(e.target.value)}
-                        />
+                        {status === 'sending' ? (
+                            <Spinner />
+                        ) : (
+                            <input
+                                placeholder="email@email.com"
+                                type="email"
+                                value={email}
+                                onChange={e => setEmail(e.target.value)}
+                            />
+                        )}
                     </div>
                     <button className="button register">ENVIAR</button>
                 </form>
