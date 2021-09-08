@@ -15,13 +15,13 @@ const CustomForm = ({ status, message, onValidated }) => {
             });
     };
 
-    // status = 'error';
-    // message =
-    //     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, ex dolorem illo fugiat consectetur animi aliquid fugit soluta placeat aspernatur!';
-
     useEffect(() => {
         status === 'success' && setEmail('');
     }, [status]);
+
+    message !== null && message.includes('already subscribed')
+        ? (message = '¡Parece que ya estabas suscrito! Este correo ya existe en nuestra base de datos.')
+        : (message = 'No puedes usar esta dirección, prueba con otra.');
 
     return (
         <>

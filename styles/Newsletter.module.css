@@ -64,7 +64,7 @@
 
 .errorModal {
     position: absolute;
-    margin-bottom: 21rem;
+    margin-bottom: 19.2rem;
     width: clamp(12rem, 32vw, 20rem);
     padding: 1rem;
     border-radius: 20px;
