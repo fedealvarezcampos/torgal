@@ -13,28 +13,37 @@ const CustomForm = ({ status, message, onValidated }) => {
             onValidated({
                 EMAIL: email,
             });
-        console.log(status);
-        console.log(message);
     };
+
+    // status = 'error';
+    // message =
+    //     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, ex dolorem illo fugiat consectetur animi aliquid fugit soluta placeat aspernatur!';
+
+    useEffect(() => {
+        status === 'success' && setEmail('');
+    }, [status]);
 
     console.log(email);
 
     return (
         <>
-            {/* {status === 'error' && (
-                <div className={styles.error} dangerouslySetInnerHTML={{ __html: message }} />
+            {status === 'error' && (
+                <div
+                    className={`${styles.errorModal} bounceAnim`}
+                    dangerouslySetInnerHTML={{ __html: message }}
+                />
             )}
-            {status === 'success' && (
-                <div className={styles.success} dangerouslySetInnerHTML={{ __html: message }} />
-            )} */}
             <div className={styles.formContainer}>
                 <form onSubmit={handleSubmit}>
-                    <p>
+                    <p
+                        className={`${
+                            status === 'success' ? styles.successMsg + ' fade-in' : styles.normalMsg
+                        }`}
+                    >
                         {status !== 'success'
                             ? 'Suscríbete a nuestra newsletter'
                             : '¡Gracias por suscribirte!'}
                     </p>
-
                     <div className={styles.inputContainer}>
                         {status === 'sending' ? (
                             <Spinner />
