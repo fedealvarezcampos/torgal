@@ -1,6 +1,4 @@
-import Image from 'next/image';
 import styles from '../styles/About.module.css';
-import aboutImage from '../public/images/bar.jpg';
 import Map from './Map';
 
 function About({ setShowMenu }) {

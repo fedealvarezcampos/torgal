@@ -23,8 +23,6 @@ const CustomForm = ({ status, message, onValidated }) => {
         status === 'success' && setEmail('');
     }, [status]);
 
-    console.log(email);
-
     return (
         <>
             {status === 'error' && (
@@ -66,9 +64,6 @@ const CustomForm = ({ status, message, onValidated }) => {
 const NewsletterForm = () => {
     const mailchimpUser = process.env.NEXT_PUBLIC_MAILCHIMPUSER;
     const mailchimpId = process.env.NEXT_PUBLIC_MAILCHIMPID;
-
-    console.log(mailchimpUser);
-    console.log(mailchimpId);
 
     const action = `https://tumblr.us12.list-manage.com/subscribe/post?u=${mailchimpUser}&id=${mailchimpId}`;
 

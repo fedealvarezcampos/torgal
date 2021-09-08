@@ -81,11 +81,11 @@
     .container p {
         font-size: 0.65rem;
         letter-spacing: 0.08rem;
-        margin: 0 0 -0.26rem 0;
+        margin: 0 0 -0.35rem 0;
     }
 
     .formContainer form {
-        gap: 7px;
+        gap: 8px;
         min-width: 13.5rem;
         padding: 0.5rem 0.9rem 0.7rem 0.9rem;
         border-radius: 22px;
@@ -97,9 +97,9 @@
     }
 
     .inputContainer input {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
         padding: 0.2rem 0.35rem 0.2rem 0.35rem;
-        border-radius: 10px;
+        border-radius: 6px;
         border: 3px solid var(--base-font);
     }
 

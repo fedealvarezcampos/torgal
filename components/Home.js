@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import styles from '../styles/Home.module.css';
-// import background from '../public/images/back1.jpg';
 
 function Home() {
     const [BG, setBG] = useState();
