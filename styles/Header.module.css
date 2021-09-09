@@ -77,6 +77,7 @@
     .header {
         width: 110vw;
         top: -110px;
+        filter: unset;
     }
 
     .navLinks {
