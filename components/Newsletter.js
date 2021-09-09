@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
+import Expire from '../helpers/ExpireComponent';
 import Spinner from './spinner';
 import styles from '../styles/Newsletter.module.css';
 
@@ -26,10 +27,9 @@ const CustomForm = ({ status, message, onValidated }) => {
     return (
         <>
             {status === 'error' && (
-                <div
-                    className={`${styles.errorModal} bounceAnim`}
-                    dangerouslySetInnerHTML={{ __html: message }}
-                />
+                <Expire className={`${styles.errorModal} bounceAnim`} delay="4000">
+                    {message}
+                </Expire>
             )}
             <div className={styles.formContainer}>
                 <form onSubmit={handleSubmit}>
