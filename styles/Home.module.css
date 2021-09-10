@@ -21,6 +21,11 @@
     align-self: start;
 }
 
+.titleContainer :first-child {
+    height: auto;
+    width: 100%;
+}
+
 @media (max-width: 1200px) {
     .container {
         height: 58vw;
@@ -40,8 +45,8 @@
     }
 
     .titleContainer {
-        margin-top: -1.4rem;
-        padding-left: 2.4vw;
+        margin-top: -0.4rem;
+        padding-left: 2.5vw;
         width: clamp(6rem, 58.5vw, 30rem);
     }
 

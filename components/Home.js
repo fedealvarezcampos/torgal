@@ -17,8 +17,8 @@ function Home() {
                 style={{ backgroundImage: BG && `url('/images/back${BG}.webp'` }}
             >
                 <div className={`${styles.titleContainer} fadeInLeft`}>
-                    <img src="./images/stairs.png" alt="Torgal logo" />
-                    <img src="./images/LOGO.svg" alt="Torgal logo" />
+                    <img src="./images/stairs.png" width="455" height="456" alt="Torgal logo" />
+                    <img src="./images/LOGO.svg" width="807" height="296" alt="Torgal logo" />
                 </div>
             </div>
         </>
