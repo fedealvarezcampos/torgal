@@ -13,7 +13,7 @@ function Header() {
                             </Link>
                         </li>
                         <li>
-                            <Link activeClass="active" to="bar" offset={-60} spy={true} smooth={true}>
+                            <Link activeClass="active" to="bar" offset={-20} spy={true} smooth={true}>
                                 BAR
                             </Link>
                         </li>

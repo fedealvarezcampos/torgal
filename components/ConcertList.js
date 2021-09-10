@@ -26,7 +26,7 @@ function ConcertList({ gigs }) {
             <div
                 id="conciertos"
                 className={styles.container}
-                style={{ backgroundImage: `url(./images/wallpaperFeather.png)` }}
+                style={{ backgroundImage: `url(./images/wallpaperFeather.webp)` }}
             >
                 <ul className={styles.gigList}>
                     {gigs.map(gigs => (
