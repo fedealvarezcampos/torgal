@@ -21,7 +21,7 @@
     align-self: start;
 }
 
-.titleContainer :first-child {
+.titleContainer * {
     height: auto;
     width: 100%;
 }

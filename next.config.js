@@ -8,6 +8,7 @@ const ContentSecurityPolicy = `
     img-src * blob: data:;
     media-src 'none';
     font-src 'self' https://fonts.gstatic.com;
+    connect-src *;
 `;
 
 const securityHeaders = [
@@ -17,7 +18,7 @@ const securityHeaders = [
     },
     {
         key: 'Referrer-Policy',
-        value: 'origin-when-cross-origin',
+        value: 'strict-origin-when-cross-origin',
     },
     {
         key: 'X-Frame-Options',
