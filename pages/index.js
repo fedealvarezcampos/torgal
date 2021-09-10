@@ -39,11 +39,6 @@ export default function MainSite({ allGigsData, cocktails }) {
             <Head>
                 <title>{siteTitle}</title>
                 <meta property="og:title" content="Café & Pop Torgal" key="title" />
-                <link
-                    rel="stylesheet"
-                    type="text/css"
-                    href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-                ></link>
             </Head>
             <header>
                 <Header />
