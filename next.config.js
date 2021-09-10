@@ -38,14 +38,6 @@ const securityHeaders = [
 ];
 
 (module.exports = {
-    async headers() {
-        return [
-            {
-                source: '/(.*)',
-                headers: securityHeaders,
-            },
-        ];
-    },
     i18n: {
         locales: ['es'],
         defaultLocale: 'es',
@@ -54,3 +46,14 @@ const securityHeaders = [
     nextImages({
         esModule: true,
     });
+
+module.exports = {
+    async headers() {
+        return [
+            {
+                source: '/(.*)',
+                headers: securityHeaders,
+            },
+        ];
+    },
+};
