@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
-import Expire from '../helpers/ExpireComponent';
 import Spinner from './spinner';
 import styles from '../styles/Newsletter.module.css';
 
 const CustomForm = ({ status, message, onValidated }) => {
     const [email, setEmail] = useState('');
+    const [timer, setTimer] = useState();
+    const [errorMsg, setErrorMsg] = useState(false);
 
     const handleSubmit = e => {
         e.preventDefault();
+        errorMsg && setErrorMsg(false);
         email &&
             email.indexOf('@') > -1 &&
             onValidated({
@@ -17,8 +19,19 @@ const CustomForm = ({ status, message, onValidated }) => {
     };
 
     useEffect(() => {
+        status === 'error' && setErrorMsg(true);
         status === 'success' && setEmail('');
     }, [status]);
+
+    useEffect(() => {
+        errorMsg && clearTimeout(timer);
+        errorMsg &&
+            setTimer(
+                setTimeout(() => {
+                    setErrorMsg(false);
+                }, 3000)
+            );
+    }, [errorMsg]);
 
     message !== null && message.includes('already subscribed')
         ? (message = '¡Parece que ya estabas suscrito! Este correo ya existe en nuestra base de datos.')
@@ -26,10 +39,8 @@ const CustomForm = ({ status, message, onValidated }) => {
 
     return (
         <>
-            {status === 'error' && (
-                <Expire className={`${styles.errorModal} bounceAnim`} delay="4000">
-                    {message}
-                </Expire>
+            {status === 'error' && errorMsg && (
+                <div className={`${styles.errorModal} bounceAnim`}>{message}</div>
             )}
             <div className={styles.formContainer}>
                 <form onSubmit={handleSubmit}>

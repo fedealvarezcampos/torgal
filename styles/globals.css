@@ -147,7 +147,7 @@ button:active {
     place-content: center;
     position: fixed;
     width: 100vw;
-    height: 92vh;
+    height: 100vh;
     z-index: 2400;
 }
 
