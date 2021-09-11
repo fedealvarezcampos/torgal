@@ -2,7 +2,7 @@ const nextImages = require('next-images');
 
 const ContentSecurityPolicy = `
     default-src 'self';
-    script-src 'self' 'unsafe-inline' *.youtube.com https://maps.googleapis.com https://tumblr.;
+    script-src 'self' 'unsafe-inline' *.youtube.com https://maps.googleapis.com https://tumblr;
     child-src *.youtube.com *.google.com;
     style-src 'self' 'unsafe-inline' *.googleapis.com;
     img-src * blob: data:;
