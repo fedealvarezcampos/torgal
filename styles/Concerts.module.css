@@ -17,7 +17,6 @@
     display: grid;
     grid: 1fr / 9.5rem 13.5rem auto auto auto;
     width: auto;
-    align-items: center;
     margin: 0.6rem;
     padding: 1.5rem;
     gap: 30px;
@@ -33,6 +32,7 @@
 .gigItem a {
     color: var(--base-font);
     text-decoration: none;
+    justify-self: end;
 }
 
 .gigArtist {
@@ -67,7 +67,7 @@ button.gigSoldOut:active {
 
     .gigItem {
         display: grid;
-        grid: 1fr / 7rem 10rem 5rem auto 6.4rem;
+        grid: 1fr / 7rem 10rem 5rem auto 6.3rem;
         gap: 1.6rem;
         width: auto;
         align-items: center;
@@ -83,7 +83,7 @@ button.gigSoldOut:active {
     }
 
     .gigItem {
-        grid: 1fr / 4rem auto 3.2rem 1.8rem 4.8rem;
+        grid: 1fr / 4rem auto 3.4rem 2rem 4.5rem;
         gap: 1.5rem;
         width: auto;
         margin: 0.6rem;
@@ -110,8 +110,7 @@ button.gigSoldOut:active {
     }
 
     .gigItem {
-        grid: 1fr / 2.7rem 3.9rem 2.4rem 0.9rem 3rem;
-        width: auto;
+        grid: 1fr / 2.7rem 4rem 3rem 0.9rem 3.8rem;
         gap: 10px;
         margin: 0.25rem;
         padding: 0.5rem 0.6rem 0.5rem 0.6rem;
