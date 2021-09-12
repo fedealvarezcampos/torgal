@@ -151,6 +151,12 @@ button:active {
     z-index: 2400;
 }
 
+@media (max-width: 500px) {
+    .modalContainer {
+        height: 100%;
+    }
+}
+
 .modalBG {
     position: fixed;
     width: 100%;
