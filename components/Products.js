@@ -1,15 +1,36 @@
 import { useState } from 'react';
+import { useSwipeable } from 'react-swipeable';
 import styles from '../styles/Products.module.css';
 
 function Products({ products, showMenu, setShowMenu }) {
     const [type, setType] = useState('cocktail');
 
+    const swipeConfig = {
+        delta: 20,
+        preventDefaultTouchmoveEvent: true,
+    };
+
+    const swipingTypes = ['cocktail', 'cerveza', 'copa', 'café', 'especial'];
+
     const randomId = new Date().getMilliseconds();
+
+    const mobileSwipes = useSwipeable({
+        onSwipedLeft: () => {
+            const index = swipingTypes.indexOf(type);
+            if (index >= 0 && index < swipingTypes.length - 1) setType(swipingTypes[index + 1]);
+        },
+        ...swipeConfig,
+        onSwipedRight: () => {
+            const index = swipingTypes.indexOf(type);
+            if (index > 0 && index <= swipingTypes.length) setType(swipingTypes[index - 1]);
+        },
+        ...swipeConfig,
+    });
 
     return (
         <>
             {showMenu && (
-                <div className="modalContainer">
+                <div className="modalContainer" {...mobileSwipes}>
                     <div className="modalBG" onClick={() => setShowMenu(false)} />
                     <div className={styles.contentContainer}>
                         <nav>
