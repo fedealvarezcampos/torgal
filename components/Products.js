@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
+import useCheckMobile from '../helpers/useCheckMobile';
 import styles from '../styles/Products.module.css';
 
 function Products({ products, showMenu, setShowMenu }) {
+    const mobile = useCheckMobile();
+
     const [type, setType] = useState('cocktail');
 
     const swipeConfig = {
@@ -31,6 +34,7 @@ function Products({ products, showMenu, setShowMenu }) {
         <>
             {showMenu && (
                 <div className="modalContainer" {...mobileSwipes}>
+                    {mobile && <span className="exitButton" onClick={() => setShowMenu(false)} />}
                     <div className="modalBG" onClick={() => setShowMenu(false)} />
                     <div className={styles.contentContainer}>
                         <nav>

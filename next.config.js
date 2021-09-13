@@ -1,4 +1,4 @@
-const nextImages = require('next-images');
+// const nextImages = require('next-images');
 
 const ContentSecurityPolicy = `
     default-src 'self';
@@ -38,15 +38,15 @@ const securityHeaders = [
     },
 ];
 
-(module.exports = {
+module.exports = {
     i18n: {
         locales: ['es'],
         defaultLocale: 'es',
     },
-}),
-    nextImages({
-        esModule: true,
-    });
+};
+// nextImages({
+//     esModule: true,
+// });
 
 module.exports = {
     async headers() {
