@@ -1,5 +1,3 @@
-// const nextImages = require('next-images');
-
 const ContentSecurityPolicy = `
     default-src 'self';
     script-src 'self' 'unsafe-inline' *.youtube.com https://maps.googleapis.com https://tumblr.us12.list-manage.com *.vercel.app *.vercel.com;
@@ -44,9 +42,6 @@ module.exports = {
         defaultLocale: 'es',
     },
 };
-// nextImages({
-//     esModule: true,
-// });
 
 module.exports = {
     async headers() {

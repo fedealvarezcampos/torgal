@@ -1,24 +1,20 @@
 .container {
-    height: clamp(28rem, 35vw, 46rem);
-    padding: 0;
+    position: relative;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    background-size: cover;
-    background-position: center top;
-    background-position-y: 1vw;
+    height: clamp(34rem, 35vw, 46rem);
+    padding: 0;
     filter: contrast(95%);
 }
 
 .titleContainer {
+    position: absolute;
     display: grid;
     grid: auto / 0.74fr 2fr;
     align-items: center;
-    margin-top: -1.2rem;
+    align-self: center;
     padding-left: clamp(1rem, 1.5vw, 2.4rem);
     width: clamp(26rem, 35vw, 42rem);
-    align-self: start;
 }
 
 .titleContainer * {
@@ -26,10 +22,15 @@
     width: 100%;
 }
 
+.backImage {
+    position: absolute;
+    transform: translateY(1vw);
+    z-index: 0;
+}
+
 @media (max-width: 1200px) {
     .container {
         height: 58vw;
-        background-position-y: -10%;
     }
 
     .titleContainer {

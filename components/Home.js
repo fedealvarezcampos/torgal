@@ -1,21 +1,33 @@
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import styles from '../styles/Home.module.css';
+import back01 from '../public/images/back1.webp';
+import back02 from '../public/images/back2.webp';
+import back03 from '../public/images/back3.webp';
 
 function Home() {
-    const [BG, setBG] = useState();
+    const bgArray = [back01, back02, back03];
+    const [random, setRandom] = useState();
+    const randomBG = bgArray[random];
 
     useEffect(() => {
-        setBG(Math.floor(Math.random() * (4 - 1) + 1));
-    }, [setBG]);
+        setRandom(Math.floor(Math.random() * bgArray?.length));
+    }, [setRandom]);
 
     return (
         <>
-            <div
-                id="home"
-                className={`${styles.container} fade-in`}
-                // style={{ backgroundImage: `url(${background.src})` }}
-                style={{ backgroundImage: BG && `url('/images/back${BG}.webp'` }}
-            >
+            <div id="home" className={`${styles.container} fade-in`}>
+                <div className={styles.backImage}>
+                    {randomBG && (
+                        <Image
+                            src={randomBG}
+                            alt="header image"
+                            quality="90"
+                            priority="true"
+                            placeholder="blur"
+                        />
+                    )}
+                </div>
                 <div className={`${styles.titleContainer} fadeInLeft`}>
                     <img src="./images/stairs.png" width="455" height="456" alt="Torgal logo" />
                     <img src="./images/LOGO.svg" width="807" height="296" alt="Torgal logo" />
