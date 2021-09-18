@@ -37,19 +37,25 @@ function ConcertList({ gigs }) {
                                 + INFO
                             </button>
                             <span className={styles.gigPrice}>{gigs.gigPrice}€</span>
-                            <a
-                                href={gigs.gigLink !== 'soldout' ? gigs.gigLink : null}
-                                target="_blank"
-                                rel="noreferrer"
-                            >
-                                <button
-                                    className={
-                                        gigs.gigLink === 'soldout' ? `button ${styles.gigSoldOut}` : 'button'
-                                    }
-                                >
-                                    {gigs.gigLink === 'soldout' ? <span>SOLD OUT</span> : 'ENTRADAS'}
-                                </button>
-                            </a>
+                            {gigs.gigLink !== 'soldout' ? (
+                                <a href={gigs.gigLink} target="_blank" rel="noreferrer">
+                                    <button
+                                        className={
+                                            gigs.gigLink === 'soldout'
+                                                ? `button ${styles.gigSoldOut}`
+                                                : 'button'
+                                        }
+                                    >
+                                        {gigs.gigLink === 'soldout' ? <span>SOLD OUT</span> : 'ENTRADAS'}
+                                    </button>
+                                </a>
+                            ) : (
+                                <span>
+                                    <button className={styles.gigSoldOut}>
+                                        <span>SOLD OUT</span>
+                                    </button>
+                                </span>
+                            )}
                         </li>
                     ))}
                 </ul>
