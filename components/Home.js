@@ -22,7 +22,8 @@ function Home() {
                         <Image
                             src={randomBG}
                             alt="header image"
-                            quality="90"
+                            quality="85"
+                            layout="responsive"
                             priority="true"
                             placeholder="blur"
                         />

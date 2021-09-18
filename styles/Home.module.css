@@ -24,6 +24,8 @@
 
 .backImage {
     position: absolute;
+    display: block;
+    width: 100%;
     transform: translateY(1vw);
     z-index: 0;
 }
