@@ -50,11 +50,9 @@ function ConcertList({ gigs }) {
                                     </button>
                                 </a>
                             ) : (
-                                <span>
-                                    <button className={styles.gigSoldOut}>
-                                        <span>SOLD OUT</span>
-                                    </button>
-                                </span>
+                                <button className={styles.gigSoldOut}>
+                                    <span>SOLD OUT</span>
+                                </button>
                             )}
                         </li>
                     ))}
