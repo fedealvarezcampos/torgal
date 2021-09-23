@@ -52,4 +52,15 @@ module.exports = {
             },
         ];
     },
+    redirects() {
+        return [
+            process.env.NEXT_PUBLIC_MAINTENANCE === '1'
+                ? {
+                      source: '/((?!maintenance).*)',
+                      destination: '/maintenance/maintenance.html',
+                      permanent: false,
+                  }
+                : null,
+        ].filter(Boolean);
+    },
 };
