@@ -57,7 +57,7 @@ module.exports = {
             process.env.NEXT_PUBLIC_MAINTENANCE === '1'
                 ? {
                       source: '/((?!maintenance).*)',
-                      destination: '/maintenance/maintenance.html',
+                      destination: '/maintenance.html',
                       permanent: false,
                   }
                 : null,
