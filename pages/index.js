@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
+import { AnimatePresence } from 'framer-motion';
 import Home from '../components/Home';
 import Header from '../components/Header';
 import About from '../components/About';
@@ -46,7 +47,14 @@ export default function MainSite({ allGigsData, cocktails }) {
             </header>
             <main>
                 <About setShowMenu={setShowMenu} />
-                <Products products={cocktails} showMenu={showMenu} setShowMenu={setShowMenu} />
+                <AnimatePresence exitBeforeEnter>
+                    <Products
+                        products={cocktails}
+                        showMenu={showMenu}
+                        setShowMenu={setShowMenu}
+                        key={showMenu}
+                    />
+                </AnimatePresence>
                 <Gallery />
                 <ConcertList gigs={allGigsData} />
             </main>

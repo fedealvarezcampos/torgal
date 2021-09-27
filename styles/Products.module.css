@@ -32,7 +32,7 @@
 
 .productItem {
     display: grid;
-    grid: 7rem / 2fr 0.7fr;
+    grid: 7.6rem / 1.2fr 8rem;
     align-items: center;
     justify-items: center;
     margin: 0 1.8rem 0 1.8rem;
@@ -47,6 +47,8 @@
 .productItem img {
     max-height: 100%;
     mix-blend-mode: multiply;
+    max-width: 180px;
+    object-fit: cover;
 }
 
 .productItem p {
@@ -108,11 +110,11 @@
 
     .productItem {
         display: grid;
-        grid: 4rem / 1.5fr 0.8fr;
+        grid: 3rem / 1.2fr 4.4rem;
         margin: 0 1.4rem 0 1.4rem;
         padding: 0.8rem 0 0.8rem 1.2rem;
-        border-radius: 18px;
-        border: solid 6px #dabc7d;
+        border-radius: 16px;
+        border: solid 5px #dabc7d;
     }
 
     .productInfo > p:first-child {

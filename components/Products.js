@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
+import { motion } from 'framer-motion';
+import { framer, framerRight } from '../styles/framer';
 import useCheckMobile from '../helpers/useCheckMobile';
 import styles from '../styles/Products.module.css';
 
@@ -33,7 +35,14 @@ function Products({ products, showMenu, setShowMenu }) {
     return (
         <>
             {showMenu && (
-                <div className="modalContainer" {...mobileSwipes}>
+                <motion.div
+                    className="modalContainer"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.4 }}
+                    {...mobileSwipes}
+                >
                     {mobile && <span className="exitButton" onClick={() => setShowMenu(false)} />}
                     <div className="modalBG" onClick={() => setShowMenu(false)} />
                     <div className={styles.contentContainer}>
@@ -75,7 +84,12 @@ function Products({ products, showMenu, setShowMenu }) {
                                     product =>
                                         product.type === type && (
                                             <li className={styles.productItem} key={product.id}>
-                                                <div className={styles.productInfo}>
+                                                <motion.div
+                                                    initial="initial"
+                                                    animate="animate"
+                                                    variants={framerRight}
+                                                    className={styles.productInfo}
+                                                >
                                                     <p>{product.product}</p>
                                                     <p className={styles.productDescription}>
                                                         {product.description}
@@ -113,8 +127,11 @@ function Products({ products, showMenu, setShowMenu }) {
                                                             </div>
                                                         )}
                                                     </div>
-                                                </div>
-                                                <img
+                                                </motion.div>
+                                                <motion.img
+                                                    initial="initial"
+                                                    animate="animate"
+                                                    variants={framer}
                                                     src={`/images/products/${product.id}.jpg`}
                                                     alt="imagen producto"
                                                 />
@@ -124,7 +141,7 @@ function Products({ products, showMenu, setShowMenu }) {
                             </ul>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             )}
         </>
     );

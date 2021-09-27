@@ -1,11 +1,17 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import GoogleMapReact from 'google-map-react';
 import { mapStyles } from '../styles/mapStyles';
 import styles from '../styles/Map.module.css';
 
 const InfoWindow = () => {
     return (
-        <div className={`${styles.infoWindow} fade-in`}>
+        <motion.div
+            initial={{ y: 60, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            className={styles.infoWindow}
+        >
             <p>TORGAL</p>
             <p>
                 Celso Emilio Ferreiro 20
@@ -18,7 +24,7 @@ const InfoWindow = () => {
             >
                 Cómo llegar...
             </a>
-        </div>
+        </motion.div>
     );
 };
 

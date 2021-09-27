@@ -100,6 +100,18 @@ button:active {
     z-index: 2000;
 }
 
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark-item);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--wallpaper);
+}
+
 @media (max-width: 1200px) {
     button {
         font-size: 0.8rem;
@@ -180,18 +192,6 @@ button:active {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(2px);
-}
-
-::-webkit-scrollbar {
-    width: 15px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--dark-item);
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: var(--wallpaper);
 }
 
 /* Sorry, Google */

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useClosingKey } from '../helpers/useClosingKey';
+import { AnimatePresence } from 'framer-motion';
 import styles from '../styles/Concerts.module.css';
 import ArtistInfo from '../components/ArtistInfo';
 import Date from '../components/date';
@@ -22,7 +23,9 @@ function ConcertList({ gigs }) {
 
     return (
         <>
-            {modal && <ArtistInfo gigs={modalData} setModal={setModal} />}
+            <AnimatePresence exitBeforeEnter>
+                {modal && <ArtistInfo gigs={modalData} key={modal} setModal={setModal} />}
+            </AnimatePresence>
             <div
                 id="conciertos"
                 className={styles.container}
