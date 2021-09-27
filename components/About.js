@@ -1,5 +1,6 @@
-import styles from '../styles/About.module.css';
 import Map from './Map';
+import { BiFoodMenu } from 'react-icons/bi';
+import styles from '../styles/About.module.css';
 
 function About({ setShowMenu }) {
     return (
@@ -26,7 +27,9 @@ function About({ setShowMenu }) {
                             veritatis corporis? Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         </span>
                         <button className={`button ${styles.menuButton}`} onClick={() => setShowMenu(true)}>
-                            VE NUESTRA CARTA
+                            <span>
+                                <BiFoodMenu /> VE NUESTRA CARTA
+                            </span>
                         </button>
                     </div>
                 </div>
