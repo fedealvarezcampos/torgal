@@ -16,7 +16,7 @@ function Home() {
 
     return (
         <>
-            <div id="home" className={`${styles.container} fade-in`}>
+            <div id="home" className={`${styles.container}`}>
                 <div className={styles.backImage}>
                     {randomBG && (
                         <Image

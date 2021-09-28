@@ -37,15 +37,17 @@ function Products({ products, showMenu, setShowMenu }) {
             {showMenu && (
                 <motion.div
                     className="modalContainer"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.4 }}
                     {...mobileSwipes}
                 >
                     {mobile && <span className="exitButton" onClick={() => setShowMenu(false)} />}
                     <div className="modalBG" onClick={() => setShowMenu(false)} />
-                    <div className={styles.contentContainer}>
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        className={styles.contentContainer}
+                    >
                         <nav>
                             <button
                                 className={`button ${type === 'cocktail' && 'current'}`}
@@ -140,7 +142,7 @@ function Products({ products, showMenu, setShowMenu }) {
                                 )}
                             </ul>
                         </div>
-                    </div>
+                    </motion.div>
                 </motion.div>
             )}
         </>

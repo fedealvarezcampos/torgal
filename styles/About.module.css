@@ -71,15 +71,14 @@
 }
 
 .menuButton {
-    width: clamp(5.4rem, 18.8vw, 15rem);
+    width: fit-content;
 }
 
 .menuButton span {
     display: flex;
     place-content: center;
     place-items: center;
-    justify-content: space-around;
-    gap: 3px;
+    gap: 4px;
 }
 
 @media (max-width: 1200px) {

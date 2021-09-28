@@ -8,8 +8,6 @@ function ArtistInfo({ gigs, setModal, modal }) {
     return (
         <>
             <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.4 }}
                 className="modalContainer"
@@ -17,17 +15,22 @@ function ArtistInfo({ gigs, setModal, modal }) {
             >
                 {mobile && <span className="exitButton" onClick={() => setModal(false)} />}
                 <div className="modalBG" onClick={() => setModal(false)} />
-                <div id="home" className={styles.contentContainer}>
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    id="home"
+                    className={styles.contentContainer}
+                >
                     <p className={styles.artistName}>{gigs.artist}</p>
                     <iframe
-                        src={`https://www.youtube.com/embed/${gigs.videoIntro}?autoplay=1&mute=1&loop=1&playlist=${gigs.videoIntro}`}
+                        src={`https://www.youtube.com/embed/${gigs.videoIntro}?&mute=1&loop=1&playlist=${gigs.videoIntro}`}
                         title="YouTube video player"
                         width="100%"
                         height="100%"
                         frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         mute="1"
-                        autoPlay="1"
+                        // autoPlay="1"
                         allowFullScreen
                     />
                     <div
@@ -65,7 +68,7 @@ function ArtistInfo({ gigs, setModal, modal }) {
                             </div>
                         )}
                     </div>
-                </div>
+                </motion.div>
             </motion.div>
         </>
     );
