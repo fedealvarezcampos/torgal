@@ -1,10 +1,12 @@
 import styles from '../styles/Socials.module.css';
+import { motion } from 'framer-motion';
 
 function Socials() {
     return (
         <>
             <div id="bar" className={styles.container}>
-                <a
+                <motion.a
+                    whileHover={{ scale: 1.05 }}
                     href="https://twitter.com/PopTorgal"
                     target="_blank"
                     rel="noreferrer"
@@ -12,8 +14,9 @@ function Socials() {
                     alt="torgal twitter"
                 >
                     <img src="/images/social/twitter.svg" alt="torgal twitter icon" />
-                </a>
-                <a
+                </motion.a>
+                <motion.a
+                    whileHover={{ scale: 1.05 }}
                     href="https://www.instagram.com/cafepoptorgal/"
                     target="_blank"
                     rel="noreferrer"
@@ -21,8 +24,9 @@ function Socials() {
                     alt="torgal instagram"
                 >
                     <img src="/images/social/instagram.svg" alt="torgal instagram icon" />
-                </a>
-                <a
+                </motion.a>
+                <motion.a
+                    whileHover={{ scale: 1.05 }}
                     href="https://www.youtube.com/channel/UCCTFJXW-mOGoV2RWRvI6CvQ"
                     target="_blank"
                     rel="noreferrer"
@@ -30,7 +34,7 @@ function Socials() {
                     alt="torgal youtube"
                 >
                     <img src="/images/social/youtube.svg" alt="torgal youtube icon" />
-                </a>
+                </motion.a>
             </div>
         </>
     );

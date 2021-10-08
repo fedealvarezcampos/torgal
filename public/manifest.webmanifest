@@ -3,8 +3,8 @@
     "name": "Torgal",
     "icons": [
         {
-            "src": "/images/logo.png",
-            "sizes": "500x500",
+            "src": "/images/torgallogo.png",
+            "sizes": "512x512",
             "type": "image/png",
             "purpose": "any maskable"
         },

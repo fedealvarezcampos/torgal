@@ -34,12 +34,14 @@ function Marker() {
     return (
         <>
             {show && <InfoWindow />}
-            <img
-                className={styles.marker}
-                onClick={() => setShow(!show)}
-                src="./images/marker.svg"
-                alt="map marker"
-            />
+            <motion.div whileHover={{ y: 2 }}>
+                <img
+                    className={styles.marker}
+                    onClick={() => setShow(!show)}
+                    src="./images/marker.svg"
+                    alt="map marker"
+                />
+            </motion.div>
         </>
     );
 }
