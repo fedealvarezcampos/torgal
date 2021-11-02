@@ -39,27 +39,6 @@
     clip-path: polygon(0 0, 100% 6%, 100% 100%, 0 100%);
 }
 
-.imageContainer {
-    will-change: transform;
-    position: relative;
-    width: fit-content;
-    height: clamp(5rem, 22vw, 22rem);
-}
-
-.imageContainer div {
-    position: relative !important;
-    width: fit-content !important;
-    height: 100% !important;
-}
-
-.imageContainer :hover {
-    filter: unset;
-}
-
-.imageContainer img {
-    height: 100% !important;
-}
-
 .aboutText {
     position: absolute;
     align-self: flex-start;
@@ -71,29 +50,6 @@
     font-family: 'Cabin', sans-serif;
     border-radius: 0 1.6rem 0 0;
     color: var(--base-font);
-}
-
-.drinkMenu {
-    overflow-x: hidden;
-    background-color: var(--pink);
-    font-family: 'Roboto', sans-serif;
-    font-size: clamp(0.8rem, 2vw, 2rem);
-    font-weight: 800;
-    color: var(--dark-item);
-    transition: all 250ms;
-}
-
-.drinkMenu:hover {
-    cursor: pointer;
-    background-color: var(--cream);
-    transition: all 250ms;
-}
-
-.drinkMenuContent span {
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    position: relative;
 }
 
 @media (max-width: 1200px) {

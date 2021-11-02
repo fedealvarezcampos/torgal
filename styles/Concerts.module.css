@@ -15,7 +15,7 @@
 
 .gigItem {
     display: grid;
-    grid: 1fr / 9.5rem 13.5rem auto auto auto;
+    grid: 1fr / 9.5rem clamp(13rem, 15vw, 16rem) auto auto auto;
     align-items: center;
     width: auto;
     margin: 0.6rem;
@@ -39,7 +39,7 @@
 .gigArtist {
     color: #e6c9b5;
     font-weight: 800;
-    justify-self: start;
+    margin-right: auto;
 }
 
 .gigPrice {
@@ -110,7 +110,7 @@ button.gigSoldOut:active {
     }
 
     .gigItem {
-        grid: 1fr / 2.7rem 4rem 2.4rem 1rem 3.2rem;
+        grid: 1fr / 2.7rem 20vw 2.6rem 1rem 3.4rem;
         gap: 12px;
         margin: 0.25rem;
         padding: 0.5rem 0.6rem 0.5rem 0.6rem;
@@ -123,10 +123,12 @@ button.gigSoldOut:active {
     }
 
     button.gigSoldOut {
+        width: fit-content;
         border: 3px solid var(--bg-color);
     }
 
     button.gigSoldOut:hover {
+        width: fit-content;
         border: 3px solid var(--bg-color);
     }
 }
