@@ -31,7 +31,6 @@
     width: 100%;
     height: 450px;
     border: 10px double var(--base-font);
-    filter: grayscale(60%);
 }
 
 .bio {
@@ -96,7 +95,6 @@
         width: 100%;
         height: auto;
         border: 8px double var(--base-font);
-        filter: grayscale(60%);
     }
 
     .iconContainer img {
