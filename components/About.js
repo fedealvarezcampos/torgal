@@ -1,5 +1,11 @@
 import Map from './Map';
-import { BiFoodMenu } from 'react-icons/bi';
+import Image from 'next/image';
+import torgal01 from '../public/images/torgal01.webp';
+import torgal02 from '../public/images/torgal02.webp';
+import torgal03 from '../public/images/torgal03.webp';
+import torgal04 from '../public/images/torgal04.webp';
+import { BiFoodMenu, BiDrink } from 'react-icons/bi';
+import Marquee from 'react-fast-marquee';
 import styles from '../styles/About.module.css';
 
 function About({ setShowMenu }) {
@@ -12,26 +18,62 @@ function About({ setShowMenu }) {
                         style={{ backgroundImage: `url(./images/about.jpg)` }}
                     ></div>
                     <div className={styles.aboutText}>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus qui veritatis
-                        corporis? Natus qui ipsum, modi reprehenderit amet asperiores hic.
+                        Aquí ibamos a poner algo sobre el bar pero nadie ha querido escribir nada. Aún así
+                        queda mejor escribir esto aunque no sea más que por una cuestión estética.
                     </div>
                 </div>
-                <div id="bar" className={styles.subContainer}>
-                    <div
-                        className={styles.imageContainer}
-                        style={{ backgroundImage: `url(./images/bar.jpg)` }}
-                    ></div>
-                    <div className={styles.aboutText2}>
-                        <span>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus qui
-                            veritatis corporis? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        </span>
-                        <button className={`button ${styles.menuButton}`} onClick={() => setShowMenu(true)}>
-                            <span>
-                                <BiFoodMenu /> VE NUESTRA CARTA
-                            </span>
-                        </button>
+
+                <Marquee className={styles.marquee} pauseOnHover={true} gradient={false} speed={40}>
+                    <div className={styles.imageContainer}>
+                        <Image
+                            src={torgal02}
+                            placeholder="blur"
+                            objectFit="contain"
+                            quality={95}
+                            alt="torgal image"
+                        />
+                        <Image
+                            src={torgal04}
+                            placeholder="blur"
+                            objectFit="contain"
+                            quality={95}
+                            alt="torgal image"
+                        />
+                        <Image
+                            src={torgal03}
+                            placeholder="blur"
+                            objectFit="contain"
+                            quality={95}
+                            alt="torgal image"
+                        />
+                        <Image
+                            src={torgal01}
+                            placeholder="blur"
+                            objectFit="contain"
+                            quality={95}
+                            alt="torgal image"
+                        />
                     </div>
+                </Marquee>
+                <div className={styles.drinkMenu}>
+                    <Marquee gradient={false} direction="right">
+                        <div className={styles.drinkMenuContent} onClick={() => setShowMenu(true)}>
+                            <span>
+                                NUESTRA CARTA
+                                <BiFoodMenu />
+                                NUESTRA CARTA
+                                <BiDrink />
+                                NUESTRA CARTA
+                                <BiFoodMenu />
+                                NUESTRA CARTA
+                                <BiDrink />
+                                NUESTRA CARTA
+                                <BiFoodMenu />
+                                NUESTRA CARTA
+                                <BiDrink />
+                            </span>
+                        </div>
+                    </Marquee>
                 </div>
                 <Map />
             </div>

@@ -35,7 +35,7 @@ function ArtistInfo({ gigs, setModal, modal }) {
                     />
                     <div
                         className={styles.image}
-                        style={{ backgroundImage: `url(images/artists/${gigs.id}.jpg)` }}
+                        style={{ backgroundImage: `url(images/artists/${gigs.id}.webp)` }}
                     />
                     <div className={styles.bio}>{gigs.bio}</div>
                     <div className={styles.socials}>
