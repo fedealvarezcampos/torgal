@@ -2,7 +2,7 @@
     position: fixed;
     display: grid;
     align-content: end;
-    top: -2.2vw;
+    top: -2.8vw;
     left: 0;
     width: 101vw;
     margin-top: -5.4rem;
@@ -56,7 +56,7 @@
 @media (max-width: 1200px) {
     .header {
         top: -70px;
-        margin-top: -4.8rem;
+        margin-top: -4.4rem;
         height: clamp(12.6rem, 14vw, 16rem);
         transform: rotate(3deg);
     }
