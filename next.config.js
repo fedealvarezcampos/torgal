@@ -16,7 +16,7 @@ const securityHeaders = [
     },
     {
         key: 'Access-Control-Allow-Origin',
-        value: '*.googleapis.com *.vercel.app *.vercel.com https://maps.googleapis.com https://tumblr.us12.list-manage.com',
+        value: '*.googleapis.com *.vercel.app *.vercel.com https://maps.googleapis.com https://tumblr.us12.list-manage.com https://vitals.vercel-insights.com/v1/vitals',
     },
     {
         key: 'Referrer-Policy',
