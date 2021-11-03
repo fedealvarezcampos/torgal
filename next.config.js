@@ -1,6 +1,6 @@
 const ContentSecurityPolicy = `
     default-src 'self';
-    script-src 'self' 'unsafe-inline' 'unsafe-eval' *.youtube.com https://maps.googleapis.com https://tumblr.us12.list-manage.com *.vercel.app *.vercel.com;
+    script-src 'self' 'unsafe-inline' 'unsafe-eval' *.youtube.com *.googleapis.com https://maps.googleapis.com https://tumblr.us12.list-manage.com https://vitals.vercel-insights.com/v1/vitals *.vercel.app *.vercel.com;
     child-src *.youtube.com *.google.com;
     style-src 'self' 'unsafe-inline' *.googleapis.com;
     img-src * blob: data:;
