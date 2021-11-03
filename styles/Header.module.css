@@ -26,7 +26,7 @@
     margin-right: 2.2rem;
     list-style: none;
     font-size: clamp(1.4rem, 2.2vw, 2rem);
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Cabin', sans-serif;
     font-style: normal;
     font-weight: bold;
     font-feature-settings: 'kern' off;
@@ -68,7 +68,7 @@
     }
 
     .navLinks li {
-        padding: 1rem 0.7rem 0.2rem 0.4rem;
+        padding: 1rem 0.7rem 0.4rem 0.4rem;
     }
 }
 
@@ -81,12 +81,12 @@
 
     .navLinks {
         margin: 0;
-        margin-right: 6vw;
+        margin-right: 5.5vw;
         list-style: none;
         font-size: clamp(0.6rem, 2vw, 2rem);
     }
 
     .navLinks li {
-        padding: 1rem 0.5rem 0.1rem 0;
+        padding: 1rem 0.4rem 0.2rem 0;
     }
 }
