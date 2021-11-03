@@ -5,14 +5,10 @@
     height: clamp(5rem, 22vw, 22rem);
 }
 
-.imageContainer div {
+.imageContainer span {
     position: relative !important;
     width: fit-content !important;
     height: 100% !important;
-}
-
-.imageContainer :hover {
-    filter: unset;
 }
 
 .imageContainer img {
