@@ -3,7 +3,6 @@
     display: grid;
     align-content: end;
     top: -2.2vw;
-    /* width: clamp(55rem, 60vw, 80rem); */
     left: 0;
     width: 101vw;
     margin-top: -5.4rem;
@@ -27,15 +26,15 @@
     margin-right: 2.2rem;
     list-style: none;
     font-size: clamp(1.4rem, 2.2vw, 2rem);
-    font-family: Adam;
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
-    font-weight: normal;
+    font-weight: bold;
     font-feature-settings: 'kern' off;
     letter-spacing: 0.025em;
 }
 
 .navLinks li {
-    padding: 1.2rem 0.8rem 0.6rem 1.2rem;
+    padding: 1.2rem 0.8rem 0.4rem 1.2rem;
     padding-left: 0.6rem;
     display: inline-block;
 }
@@ -69,7 +68,7 @@
     }
 
     .navLinks li {
-        padding: 1rem 0.7rem 0.5rem 0.4rem;
+        padding: 1rem 0.7rem 0.2rem 0.4rem;
     }
 }
 
@@ -88,6 +87,6 @@
     }
 
     .navLinks li {
-        padding: 1rem 0.5rem 0.3rem 0;
+        padding: 1rem 0.5rem 0.1rem 0;
     }
 }
