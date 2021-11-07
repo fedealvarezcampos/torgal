@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
+import { useClosingKey } from '../helpers/useClosingKey';
 import { AnimatePresence } from 'framer-motion';
 import Home from '../components/Home';
 import Header from '../components/Header';
@@ -30,6 +31,8 @@ export async function getStaticProps() {
 export default function MainSite({ allGigsData, cocktails }) {
     const [showMenu, setShowMenu] = useState(false);
 
+    useClosingKey('Escape', showMenu, setShowMenu);
+
     useEffect(() => {
         showMenu && document.body.setAttribute('style', `overflow: hidden; margin-right: 15px;`);
         !showMenu && document.body.removeAttribute('style', `overflow: hidden; margin-right: 15px;`);
@@ -48,12 +51,14 @@ export default function MainSite({ allGigsData, cocktails }) {
             <main>
                 <About setShowMenu={setShowMenu} />
                 <AnimatePresence exitBeforeEnter>
-                    <Products
-                        products={cocktails}
-                        showMenu={showMenu}
-                        setShowMenu={setShowMenu}
-                        key={showMenu}
-                    />
+                    {showMenu && (
+                        <Products
+                            products={cocktails}
+                            showMenu={showMenu}
+                            setShowMenu={setShowMenu}
+                            key={showMenu}
+                        />
+                    )}
                 </AnimatePresence>
                 <Gallery />
                 <ConcertList gigs={allGigsData} />

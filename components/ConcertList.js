@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useClosingKey } from '../helpers/useClosingKey';
 import { AnimatePresence } from 'framer-motion';
+import Date from './date';
+import ArtistInfo from './ArtistInfo';
 import styles from '../styles/Concerts.module.css';
-import ArtistInfo from '../components/ArtistInfo';
-import Date from '../components/date';
 
 function ConcertList({ gigs }) {
     const [modal, setModal] = useState(false);
