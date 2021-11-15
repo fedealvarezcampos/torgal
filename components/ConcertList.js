@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react';
 import { useClosingKey } from '../helpers/useClosingKey';
 import { AnimatePresence } from 'framer-motion';
-import Date from './date';
+import DateConverter from './date';
 import ArtistInfo from './ArtistInfo';
 import styles from '../styles/Concerts.module.css';
 
 function ConcertList({ gigs }) {
     const [modal, setModal] = useState(false);
     const [modalData, setModalData] = useState([]);
+
+    const dateNow = new Date().toISOString();
 
     const handleModal = data => {
         setModal(true);
@@ -32,33 +34,40 @@ function ConcertList({ gigs }) {
                 style={{ backgroundImage: `url(./images/wallpaperFeather.webp)` }}
             >
                 <ul className={styles.gigList}>
-                    {gigs.map(gigs => (
-                        <li className={styles.gigItem} key={gigs.id}>
-                            <Date dateString={gigs.gigDate} />
-                            <span className={styles.gigArtist}>{gigs.artist}</span>
-                            <button className="button" onClick={() => handleModal(gigs)}>
-                                + INFO
-                            </button>
-                            <span className={styles.gigPrice}>{gigs.gigPrice}€</span>
-                            {gigs.gigLink !== 'soldout' ? (
-                                <a href={gigs.gigLink} target="_blank" rel="noreferrer">
-                                    <button
-                                        className={
-                                            gigs.gigLink === 'soldout'
-                                                ? `button ${styles.gigSoldOut}`
-                                                : 'button'
-                                        }
-                                    >
-                                        {gigs.gigLink === 'soldout' ? <span>SOLD OUT</span> : 'ENTRADAS'}
+                    {gigs.map(
+                        gigs =>
+                            gigs?.gigDate > dateNow && (
+                                <li className={styles.gigItem} key={gigs.id}>
+                                    <DateConverter dateString={gigs.gigDate} />
+                                    <span className={styles.gigArtist}>{gigs.artist}</span>
+                                    <button className="button" onClick={() => handleModal(gigs)}>
+                                        + INFO
                                     </button>
-                                </a>
-                            ) : (
-                                <button className={styles.gigSoldOut}>
-                                    <span>SOLD OUT</span>
-                                </button>
-                            )}
-                        </li>
-                    ))}
+                                    <span className={styles.gigPrice}>{gigs.gigPrice}€</span>
+                                    {gigs.gigLink !== 'soldout' ? (
+                                        <a href={gigs.gigLink} target="_blank" rel="noreferrer">
+                                            <button
+                                                className={
+                                                    gigs.gigLink === 'soldout'
+                                                        ? `button ${styles.gigSoldOut}`
+                                                        : 'button'
+                                                }
+                                            >
+                                                {gigs.gigLink === 'soldout' ? (
+                                                    <span>SOLD OUT</span>
+                                                ) : (
+                                                    'ENTRADAS'
+                                                )}
+                                            </button>
+                                        </a>
+                                    ) : (
+                                        <button className={styles.gigSoldOut}>
+                                            <span>SOLD OUT</span>
+                                        </button>
+                                    )}
+                                </li>
+                            )
+                    )}
                 </ul>
             </div>
         </>
