@@ -2,7 +2,7 @@ import useCheckMobile from '../helpers/useCheckMobile';
 import { motion } from 'framer-motion';
 import styles from '../styles/ArtistInfo.module.css';
 
-function ArtistInfo({ gigs, setModal, modal }) {
+function ArtistInfo({ gigs, setModal }) {
     const mobile = useCheckMobile();
 
     return (
@@ -33,10 +33,12 @@ function ArtistInfo({ gigs, setModal, modal }) {
                         // autoPlay="1"
                         allowFullScreen
                     />
-                    <div
-                        className={styles.image}
-                        style={{ backgroundImage: `url(images/artists/${gigs.id}.webp)` }}
-                    />
+                    {!mobile && (
+                        <div
+                            className={styles.image}
+                            style={{ backgroundImage: `url(images/artists/${gigs.id}.webp)` }}
+                        />
+                    )}
                     <div className={styles.bio}>{gigs.bio}</div>
                     <div className={styles.socials}>
                         {gigs.artistTW && (
