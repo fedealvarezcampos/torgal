@@ -1,134 +1,142 @@
 .container {
-    height: auto;
-    background-size: clamp(40rem, 140vw, 120%);
-    background-position: center center;
-    background-color: var(--wallpaper);
+	height: auto;
+	background-size: clamp(40rem, 140vw, 120%);
+	background-position: center center;
+	background-color: var(--wallpaper);
 }
 
 .gigList {
-    margin: 0;
-    padding: 2.5rem 0 2.5rem 0;
-    display: grid;
-    place-content: center;
-    list-style: none;
+	margin: 0;
+	padding: 2.5rem 0 2.5rem 0;
+	display: grid;
+	place-content: center;
+	list-style: none;
 }
 
 .gigItem {
-    display: grid;
-    grid: 1fr / 9.5rem clamp(13rem, 15vw, 16rem) auto auto auto;
-    align-items: center;
-    width: auto;
-    margin: 0.6rem;
-    padding: 1.5rem;
-    gap: 30px;
-    border-radius: 22px;
-    color: var(--base-font);
-    font-family: 'Cabin', sans-serif;
-    font-size: 1.6rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' width='100%25'%3E%3Cdefs%3E%3Cpattern id='doodad' width='30' height='30' viewBox='0 0 40 40' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'%3E%3Crect width='100%25' height='100%25' fill='rgba(43, 43, 43,1)'/%3E%3Cpath d='M-10-10h60v60h-60zM2 2v36h36v-36z' fill='rgba(39, 39, 39,1)'/%3E%3Cpath d='M-22-22h90v90h-90zM20 20v16h16v-16zM-20-20v16h16v-16zM20-20v16h16v-16zM-20 20v16h16v-16z' fill='rgba(39, 39, 39,1)'/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23doodad)' height='200%25' width='200%25'/%3E%3C/svg%3E ");
+	/* display: grid;
+	grid: 1fr / 9.5rem clamp(13rem, 15vw, 16rem) auto auto auto; */
+	display: flex;
+	align-items: center;
+	width: clamp(18rem, 70vw, 50rem);
+	margin: 0.6rem;
+	padding: 1.5rem;
+	gap: 30px;
+	border-radius: 22px;
+	color: var(--base-font);
+	font-family: 'Cabin', sans-serif;
+	font-size: 1.6rem;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' width='100%25'%3E%3Cdefs%3E%3Cpattern id='doodad' width='30' height='30' viewBox='0 0 40 40' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'%3E%3Crect width='100%25' height='100%25' fill='rgba(43, 43, 43,1)'/%3E%3Cpath d='M-10-10h60v60h-60zM2 2v36h36v-36z' fill='rgba(39, 39, 39,1)'/%3E%3Cpath d='M-22-22h90v90h-90zM20 20v16h16v-16zM-20-20v16h16v-16zM20-20v16h16v-16zM-20 20v16h16v-16z' fill='rgba(39, 39, 39,1)'/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23doodad)' height='200%25' width='200%25'/%3E%3C/svg%3E ");
 }
 
 .gigItem a {
-    color: var(--base-font);
-    text-decoration: none;
-    justify-self: end;
+	color: var(--base-font);
+	text-decoration: none;
+	justify-self: end;
+}
+
+.gigItem time {
+	min-width: 20%;
 }
 
 .gigArtist {
-    color: #e6c9b5;
-    font-weight: 800;
-    margin-right: auto;
+	color: #e6c9b5;
+	font-weight: 800;
+	margin-right: auto;
 }
 
 .gigPrice {
-    justify-self: end;
+	justify-self: end;
 }
 
 button.gigSoldOut {
-    cursor: auto;
-    border: 5px solid var(--bg-color);
+	cursor: auto;
+	border: 5px solid var(--bg-color);
 }
 
 button.gigSoldOut:hover {
-    border: 5px solid var(--bg-color);
-    transform: translateY(0px);
+	border: 5px solid var(--bg-color);
+	transform: translateY(0px);
 }
 
 button.gigSoldOut:active {
-    border: 5px solid var(--bg-color);
-    transform: translateY(0px);
+	border: 5px solid var(--bg-color);
+	transform: translateY(0px);
 }
 
 @media (max-width: 1200px) {
-    .gigList {
-        padding: 1.5rem 0 1.5rem 0;
-    }
+	.gigList {
+		padding: 1.5rem 0 1.5rem 0;
+	}
 
-    .gigItem {
-        display: grid;
-        grid: 1fr / 7rem 10rem 5rem auto 6.3rem;
-        gap: 1.6rem;
-        width: auto;
-        margin: 0.6rem;
-        padding: 1.2rem 1.5rem 1.2rem 1.5rem;
-        font-size: 1.2rem;
-    }
+	.gigItem {
+		/* display: grid; */
+		/* grid: 1fr / 7rem 10rem 5rem auto 6.3rem; */
+		gap: 1.6rem;
+		/* width: auto; */
+		margin: 0.6rem;
+		padding: 1.2rem 1.5rem 1.2rem 1.5rem;
+		font-size: 1.1rem;
+	}
 }
 
 @media (max-width: 900px) {
-    .gigList {
-        padding: 1.6rem 0 1.6rem 0;
-    }
+	.gigList {
+		padding: 1.6rem 0 1.6rem 0;
+	}
 
-    .gigItem {
-        grid: 1fr / 4rem auto 3.4rem 2rem 4.5rem;
-        gap: 1.5rem;
-        width: auto;
-        margin: 0.6rem;
-        padding: 1rem;
-        font-size: 0.8rem;
-    }
+	.gigItem {
+		/* grid: 1fr / 4rem auto 3.4rem 2rem 4.5rem; */
+		gap: 1.5rem;
+		/* width: auto; */
+		margin: 0.6rem;
+		padding: 1rem;
+		font-size: 0.8rem;
+	}
 
-    button.gigSoldOut {
-        border: 3px solid var(--bg-color);
-    }
+	button.gigSoldOut {
+		white-space: nowrap;
+		justify-content: center;
+		border: 3px solid var(--bg-color);
+	}
 
-    button.gigSoldOut:hover {
-        border: 3px solid var(--bg-color);
-    }
+	button.gigSoldOut:hover {
+		border: 3px solid var(--bg-color);
+	}
 
-    button.gigSoldOut:active {
-        border: 3px solid var(--bg-color);
-    }
+	button.gigSoldOut:active {
+		border: 3px solid var(--bg-color);
+	}
 }
 
 @media (max-width: 650px) {
-    .gigList {
-        padding: 0.6rem 0 0.6rem 0;
-    }
+	.gigList {
+		padding: 0.6rem 0 0.6rem 0;
+	}
 
-    .gigItem {
-        grid: 1fr / 2.7rem 20vw 2.6rem 1rem 3.4rem;
-        gap: 12px;
-        margin: 0.25rem;
-        padding: 0.5rem 0.6rem 0.5rem 0.6rem;
-        font-size: 0.5rem;
-        border-radius: 10px;
-    }
+	.gigItem {
+		/* grid: 1fr / 2.7rem 20vw 2.6rem 1rem 3.4rem; */
+		width: 90vw;
+		gap: 12px;
+		margin: 0.25rem;
+		padding: 0.5rem 0.6rem 0.5rem 0.6rem;
+		font-size: 0.5rem;
+		border-radius: 10px;
+	}
 
-    .gigArtist {
-        font-size: 0.6rem;
-    }
+	.gigArtist {
+		font-size: 0.6rem;
+	}
 
-    button.gigSoldOut {
-        width: fit-content;
-        border: 3px solid var(--bg-color);
-    }
+	button.gigSoldOut {
+		width: fit-content;
+		border: 3px solid var(--bg-color);
+	}
 
-    button.gigSoldOut:hover {
-        width: fit-content;
-        border: 3px solid var(--bg-color);
-    }
+	button.gigSoldOut:hover {
+		width: fit-content;
+		border: 3px solid var(--bg-color);
+	}
 }

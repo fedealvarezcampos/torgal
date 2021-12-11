@@ -2,208 +2,208 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
 
 @font-face {
-    font-family: Adam;
-    src: url('../public/font/adam.otf') format('opentype');
-    font-display: swap;
+	font-family: Adam;
+	src: url('../public/font/adam.otf') format('opentype');
+	font-display: swap;
 }
 
 :root {
-    --base-font: #e9e9e9;
-    --bg-color: #512424;
-    --dark-item: #272727;
-    --light-green: #7a9e9c;
-    --wallpaper: #1c4a47;
-    --pink: #d5a18e;
-    --cream: #f4dba4;
+	--base-font: #e9e9e9;
+	--bg-color: #512424;
+	--dark-item: #272727;
+	--light-green: #7a9e9c;
+	--wallpaper: #1c4a47;
+	--pink: #d5a18e;
+	--cream: #f4dba4;
 }
 
 html,
 body {
-    padding: 0;
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
-        Droid Sans, Helvetica Neue, sans-serif;
-    line-height: 1.6;
-    font-size: 18px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' width='100%25'%3E%3Cdefs%3E%3Cpattern id='doodad' width='100' height='100' viewBox='0 0 40 40' patternUnits='userSpaceOnUse' patternTransform='rotate(127)'%3E%3Crect width='100%25' height='100%25' fill='rgba(81, 36, 36,1)'/%3E%3Cpath d='M20 20l20-20v12L20 32z' fill='rgba(83, 39, 39,1)' filter='url(%23filter-doodad-1)'/%3E%3Cpath d='M40 0L60 20v12L40 12zM0 0L20 20v12L0 12z ' fill='rgba(90, 42, 42,1)'/%3E%3C/pattern%3E%3Cfilter id='filter-doodad-1'%3E%3CfeTurbulence baseFrequency='0' numOctaves='2' type='fractalNoise' result='result1'/%3E%3CfeDisplacementMap in2='result1' scale='0' result='result2' xChannelSelector='R' in='SourceGraphic'/%3E%3CfeComposite in2='result2' in='SourceGraphic' operator='atop' result='fbSourceGraphic'/%3E%3C/filter%3E%3C/defs%3E%3Crect fill='url(%23doodad)' height='200%25' width='200%25'/%3E%3C/svg%3E ") !important;
-    background-repeat: no-repeat;
-    background-attachment: fixed !important;
+	padding: 0;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
+		Droid Sans, Helvetica Neue, sans-serif;
+	line-height: 1.6;
+	font-size: 18px;
+	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' width='100%25'%3E%3Cdefs%3E%3Cpattern id='doodad' width='100' height='100' viewBox='0 0 40 40' patternUnits='userSpaceOnUse' patternTransform='rotate(127)'%3E%3Crect width='100%25' height='100%25' fill='rgba(81, 36, 36,1)'/%3E%3Cpath d='M20 20l20-20v12L20 32z' fill='rgba(83, 39, 39,1)' filter='url(%23filter-doodad-1)'/%3E%3Cpath d='M40 0L60 20v12L40 12zM0 0L20 20v12L0 12z ' fill='rgba(90, 42, 42,1)'/%3E%3C/pattern%3E%3Cfilter id='filter-doodad-1'%3E%3CfeTurbulence baseFrequency='0' numOctaves='2' type='fractalNoise' result='result1'/%3E%3CfeDisplacementMap in2='result1' scale='0' result='result2' xChannelSelector='R' in='SourceGraphic'/%3E%3CfeComposite in2='result2' in='SourceGraphic' operator='atop' result='fbSourceGraphic'/%3E%3C/filter%3E%3C/defs%3E%3Crect fill='url(%23doodad)' height='200%25' width='200%25'/%3E%3C/svg%3E ") !important;
+	background-repeat: no-repeat;
+	background-attachment: fixed !important;
 }
 
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 a {
-    color: #0070f3;
-    text-decoration: none;
+	color: #0070f3;
+	text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
 button {
-    cursor: pointer;
-    justify-self: end;
-    width: auto;
-    padding: 0.6rem 0.7rem 0.6rem 0.7rem;
-    border-radius: 12px;
-    box-sizing: border-box;
-    color: var(--base-font);
-    font-family: 'Cabin', sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    letter-spacing: 0.075em;
-    line-height: 1;
-    border: 5px solid var(--light-green);
-    background: #1f1f1f;
-    transition: border 150ms ease-in-out;
+	cursor: pointer;
+	/* justify-self: end; */
+	width: auto;
+	padding: 0.6rem 0.7rem 0.6rem 0.7rem;
+	border-radius: 12px;
+	box-sizing: border-box;
+	color: var(--base-font);
+	font-family: 'Cabin', sans-serif;
+	font-weight: 700;
+	font-size: 1rem;
+	letter-spacing: 0.075em;
+	line-height: 1;
+	border: 5px solid var(--light-green);
+	background: #1f1f1f;
+	transition: border 150ms ease-in-out;
 }
 
 button:hover {
-    border: 5px solid var(--pink);
-    transform: translateY(-1px);
-    transition: all 200ms ease-in-out;
+	border: 5px solid var(--pink);
+	transform: translateY(-1px);
+	transition: all 200ms ease-in-out;
 }
 
 button:active {
-    border: 5px solid var(--pink);
-    transform: translateY(2px);
-    transition: all 20ms ease-in-out;
+	border: 5px solid var(--pink);
+	transform: translateY(2px);
+	transition: all 20ms ease-in-out;
 }
 
 .current {
-    border: 5px solid var(--pink);
-    transform: translateY(2px);
-    transition: all 20ms ease-in-out;
+	border: 5px solid var(--pink);
+	transform: translateY(2px);
+	transition: all 20ms ease-in-out;
 }
 
 .current:hover {
-    transform: translateY(2px);
+	transform: translateY(2px);
 }
 
 .exitButton {
-    position: relative;
-    margin: auto;
-    margin-bottom: 10px;
-    line-height: 1;
-    color: var(--cream);
-    z-index: 2000;
+	position: relative;
+	margin: auto;
+	margin-bottom: 10px;
+	line-height: 1;
+	color: var(--cream);
+	z-index: 2000;
 }
 
 .exitButton::before {
-    font-family: 'Roboto';
-    font-size: 1.5rem;
-    font-weight: 800;
-    content: 'X';
-    z-index: 2000;
+	font-family: 'Roboto';
+	font-size: 1.5rem;
+	font-weight: 800;
+	content: 'X';
+	z-index: 2000;
 }
 
 ::-webkit-scrollbar {
-    width: 15px;
+	width: 15px;
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--dark-item);
+	background: var(--dark-item);
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--wallpaper);
+	background-color: var(--wallpaper);
 }
 
 @media (max-width: 1200px) {
-    button {
-        font-size: 0.8rem;
-        width: auto;
-        padding: 0.5rem 0.7rem 0.5rem 0.7rem;
-        border-radius: 12px;
-    }
+	button {
+		font-size: 0.8rem;
+		/* width: fit-content; */
+		padding: 0.5rem 0.7rem 0.5rem 0.7rem;
+		border-radius: 12px;
+	}
 }
 
 @media (max-width: 900px) {
-    button {
-        font-size: clamp(0.4rem, 1.3vw, 1.2rem);
-        width: auto;
-        border: 3px solid var(--light-green);
-        padding: 0.5rem 0.4rem 0.4rem 0.4rem;
-    }
+	button {
+		white-space: nowrap;
+		font-size: clamp(0.4rem, 1.3vw, 1.2rem);
+		border: 3px solid var(--light-green);
+		padding: 0.5rem 0.4rem 0.4rem 0.4rem;
+	}
 
-    button:hover {
-        border: 3px solid var(--pink);
-        transform: translateY(-1px);
-        transition: all 200ms ease-in-out;
-    }
+	button:hover {
+		border: 3px solid var(--pink);
+		transform: translateY(-1px);
+		transition: all 200ms ease-in-out;
+	}
 
-    .current {
-        border: 3px solid var(--pink) !important;
-    }
+	.current {
+		border: 3px solid var(--pink) !important;
+	}
 }
 
 @media (max-width: 500px) {
-    html,
-    body {
-        background: unset !important;
-        background-color: var(--bg-color) !important;
-    }
+	html,
+	body {
+		background: unset !important;
+		background-color: var(--bg-color) !important;
+	}
 
-    button {
-        font-size: clamp(0.38rem, 0.5vw, 1rem);
-        width: auto;
-        border: 3px solid var(--light-green);
-        padding: 0.3rem 0.3rem 0.28rem 0.3rem;
-        border-radius: 8px;
-    }
+	button {
+		font-size: clamp(0.38rem, 0.5vw, 1rem);
+		width: auto;
+		border: 3px solid var(--light-green);
+		padding: 0.3rem 0.3rem 0.28rem 0.3rem;
+		border-radius: 8px;
+	}
 
-    button:hover {
-        border: 3px solid var(--light-green);
-        transform: none;
-        transition: all 200ms ease-in-out;
-    }
+	button:hover {
+		border: 3px solid var(--light-green);
+		transform: none;
+		transition: all 200ms ease-in-out;
+	}
 
-    button:active {
-        border: 3px solid var(--pink);
-        transform: none;
-        transition: all 200ms ease-in-out;
-    }
+	button:active {
+		border: 3px solid var(--pink);
+		transform: none;
+		transition: all 200ms ease-in-out;
+	}
 }
 
 .modalContainer {
-    position: absolute;
-    display: grid;
-    top: 0;
-    left: 0;
-    place-content: center;
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    z-index: 2400;
+	position: absolute;
+	display: grid;
+	top: 0;
+	left: 0;
+	place-content: center;
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	z-index: 2400;
 }
 
 @media (max-width: 500px) {
-    .modalContainer {
-        height: 100%;
-    }
+	.modalContainer {
+		height: 100%;
+	}
 }
 
 .modalBG {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(2px);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(2px);
 }
 
 /* Sorry, Google */
 
 .gmnoprint {
-    display: none !important;
+	display: none !important;
 }
 
 .gm-style-cc {
-    display: none !important;
+	display: none !important;
 }
 
 .gm-fullscreen-control {
-    background-color: var(--cream) !important;
+	background-color: var(--cream) !important;
 }
