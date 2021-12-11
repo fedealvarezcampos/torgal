@@ -118,7 +118,7 @@ button.gigSoldOut:active {
 
 	.gigItem {
 		/* grid: 1fr / 2.7rem 20vw 2.6rem 1rem 3.4rem; */
-		width: 90vw;
+		width: clamp(10rem, 90vw, 20rem);
 		gap: 12px;
 		margin: 0.25rem;
 		padding: 0.5rem 0.6rem 0.5rem 0.6rem;
