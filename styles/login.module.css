@@ -1,0 +1,31 @@
+.pageContainer {
+	display: flex;
+	place-content: center;
+	place-items: center;
+	width: 100vw;
+	height: 100vh;
+}
+
+.pageContainer > form {
+	display: flex;
+	width: clamp(10rem, 50vw, 20rem);
+	flex-direction: column;
+	font-family: 'Cabin', sans-serif;
+	font-weight: 700;
+	color: var(--base-font);
+	padding: 2.2rem 1.8rem;
+	gap: 1rem;
+	background-color: var(--dark-item);
+	border-radius: 20px;
+	border: 8px solid var(--base-font);
+}
+
+.pageContainer > form > label > span {
+	padding-right: 1rem;
+}
+
+.error {
+	color: var(--pink);
+	font-style: italic;
+	font-size: 0.9rem;
+}
