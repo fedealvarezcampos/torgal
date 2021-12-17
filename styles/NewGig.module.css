@@ -1,0 +1,102 @@
+.formsOuterContainer {
+	display: flex;
+	place-content: center;
+	height: 100vh;
+	width: 100vw;
+	color: var(--base-font);
+	font-weight: 700;
+	overflow-x: hidden;
+}
+
+.formsContainer {
+	display: flex;
+	flex-direction: column;
+	padding: 2rem;
+	margin: auto;
+	border-radius: 20px;
+	border: 5px solid var(--base-font);
+	width: clamp(20rem, 50vw, 40rem);
+	background-color: var(--dark-item);
+}
+
+.formsContainer > form {
+	display: flex;
+	flex-direction: column;
+	gap: 0.6rem;
+}
+
+.formsContainer h1 {
+	margin: 0 0 0.5rem;
+}
+
+.formsContainer label {
+	display: flex;
+	flex-direction: column;
+	width: 16rem;
+}
+
+.formsContainer input {
+	font-size: 0.8rem;
+	color: var(--base-font);
+	border-radius: 8px;
+	padding: 0.3rem 0.6rem 0.3rem 0.6rem;
+	border: 4px solid var(--base-font);
+	background-color: var(--dark-item);
+	transition: border 200ms;
+}
+
+.formsContainer textarea {
+	font-size: 0.8rem;
+	border-radius: 8px;
+	padding: 0.3rem 0.6rem 0.3rem 0.6rem;
+	color: var(--base-font);
+	border: 4px solid var(--base-font);
+	background-color: var(--dark-item);
+	transition: border 200ms;
+}
+
+.formsContainer button {
+	width: 5rem;
+	font-size: 1.2rem;
+	margin-top: 1rem;
+}
+
+.formsContainer [type='file'] {
+	display: none;
+	visibility: hidden;
+}
+
+.imageInputs label {
+	width: 10rem;
+	padding: 0.3rem 0.6rem 0.3rem 0.6rem;
+	color: var(--base-font);
+	border: 4px solid var(--base-font);
+	background-color: var(--dark-item);
+}
+
+.imageInputs label:hover {
+	width: 10rem;
+	cursor: pointer;
+	color: var(--base-font);
+	padding: 0.3rem 0.6rem 0.3rem 0.6rem;
+	border: 4px solid var(--cream);
+	background-color: var(--light-green);
+}
+
+.imageInputs span {
+	margin: auto;
+	padding-right: 0.15rem;
+}
+
+.imageContainer {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+}
+
+.imageContainer span {
+	position: relative !important;
+	width: 5rem !important;
+	height: 5rem !important;
+}
