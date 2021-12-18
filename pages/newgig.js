@@ -21,8 +21,8 @@ function NewGig() {
 	const [youtubeChannel, setYoutubeChannel] = useState('');
 	const [youtubeCode, setYoutubeCode] = useState('');
 	const [images, setImages] = useState([]);
+	const [soldout, setSoldout] = useState(false);
 
-	// console.log(gigDate);
 	useEffect(() => {
 		!user && router?.push('/');
 	}, []);
@@ -59,11 +59,6 @@ function NewGig() {
 				previewsArray.push({ preview: url, file: file, filePath: fileName });
 			}
 
-			if (images?.length + files?.length > 5) {
-				alert('Five images max!');
-				return;
-			}
-
 			setImages([...images, ...previewsArray]);
 		} catch (error) {
 			alert(error.message);
@@ -95,9 +90,9 @@ function NewGig() {
 				imgURL.push(fileName);
 			}
 
-			const { data, error } = await supabase.from('recipes').insert({
+			const { data, error } = await supabase.from('gigs').insert({
 				artist: artist,
-				images: imgURL,
+				image: imgURL,
 				bio: bio,
 				videoIntro: youtubeCode,
 				artistSite: site,
@@ -108,20 +103,14 @@ function NewGig() {
 				gigPrice: price,
 				gigLink: tickets,
 				gigDate: gigDate,
-				owner_id: user?.id,
+				soldout: soldout,
 			});
 
 			if (error) throw error;
 
-			const urlTitle = data[0]?.name.replaceAll(' ', '-');
-
-			router.push(data[0]?.id + '/' + urlTitle);
-
-			alert();
-			alert('Recipe added!');
+			alert('¡Concierto añadido!');
 		} catch (error) {
-			alert();
-			alert('Something went wrong!');
+			alert('¡Se pudrió todo!');
 		}
 	};
 
@@ -200,7 +189,6 @@ function NewGig() {
 									name="tickets"
 									id="tickets"
 									type="url"
-									required
 									placeholder="Link a entradas"
 									value={tickets}
 									onChange={e => setTickets(e.target.value)}
@@ -283,6 +271,17 @@ function NewGig() {
 									placeholder="You-Tube channel URL"
 									value={youtubeChannel}
 									onChange={e => setYoutubeChannel(e.target.value)}
+								/>
+							</label>
+							<label htmlFor="soldout">
+								<span>¿Soldout?</span>
+								<input
+									name="soldout"
+									id="soldout"
+									type="checkbox"
+									placeholder="You-Tube channel URL"
+									value={soldout}
+									onChange={() => setSoldout(!soldout)}
 								/>
 							</label>
 							<button aria-label="save new recipe">

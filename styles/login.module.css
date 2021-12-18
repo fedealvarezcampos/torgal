@@ -4,6 +4,7 @@
 	place-items: center;
 	width: 100vw;
 	height: 100vh;
+	color: var(--base-font);
 }
 
 .pageContainer > form {
@@ -12,7 +13,6 @@
 	flex-direction: column;
 	font-family: 'Cabin', sans-serif;
 	font-weight: 700;
-	color: var(--base-font);
 	padding: 2.2rem 1.8rem;
 	gap: 1rem;
 	background-color: var(--dark-item);

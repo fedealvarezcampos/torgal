@@ -50,16 +50,10 @@ function ConcertList({ gigs }) {
 										<a href={gigs.gigLink} target="_blank" rel="noreferrer">
 											<button
 												className={
-													gigs.gigLink === 'soldout'
-														? `button ${styles.gigSoldOut}`
-														: 'button'
+													gigs.soldout ? `button ${styles.gigSoldOut}` : 'button'
 												}
 											>
-												{gigs.gigLink === 'soldout' ? (
-													<span>SOLD OUT</span>
-												) : (
-													'ENTRADAS'
-												)}
+												{gigs.soldout ? <span>SOLD OUT</span> : 'ENTRADAS'}
 											</button>
 										</a>
 									) : (

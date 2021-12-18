@@ -1,15 +1,20 @@
 import { useRouter } from 'next/dist/client/router';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabaseClient';
 import styles from '../styles/login.module.css';
 
 function Login({ modal, setModal }) {
 	const router = useRouter();
+	const user = supabase?.auth.user();
 
 	const [loading, setLoading] = useState(false);
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [error, setError] = useState('');
+
+	useEffect(() => {
+		user && router?.push('/newgig');
+	}, []);
 
 	const handleLogin = async e => {
 		e.preventDefault();
@@ -31,31 +36,35 @@ function Login({ modal, setModal }) {
 
 	return (
 		<div className={styles.pageContainer}>
-			<form onSubmit={e => handleLogin(e)}>
-				<span>Log-in</span>
-				{error && <span className={styles.error}>{error}</span>}
-				<label>
-					<span>Email</span>
-					<input
-						name="email"
-						type="email"
-						placeholder="Your email"
-						value={email}
-						onChange={e => setEmail(e.target.value)}
-					/>
-				</label>
-				<label>
-					<span>Password</span>
-					<input
-						name="password"
-						type="password"
-						placeholder="Your pass"
-						value={password}
-						onChange={e => setPassword(e.target.value)}
-					/>
-				</label>
-				<button>{loading ? 'Entrando...' : 'Entrar'}</button>
-			</form>
+			{!user ? (
+				<form onSubmit={e => handleLogin(e)}>
+					<span>Log-in</span>
+					{error && <span className={styles.error}>{error}</span>}
+					<label>
+						<span>Email</span>
+						<input
+							name="email"
+							type="email"
+							placeholder="Your email"
+							value={email}
+							onChange={e => setEmail(e.target.value)}
+						/>
+					</label>
+					<label>
+						<span>Password</span>
+						<input
+							name="password"
+							type="password"
+							placeholder="Your pass"
+							value={password}
+							onChange={e => setPassword(e.target.value)}
+						/>
+					</label>
+					<button>{loading ? 'Entrando...' : 'Entrar'}</button>
+				</form>
+			) : (
+				<div>Loading...</div>
+			)}
 		</div>
 	);
 }
