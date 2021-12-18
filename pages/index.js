@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import { useClosingKey } from '../helpers/useClosingKey';
 import { AnimatePresence } from 'framer-motion';
 import { supabase } from '../lib/supabaseClient';
-import useSWR from 'swr';
 import Home from '../components/Home';
 import Header from '../components/Header';
 import About from '../components/About';
