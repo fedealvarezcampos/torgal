@@ -166,6 +166,10 @@ button:active {
 		transform: none;
 		transition: all 200ms ease-in-out;
 	}
+
+	::-webkit-scrollbar {
+		width: 5px;
+	}
 }
 
 .modalContainer {
