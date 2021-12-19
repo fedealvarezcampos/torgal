@@ -12,11 +12,9 @@ import Products from '../components/Products';
 import ConcertList from '../components/ConcertList';
 import NewsletterForm from '../components/Newsletter';
 import Layout, { siteTitle } from '../components/layout';
-import { getSortedGigsData } from '../lib/gigs';
 import { getCocktails } from '../lib/products';
 
 export async function getStaticProps() {
-	const result = await getSortedGigsData();
 	const rescocktails = await getCocktails();
 	const cocktails = JSON.parse(JSON.stringify(rescocktails));
 
