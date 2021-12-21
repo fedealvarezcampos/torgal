@@ -27,24 +27,8 @@ export async function getStaticProps() {
 
 export default function MainSite({ cocktails }) {
 	const [showMenu, setShowMenu] = useState(false);
-	const [allGigsData, setAllGigsData] = useState([]);
 
 	useClosingKey('Escape', showMenu, setShowMenu);
-
-	const getGigs = async () => {
-		try {
-			let { data: allGigsData, error } = await supabase.from('gigs').select('*');
-			if (error) throw error;
-
-			setAllGigsData(allGigsData);
-		} catch (error) {
-			console.log(error.message);
-		}
-	};
-
-	useEffect(() => {
-		getGigs();
-	}, []);
 
 	useEffect(() => {
 		showMenu && document.body.setAttribute('style', `overflow: hidden; margin-right: 15px;`);
@@ -74,7 +58,7 @@ export default function MainSite({ cocktails }) {
 					)}
 				</AnimatePresence>
 				<Gallery />
-				<ConcertList gigs={allGigsData} />
+				<ConcertList />
 			</main>
 			<footer>
 				<NewsletterForm />

@@ -1,19 +1,19 @@
 .container {
-    width: clamp(55rem, 60vw, 80rem);
-    padding: 0 0.8rem 2.5rem 0.8rem;
-    margin: 2.2rem auto 0;
+	width: clamp(55rem, 65vw, 80rem);
+	padding: 0 0.8rem 2.5rem 0.8rem;
+	margin: 2.2rem auto 0;
 }
 
 @media (max-width: 1200px) {
-    .container {
-        width: 90vw;
-    }
+	.container {
+		width: 90vw;
+	}
 }
 
 @media (max-width: 500px) {
-    .container {
-        width: 100vw;
-        padding: 0;
-        margin: 1rem auto 0;
-    }
+	.container {
+		width: 100vw;
+		padding: 0;
+		margin: 1rem auto 0;
+	}
 }

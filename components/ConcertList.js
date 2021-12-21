@@ -1,15 +1,32 @@
 import { useEffect, useState } from 'react';
+import { supabase } from '../lib/supabaseClient';
 import { useClosingKey } from '../helpers/useClosingKey';
 import { AnimatePresence } from 'framer-motion';
 import DateConverter from './date';
 import ArtistInfo from './ArtistInfo';
 import styles from '../styles/Concerts.module.css';
 
-function ConcertList({ gigs }) {
+function ConcertList() {
 	const [modal, setModal] = useState(false);
 	const [modalData, setModalData] = useState([]);
+	const [gigs, setGigs] = useState([]);
 
 	const dateNow = new Date().toISOString();
+
+	const getGigs = async () => {
+		try {
+			let { data: allGigsData, error } = await supabase.from('gigs').select('*');
+			if (error) throw error;
+
+			setGigs(allGigsData);
+		} catch (error) {
+			console.log(error.message);
+		}
+	};
+
+	useEffect(() => {
+		getGigs();
+	}, []);
 
 	const handleModal = data => {
 		setModal(true);
