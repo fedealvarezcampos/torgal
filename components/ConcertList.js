@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '../lib/supabaseClient';
 import { useClosingKey } from '../helpers/useClosingKey';
-import { AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import DateConverter from './date';
 import ArtistInfo from './ArtistInfo';
 import styles from '../styles/Concerts.module.css';
 
 function ConcertList() {
+	const [loading, setLoading] = useState(false);
 	const [modal, setModal] = useState(false);
 	const [modalData, setModalData] = useState([]);
 	const [gigs, setGigs] = useState([]);
@@ -15,12 +16,16 @@ function ConcertList() {
 
 	const getGigs = async () => {
 		try {
+			setLoading(true);
+
 			let { data: allGigsData, error } = await supabase.from('gigs').select('*');
 			if (error) throw error;
 
 			setGigs(allGigsData);
 		} catch (error) {
 			console.log(error.message);
+		} finally {
+			setLoading(false);
 		}
 	};
 
@@ -51,10 +56,16 @@ function ConcertList() {
 				style={{ backgroundImage: `url(./images/wallpaperFeather.webp)` }}
 			>
 				<ul className={styles.gigList}>
+					{loading && <span className={styles.loadingMsg}>CARGANDO...</span>}
 					{gigs.map(
 						gigs =>
 							gigs?.gigDate > dateNow && (
-								<li className={styles.gigItem} key={gigs.id}>
+								<motion.li
+									initial={{ opacity: 0 }}
+									animate={{ opacity: 1 }}
+									className={styles.gigItem}
+									key={gigs.id}
+								>
 									<DateConverter dateString={gigs.gigDate} />
 									<span className={styles.gigArtist}>{gigs.artist}</span>
 									{gigs.bio && (
@@ -78,7 +89,7 @@ function ConcertList() {
 											<span>SOLD OUT</span>
 										</button>
 									)}
-								</li>
+								</motion.li>
 							)
 					)}
 				</ul>

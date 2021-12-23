@@ -1,4 +1,6 @@
 .container {
+	display: flex;
+	place-content: center;
 	height: auto;
 	background-size: clamp(40rem, 140vw, 120%);
 	background-position: center center;
@@ -47,6 +49,12 @@
 
 .gigPrice {
 	justify-self: end;
+}
+
+.loadingMsg {
+	color: var(--base-font);
+	font-size: 1.4rem;
+	font-weight: 700;
 }
 
 button.gigSoldOut {
