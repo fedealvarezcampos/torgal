@@ -1,6 +1,8 @@
 .formsOuterContainer {
 	display: flex;
-	place-content: center;
+	flex-direction: column;
+	place-content: flex-start;
+	gap: 0.6rem;
 	padding: 2rem 0;
 	height: 100vh;
 	width: 100vw;
@@ -102,6 +104,27 @@
 	position: relative !important;
 	width: 5rem !important;
 	height: 5rem !important;
+}
+
+.concertsTitle {
+	display: flex;
+	place-content: center;
+	color: var(--base-font);
+	font-weight: 600;
+	font-size: 2rem;
+}
+
+.concertContainer {
+	display: flex;
+	gap: 1rem;
+	margin: auto;
+	place-content: space-evenly;
+	place-items: center;
+	padding: 1rem;
+	width: clamp(15rem, 70vw, 45rem);
+	color: var(--base-font);
+	font-family: 'Cabin', sans-serif;
+	background-color: var(--dark-item);
 }
 
 @media (max-width: 800px) {

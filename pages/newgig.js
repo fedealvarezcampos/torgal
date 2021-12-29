@@ -9,6 +9,8 @@ function NewGig() {
 	const router = useRouter();
 	const user = supabase?.auth.user();
 
+	const [concerts, setConcerts] = useState([]);
+
 	const [artist, setArtist] = useState('');
 	const [bio, setBio] = useState('');
 	const [gigDate, setGigDate] = useState('');
@@ -25,6 +27,21 @@ function NewGig() {
 
 	useEffect(() => {
 		!user && router?.push('/');
+	}, []);
+
+	const getConcerts = async () => {
+		try {
+			let { data: allGigsData, error } = await supabase.from('gigs').select('*');
+			if (error) throw error;
+
+			setConcerts(allGigsData);
+		} catch (error) {
+			console.log(error.message);
+		}
+	};
+
+	useEffect(() => {
+		getConcerts();
 	}, []);
 
 	async function setPreviews(e) {
@@ -90,7 +107,7 @@ function NewGig() {
 				imgURL.push(fileName);
 			}
 
-			const { data, error } = await supabase.from('gigs').insert({
+			const { error } = await supabase.from('gigs').insert({
 				artist: artist,
 				image: imgURL,
 				bio: bio,
@@ -117,179 +134,192 @@ function NewGig() {
 	return (
 		<>
 			{user && (
-				<div className={styles.formsOuterContainer}>
-					<div className={styles.formsContainer}>
-						<h1>Añadir concierto</h1>
-						<form action="" onSubmit={e => handleSubmit(e)} className={styles.recipeForm}>
-							<label htmlFor="artist">
-								<span>Artista</span>
-								<input
-									name="artist"
-									id="artist"
-									type="text"
-									required
-									placeholder="Artista"
-									value={artist}
-									onChange={e => setArtist(e.target.value)}
-								/>
-							</label>
-							<span className={styles.imageInputs}>
-								<label htmlFor="file">
-									<span>Subir imagen</span>
+				<>
+					<div className={styles.formsOuterContainer}>
+						<span className={styles.concertsTitle}>Conciertos añadidos: </span>
+						<ul>
+							{concerts.map(e => (
+								<li className={styles.concertContainer}>
+									<span>{e.artist}</span>
+									<span>{e.gigDate}</span>
+									<button>Marcar como soldout</button>
+									<button>Eliminar evento</button>
+								</li>
+							))}
+						</ul>
+						<div className={styles.formsContainer}>
+							<h1>Añadir concierto</h1>
+							<form action="" onSubmit={e => handleSubmit(e)} className={styles.recipeForm}>
+								<label htmlFor="artist">
+									<span>Artista</span>
 									<input
-										type="file"
-										name="file"
+										name="artist"
+										id="artist"
+										type="text"
 										required
-										accept="image/jpeg, image/png, image/webp"
-										id="file"
-										onChange={setPreviews}
+										placeholder="Artista"
+										value={artist}
+										onChange={e => setArtist(e.target.value)}
 									/>
 								</label>
-							</span>
-							{images?.length !== 0 && (
-								<div className={styles.imageContainer}>
-									{images?.map((image, i) => (
-										<Image
-											key={i}
-											src={image?.preview}
-											layout="fill"
-											alt="image in board"
-											quality={70}
-											objectFit="cover"
-											onClick={() => removeImgPreview(image?.preview)}
+								<span className={styles.imageInputs}>
+									<label htmlFor="file">
+										<span>Subir imagen</span>
+										<input
+											type="file"
+											name="file"
+											required
+											accept="image/jpeg, image/png, image/webp"
+											id="file"
+											onChange={setPreviews}
 										/>
-									))}
-								</div>
-							)}
-							<label htmlFor="bio">
-								<span>Biografía</span>
-								<textarea
-									name="bio"
-									id="bio"
-									type="textarea"
-									required
-									placeholder="Biografía"
-									value={bio}
-									onChange={e => setBio(e.target.value)}
-								/>
-							</label>
-							<label htmlFor="gigDate">
-								<span>Fecha</span>
-								<input
-									name="gigDate"
-									id="gigDate"
-									type="date"
-									value={gigDate}
-									onChange={e => setGigDate(e.target.value)}
-								/>
-							</label>
-							<label htmlFor="tickets">
-								<span>URL entradas</span>
-								<input
-									name="tickets"
-									id="tickets"
-									type="url"
-									placeholder="Link a entradas"
-									value={tickets}
-									onChange={e => setTickets(e.target.value)}
-								/>
-							</label>
-							<label htmlFor="price">
-								<span>Precio (sólo número)</span>
-								<input
-									name="price"
-									id="price"
-									type="number"
-									required
-									placeholder="Precio"
-									value={price}
-									onChange={e => setPrice(e.target.value)}
-								/>
-							</label>
-							<label htmlFor="youtubevideo">
-								<span>Vídeo del artista (sólo código YT)</span>
-								<input
-									name="youtubevideo"
-									id="youtubevideo"
-									required
-									type="text"
-									placeholder="You-Tube preview"
-									value={youtubeCode}
-									onChange={e => setYoutubeCode(e.target.value)}
-								/>
-							</label>
-							<label htmlFor="site">
-								<span>Web del artista</span>
-								<input
-									name="site"
-									id="site"
-									type="url"
-									placeholder="URL"
-									value={site}
-									onChange={e => setSite(e.target.value)}
-								/>
-							</label>
-							<label htmlFor="twitter">
-								<span>Twitter</span>
-								<input
-									name="twitter"
-									id="twitter"
-									type="url"
-									placeholder="Twitter URL"
-									value={twitter}
-									onChange={e => setTwitter(e.target.value)}
-								/>
-							</label>
-							<label htmlFor="instagram">
-								<span>Instagram</span>
-								<input
-									name="instagram"
-									id="instagram"
-									type="url"
-									placeholder="Instagram URL"
-									value={instagram}
-									onChange={e => setInstagram(e.target.value)}
-								/>
-							</label>
-							<label htmlFor="spotify">
-								<span>Spotify</span>
-								<input
-									name="spotify"
-									id="spotify"
-									type="url"
-									placeholder="Spotify profile URL"
-									value={spotify}
-									onChange={e => setSpotify(e.target.value)}
-								/>
-							</label>
-							<label htmlFor="youtubechannel">
-								<span>Youtube channel</span>
-								<input
-									name="youtubechannel"
-									id="youtubechannel"
-									type="url"
-									placeholder="You-Tube channel URL"
-									value={youtubeChannel}
-									onChange={e => setYoutubeChannel(e.target.value)}
-								/>
-							</label>
-							<label htmlFor="soldout">
-								<span>¿Soldout?</span>
-								<input
-									name="soldout"
-									id="soldout"
-									type="checkbox"
-									placeholder="You-Tube channel URL"
-									value={soldout}
-									onChange={() => setSoldout(!soldout)}
-								/>
-							</label>
-							<button aria-label="save new recipe">
-								<span>save</span>
-							</button>
-						</form>
+									</label>
+								</span>
+								{images?.length !== 0 && (
+									<div className={styles.imageContainer}>
+										{images?.map((image, i) => (
+											<Image
+												key={i}
+												src={image?.preview}
+												layout="fill"
+												alt="image in board"
+												quality={70}
+												objectFit="cover"
+												onClick={() => removeImgPreview(image?.preview)}
+											/>
+										))}
+									</div>
+								)}
+								<label htmlFor="bio">
+									<span>Biografía</span>
+									<textarea
+										name="bio"
+										id="bio"
+										type="textarea"
+										required
+										placeholder="Biografía"
+										value={bio}
+										onChange={e => setBio(e.target.value)}
+									/>
+								</label>
+								<label htmlFor="gigDate">
+									<span>Fecha</span>
+									<input
+										name="gigDate"
+										id="gigDate"
+										type="date"
+										value={gigDate}
+										onChange={e => setGigDate(e.target.value)}
+									/>
+								</label>
+								<label htmlFor="tickets">
+									<span>URL entradas</span>
+									<input
+										name="tickets"
+										id="tickets"
+										type="url"
+										placeholder="Link a entradas"
+										value={tickets}
+										onChange={e => setTickets(e.target.value)}
+									/>
+								</label>
+								<label htmlFor="price">
+									<span>Precio (sólo número)</span>
+									<input
+										name="price"
+										id="price"
+										type="number"
+										required
+										placeholder="Precio"
+										value={price}
+										onChange={e => setPrice(e.target.value)}
+									/>
+								</label>
+								<label htmlFor="youtubevideo">
+									<span>Vídeo del artista (sólo código YT)</span>
+									<input
+										name="youtubevideo"
+										id="youtubevideo"
+										required
+										type="text"
+										placeholder="You-Tube preview"
+										value={youtubeCode}
+										onChange={e => setYoutubeCode(e.target.value)}
+									/>
+								</label>
+								<label htmlFor="site">
+									<span>Web del artista</span>
+									<input
+										name="site"
+										id="site"
+										type="url"
+										placeholder="URL"
+										value={site}
+										onChange={e => setSite(e.target.value)}
+									/>
+								</label>
+								<label htmlFor="twitter">
+									<span>Twitter</span>
+									<input
+										name="twitter"
+										id="twitter"
+										type="url"
+										placeholder="Twitter URL"
+										value={twitter}
+										onChange={e => setTwitter(e.target.value)}
+									/>
+								</label>
+								<label htmlFor="instagram">
+									<span>Instagram</span>
+									<input
+										name="instagram"
+										id="instagram"
+										type="url"
+										placeholder="Instagram URL"
+										value={instagram}
+										onChange={e => setInstagram(e.target.value)}
+									/>
+								</label>
+								<label htmlFor="spotify">
+									<span>Spotify</span>
+									<input
+										name="spotify"
+										id="spotify"
+										type="url"
+										placeholder="Spotify profile URL"
+										value={spotify}
+										onChange={e => setSpotify(e.target.value)}
+									/>
+								</label>
+								<label htmlFor="youtubechannel">
+									<span>Youtube channel</span>
+									<input
+										name="youtubechannel"
+										id="youtubechannel"
+										type="url"
+										placeholder="You-Tube channel URL"
+										value={youtubeChannel}
+										onChange={e => setYoutubeChannel(e.target.value)}
+									/>
+								</label>
+								<label htmlFor="soldout">
+									<span>¿Soldout?</span>
+									<input
+										name="soldout"
+										id="soldout"
+										type="checkbox"
+										placeholder="You-Tube channel URL"
+										value={soldout}
+										onChange={() => setSoldout(!soldout)}
+									/>
+								</label>
+								<button aria-label="save new recipe">
+									<span>save</span>
+								</button>
+							</form>
+						</div>
 					</div>
-				</div>
+				</>
 			)}
 		</>
 	);
