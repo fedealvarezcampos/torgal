@@ -131,19 +131,31 @@ function NewGig() {
 		}
 	};
 
+	const deleteGig = async id => {
+		try {
+			const { error } = await supabase.from('gigs').delete().eq('id', id);
+
+			if (error) throw error;
+
+			alert('Concierto eliminado!');
+		} catch (error) {
+			alert(error.message);
+		}
+	};
+
 	return (
 		<>
 			{user && (
 				<>
 					<div className={styles.formsOuterContainer}>
 						<span className={styles.concertsTitle}>Conciertos añadidos: </span>
-						<ul>
+						<ul className={styles.concertListContainer}>
 							{concerts.map(e => (
-								<li className={styles.concertContainer}>
+								<li key={e.id} className={styles.concertContainer}>
 									<span>{e.artist}</span>
 									<span>{e.gigDate}</span>
 									<button>Marcar como soldout</button>
-									<button>Eliminar evento</button>
+									<button onClick={() => deleteGig(e.id)}>Eliminar evento</button>
 								</li>
 							))}
 						</ul>
@@ -168,7 +180,6 @@ function NewGig() {
 										<input
 											type="file"
 											name="file"
-											required
 											accept="image/jpeg, image/png, image/webp"
 											id="file"
 											onChange={setPreviews}

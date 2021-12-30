@@ -2,7 +2,7 @@
 	display: flex;
 	flex-direction: column;
 	place-content: flex-start;
-	gap: 0.6rem;
+	gap: 1.5rem;
 	padding: 2rem 0;
 	height: 100vh;
 	width: 100vw;
@@ -18,7 +18,7 @@
 	margin: auto;
 	border-radius: 20px;
 	border: 5px solid var(--base-font);
-	width: clamp(20rem, 50vw, 40rem);
+	width: clamp(20rem, 62vw, 40rem);
 	background-color: var(--dark-item);
 }
 
@@ -114,14 +114,20 @@
 	font-size: 2rem;
 }
 
+.concertListContainer {
+	margin: 0;
+	padding: 0;
+}
+
 .concertContainer {
 	display: flex;
 	gap: 1rem;
 	margin: auto;
-	place-content: space-evenly;
+	place-content: space-between;
 	place-items: center;
-	padding: 1rem;
-	width: clamp(15rem, 70vw, 45rem);
+	padding: 1.4rem;
+	font-size: clamp(0.6rem, 2vw, 1rem);
+	width: clamp(20rem, 85vw, 45rem);
 	color: var(--base-font);
 	font-family: 'Cabin', sans-serif;
 	background-color: var(--dark-item);
