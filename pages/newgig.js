@@ -143,6 +143,18 @@ function NewGig() {
 		}
 	};
 
+	const setAsSoldout = async id => {
+		try {
+			const { error } = await supabase.from('gigs').update({ soldout: true }).eq('id', id);
+
+			if (error) throw error;
+
+			alert('Concierto marcado como soldout!');
+		} catch (error) {
+			alert(error.message);
+		}
+	};
+
 	return (
 		<>
 			{user && (
@@ -154,7 +166,7 @@ function NewGig() {
 								<li key={e.id} className={styles.concertContainer}>
 									<span>{e.artist}</span>
 									<span>{e.gigDate}</span>
-									<button>Marcar como soldout</button>
+									<button onClick={() => setAsSoldout(e.id)}>Marcar como soldout</button>
 									<button onClick={() => deleteGig(e.id)}>Eliminar evento</button>
 								</li>
 							))}

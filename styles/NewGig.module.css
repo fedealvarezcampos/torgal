@@ -121,7 +121,7 @@
 
 .concertContainer {
 	display: flex;
-	gap: 1rem;
+	gap: clamp(1rem, 2vw, 2rem);
 	margin: auto;
 	place-content: space-between;
 	place-items: center;
@@ -131,6 +131,10 @@
 	color: var(--base-font);
 	font-family: 'Cabin', sans-serif;
 	background-color: var(--dark-item);
+}
+
+.concertContainer button:nth-child(3) {
+	margin-left: auto;
 }
 
 @media (max-width: 800px) {
