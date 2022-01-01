@@ -1,4 +1,4 @@
-.formsOuterContainer {
+.outerContainer {
 	display: flex;
 	flex-direction: column;
 	place-content: flex-start;

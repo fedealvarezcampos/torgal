@@ -1,72 +1,18 @@
+import { useEffect } from 'react';
 import { useRouter } from 'next/dist/client/router';
-import { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabaseClient';
+import AdminLoginForm from '../components/AdminLoginForm';
 import styles from '../styles/login.module.css';
 
-function Login({ modal, setModal }) {
+function Login() {
 	const router = useRouter();
 	const user = supabase?.auth.user();
-
-	const [loading, setLoading] = useState(false);
-	const [email, setEmail] = useState('');
-	const [password, setPassword] = useState('');
-	const [error, setError] = useState('');
 
 	useEffect(() => {
 		user && router?.push('/newgig');
 	}, []);
 
-	const handleLogin = async e => {
-		e.preventDefault();
-		try {
-			setLoading(true);
-			const { error } = await supabase.auth.signIn({ email: email, password: password });
-
-			if (error) throw error;
-
-			router.push('/newgig');
-		} catch (error) {
-			setError(error.error_description || error.message);
-		} finally {
-			setLoading(false);
-		}
-	};
-
-	// useClosingKey('Escape', undefined, setModal);
-
-	return (
-		<div className={styles.pageContainer}>
-			{!user ? (
-				<form onSubmit={e => handleLogin(e)}>
-					<span>Log-in</span>
-					{error && <span className={styles.error}>{error}</span>}
-					<label>
-						<span>Email</span>
-						<input
-							name="email"
-							type="email"
-							placeholder="Your email"
-							value={email}
-							onChange={e => setEmail(e.target.value)}
-						/>
-					</label>
-					<label>
-						<span>Password</span>
-						<input
-							name="password"
-							type="password"
-							placeholder="Your pass"
-							value={password}
-							onChange={e => setPassword(e.target.value)}
-						/>
-					</label>
-					<button>{loading ? 'Entrando...' : 'Entrar'}</button>
-				</form>
-			) : (
-				<div>Loading...</div>
-			)}
-		</div>
-	);
+	return <div className={styles.pageContainer}>{!user ? <AdminLoginForm /> : <div>Loading...</div>}</div>;
 }
 
 export default Login;
