@@ -150,12 +150,13 @@ function AddGigForm() {
 					</div>
 				)}
 				<label htmlFor="bio">
-					<span>Biografía</span>
+					<span>Biografía (máximo 430 chars)</span>
 					<textarea
 						name="bio"
 						id="bio"
 						type="textarea"
 						required
+						maxLength={430}
 						placeholder="Biografía"
 						value={bio}
 						onChange={e => setBio(e.target.value)}
