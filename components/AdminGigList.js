@@ -1,8 +1,11 @@
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { supabase } from '../lib/supabaseClient';
 import styles from '../styles/AddGigForm.module.css';
 
 function AdminGigList() {
+	const router = useRouter();
+
 	const [concerts, setConcerts] = useState([]);
 
 	const getConcerts = async () => {
@@ -44,8 +47,17 @@ function AdminGigList() {
 		}
 	};
 
+	const logOut = async () => {
+		await supabase.auth.signOut();
+
+		router.push('/login');
+	};
+
 	return (
 		<>
+			<button onClick={() => logOut()} className={styles.logOutButton}>
+				LOG OUT
+			</button>
 			<span className={styles.concertsTitle}>Conciertos añadidos: </span>
 			<ul className={styles.concertListContainer}>
 				{concerts.map(e => (

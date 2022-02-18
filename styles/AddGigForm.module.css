@@ -137,6 +137,11 @@
 	margin-left: auto;
 }
 
+.logOutButton {
+	place-self: center;
+	width: fit-content;
+}
+
 @media (max-width: 800px) {
 	.formsContainer {
 		padding: 1.6rem;

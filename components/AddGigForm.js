@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { supabase } from '../lib/supabaseClient';
 import Image from 'next/image';
 import styles from '../styles/AddGigForm.module.css';
 
@@ -101,7 +102,7 @@ function AddGigForm() {
 
 			alert('¡Concierto añadido!');
 		} catch (error) {
-			alert('¡Se pudrió todo!');
+			alert(error.message);
 		}
 	};
 
@@ -198,7 +199,6 @@ function AddGigForm() {
 					<input
 						name="youtubevideo"
 						id="youtubevideo"
-						required
 						type="text"
 						placeholder="You-Tube preview"
 						value={youtubeCode}
