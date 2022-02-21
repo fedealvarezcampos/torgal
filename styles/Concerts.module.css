@@ -52,6 +52,14 @@
 	justify-self: flex-end;
 }
 
+.gigButtonCol {
+	width: clamp(3rem, 12vw, 7.5rem);
+}
+
+.gigButtonCol button {
+	width: stretch;
+}
+
 .loadingMsg {
 	color: var(--base-font);
 	font-size: clamp(0.8rem, 2.8vw, 1.4rem);
@@ -84,7 +92,7 @@ button.gigSoldOut:active {
 		border-radius: 18px;
 		padding: 1.2rem 1.5rem 1.2rem 1.5rem;
 		font-size: 1.1rem;
-		width: clamp(38rem, 65vw, 48rem);
+		width: clamp(39rem, 70vw, 48rem);
 	}
 }
 
@@ -99,7 +107,8 @@ button.gigSoldOut:active {
 		padding: 1rem;
 		border-radius: 12px;
 		font-size: 0.8rem;
-		width: 70vw;
+		place-self: center;
+		width: 100%;
 	}
 
 	button.gigSoldOut {
@@ -136,12 +145,10 @@ button.gigSoldOut:active {
 	}
 
 	button.gigSoldOut {
-		width: fit-content;
 		border: 3px solid var(--bg-color);
 	}
 
 	button.gigSoldOut:hover {
-		width: fit-content;
 		border: 3px solid var(--bg-color);
 	}
 }

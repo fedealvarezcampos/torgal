@@ -18,7 +18,7 @@ function ConcertList() {
 		try {
 			setLoading(true);
 
-			let { data: allGigsData, error } = await supabase.from('gigs').select('*');
+			let { data: allGigsData, error } = await supabase.from('gigs').select('*').order('gigDate');
 			if (error) throw error;
 
 			setGigs(allGigsData);
@@ -74,21 +74,25 @@ function ConcertList() {
 										</button>
 									)}
 									<span className={styles.gigPrice}>{gigs.gigPrice}€</span>
-									{gigs.gigLink !== 'soldout' ? (
-										<a href={gigs.gigLink} target="_blank" rel="noreferrer">
-											<button
-												className={
-													gigs.soldout ? `button ${styles.gigSoldOut}` : 'button'
-												}
-											>
-												{gigs.soldout ? <span>SOLD OUT</span> : 'ENTRADAS'}
+									<div className={styles.gigButtonCol}>
+										{gigs.gigLink !== 'soldout' ? (
+											<a href={gigs.gigLink} target="_blank" rel="noreferrer">
+												<button
+													className={
+														gigs.soldout
+															? `button ${styles.gigSoldOut}`
+															: 'button'
+													}
+												>
+													{gigs.soldout ? <span>SOLD OUT</span> : 'ENTRADAS'}
+												</button>
+											</a>
+										) : (
+											<button className={styles.gigSoldOut}>
+												<span>SOLD OUT</span>
 											</button>
-										</a>
-									) : (
-										<button className={styles.gigSoldOut}>
-											<span>SOLD OUT</span>
-										</button>
-									)}
+										)}
+									</div>
 								</motion.li>
 							)
 					)}
