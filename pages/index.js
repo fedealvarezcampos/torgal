@@ -18,14 +18,17 @@ export async function getStaticProps() {
 	const rescocktails = await getCocktails();
 	const cocktails = JSON.parse(JSON.stringify(rescocktails));
 
+	let { data: gigs } = await supabase.from('gigs').select('*').order('gigDate');
+
 	return {
 		props: {
 			cocktails,
+			gigs,
 		},
 	};
 }
 
-export default function MainSite({ cocktails }) {
+export default function MainSite({ cocktails, gigs }) {
 	const [showMenu, setShowMenu] = useState(false);
 
 	useClosingKey('Escape', showMenu, setShowMenu);
@@ -58,7 +61,7 @@ export default function MainSite({ cocktails }) {
 					)}
 				</AnimatePresence>
 				<Gallery />
-				<ConcertList />
+				<ConcertList gigs={gigs} />
 			</main>
 			<footer>
 				<NewsletterForm />

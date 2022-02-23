@@ -6,32 +6,11 @@ import DateConverter from './date';
 import ArtistInfo from './ArtistInfo';
 import styles from '../styles/Concerts.module.css';
 
-function ConcertList() {
-	const [loading, setLoading] = useState(false);
+function ConcertList({ gigs }) {
 	const [modal, setModal] = useState(false);
 	const [modalData, setModalData] = useState([]);
-	const [gigs, setGigs] = useState([]);
 
 	const dateNow = new Date().toISOString();
-
-	const getGigs = async () => {
-		try {
-			setLoading(true);
-
-			let { data: allGigsData, error } = await supabase.from('gigs').select('*').order('gigDate');
-			if (error) throw error;
-
-			setGigs(allGigsData);
-		} catch (error) {
-			console.log(error.message);
-		} finally {
-			setLoading(false);
-		}
-	};
-
-	useEffect(() => {
-		getGigs();
-	}, []);
 
 	const handleModal = data => {
 		setModal(true);
@@ -56,7 +35,6 @@ function ConcertList() {
 				style={{ backgroundImage: `url(./images/wallpaperFeather.webp)` }}
 			>
 				<ul className={styles.gigList}>
-					{loading && <span className={styles.loadingMsg}>CARGANDO...</span>}
 					{gigs.map(
 						gigs =>
 							gigs?.gigDate > dateNow && (

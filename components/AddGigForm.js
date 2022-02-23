@@ -19,6 +19,8 @@ function AddGigForm() {
 	const [images, setImages] = useState([]);
 	const [soldout, setSoldout] = useState(false);
 
+	const revalidateSecret = process.env.NEXT_PUBLIC_REVALIDATESECRET;
+
 	async function setPreviews(e) {
 		e.preventDefault();
 		try {
@@ -100,6 +102,7 @@ function AddGigForm() {
 
 			if (error) throw error;
 
+			fetch(`/api/revalidate?secret=${revalidateSecret}`);
 			alert('¡Concierto añadido!');
 		} catch (error) {
 			alert(error.message);
