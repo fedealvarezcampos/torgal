@@ -1,5 +1,5 @@
 export default async function handler(req, res) {
-	if (req.query.secret !== process.env.NEXT_PUBLIC_REVALIDATESECRET) {
+	if (req.query.secret !== process.env.REVALIDATESECRET) {
 		return res.status(401).json({ message: 'Invalid token' });
 	}
 

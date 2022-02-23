@@ -8,8 +8,6 @@ function AdminGigList() {
 
 	const [concerts, setConcerts] = useState([]);
 
-	const revalidateSecret = process.env.NEXT_PUBLIC_REVALIDATESECRET;
-
 	const getConcerts = async () => {
 		try {
 			let { data: allGigsData, error } = await supabase.from('gigs').select('*');
@@ -31,7 +29,6 @@ function AdminGigList() {
 
 			if (error) throw error;
 
-			fetch(`/api/revalidate?secret=${revalidateSecret}`);
 			alert('Concierto eliminado!');
 		} catch (error) {
 			alert(error.message);
@@ -44,7 +41,6 @@ function AdminGigList() {
 
 			if (error) throw error;
 
-			fetch(`/api/revalidate?secret=${revalidateSecret}`);
 			alert('Concierto marcado como soldout!');
 		} catch (error) {
 			alert(error.message);
