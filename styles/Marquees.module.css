@@ -1,39 +1,43 @@
+.marquee {
+	overflow-y: hidden;
+}
+
 .imageContainer {
-    will-change: transform;
-    position: relative;
-    width: fit-content;
-    height: clamp(5rem, 22vw, 22rem);
+	will-change: transform;
+	position: relative;
+	width: fit-content;
+	height: clamp(5rem, 22vw, 22rem);
 }
 
 .imageContainer span {
-    position: relative !important;
-    width: fit-content !important;
-    height: 100% !important;
+	position: relative !important;
+	width: fit-content !important;
+	height: 100% !important;
 }
 
 .imageContainer img {
-    height: 100% !important;
+	height: 100% !important;
 }
 
 .drinkMenu {
-    overflow-x: hidden;
-    background-color: var(--pink);
-    font-family: 'Roboto', sans-serif;
-    font-size: clamp(0.8rem, 2vw, 2rem);
-    font-weight: 800;
-    color: var(--dark-item);
-    transition: all 250ms;
+	overflow-x: hidden;
+	background-color: var(--pink);
+	font-family: 'Roboto', sans-serif;
+	font-size: clamp(0.8rem, 2vw, 2rem);
+	font-weight: 800;
+	color: var(--dark-item);
+	transition: all 250ms;
 }
 
 .drinkMenu:hover {
-    cursor: pointer;
-    background-color: var(--cream);
-    transition: all 250ms;
+	cursor: pointer;
+	background-color: var(--cream);
+	transition: all 250ms;
 }
 
 .drinkMenuContent span {
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    position: relative;
+	display: flex;
+	align-items: center;
+	gap: 0.3rem;
+	position: relative;
 }
