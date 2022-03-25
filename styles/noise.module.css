@@ -24,6 +24,12 @@
 	animation-play-state: running;
 }
 
+@media (max-width: 800px) {
+	.noise::before {
+		background-size: 6%;
+	}
+}
+
 @keyframes noise {
 	0% {
 		transform: translate3d(0, 9rem, 0);
