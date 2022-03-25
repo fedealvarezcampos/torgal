@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useClosingKey } from '../helpers/useClosingKey';
 import { AnimatePresence } from 'framer-motion';
 import { supabase } from '../lib/supabaseClient';
+import { Noise } from '../components/noise';
 import Home from '../components/Home';
 import Header from '../components/Header';
 import About from '../components/About';
@@ -39,34 +40,37 @@ export default function MainSite({ cocktails, gigs }) {
 	}, [showMenu]);
 
 	return (
-		<Layout home>
-			<Head>
-				<title>{siteTitle}</title>
-				<meta property="og:title" content="Café & Pop Torgal" key="title" />
-			</Head>
-			<header>
-				<Header />
-				<Home />
-			</header>
-			<main>
-				<About setShowMenu={setShowMenu} />
-				<AnimatePresence exitBeforeEnter>
-					{showMenu && (
-						<Products
-							products={cocktails}
-							showMenu={showMenu}
-							setShowMenu={setShowMenu}
-							key={showMenu}
-						/>
-					)}
-				</AnimatePresence>
-				<Gallery />
-				<ConcertList gigs={gigs} />
-			</main>
-			<footer>
-				<NewsletterForm />
-				<Socials />
-			</footer>
-		</Layout>
+		<>
+			<Layout home>
+				<Head>
+					<title>{siteTitle}</title>
+					<meta property="og:title" content="Café & Pop Torgal" key="title" />
+				</Head>
+				<header>
+					<Header />
+					<Home />
+				</header>
+				<Noise />
+				<main>
+					<About setShowMenu={setShowMenu} />
+					<AnimatePresence exitBeforeEnter>
+						{showMenu && (
+							<Products
+								products={cocktails}
+								showMenu={showMenu}
+								setShowMenu={setShowMenu}
+								key={showMenu}
+							/>
+						)}
+					</AnimatePresence>
+					<Gallery />
+					<ConcertList gigs={gigs} />
+				</main>
+				<footer>
+					<NewsletterForm />
+					<Socials />
+				</footer>
+			</Layout>
+		</>
 	);
 }
