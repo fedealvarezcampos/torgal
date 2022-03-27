@@ -15,7 +15,12 @@ function ArtistInfo({ gigs, setModal }) {
 				key={setModal}
 			>
 				{mobile && <span className="exitButton" onClick={() => setModal(false)} />}
-				<div className="modalBG" onClick={() => setModal(false)} />
+				<motion.div
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					className="modalBG"
+					onClick={() => setModal(false)}
+				/>
 				<motion.div
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
@@ -38,7 +43,7 @@ function ArtistInfo({ gigs, setModal }) {
 					)}
 					{!mobile && (
 						<div
-							className={styles.image}
+							className={`${styles.image} ${styles.vhsfilter}`}
 							style={{ backgroundImage: `url(${supabaseHost + gigs?.image})` }}
 						/>
 					)}

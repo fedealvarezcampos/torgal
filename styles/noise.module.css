@@ -16,7 +16,7 @@
 	width: calc(100% + 20rem);
 	height: calc(100% + 20rem);
 	background-image: url('/images/noise-white.png');
-	opacity: 0.18;
+	opacity: 0.15;
 	background-position: 50%;
 	-webkit-animation: noise 1s steps(2) 0.01s infinite;
 	animation: noise 1.2s steps(2) 0.01s infinite;
