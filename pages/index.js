@@ -35,8 +35,8 @@ export default function MainSite({ cocktails, gigs }) {
 	useClosingKey('Escape', showMenu, setShowMenu);
 
 	useEffect(() => {
-		showMenu && document.body.setAttribute('style', `overflow: hidden; margin-right: 15px;`);
-		!showMenu && document.body.removeAttribute('style', `overflow: hidden; margin-right: 15px;`);
+		showMenu && document.body.setAttribute('style', `overflow: hidden; margin-right: 12px;`);
+		!showMenu && document.body.removeAttribute('style', `overflow: hidden; margin-right: 12px;`);
 	}, [showMenu]);
 
 	return (

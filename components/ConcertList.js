@@ -20,8 +20,8 @@ function ConcertList({ gigs }) {
 	useClosingKey('Escape', modal, setModal);
 
 	useEffect(() => {
-		modal && document.body.setAttribute('style', `overflow: hidden; margin-right: 15px;`);
-		!modal && document.body.removeAttribute('style', `overflow: hidden; margin-right: 15px;`);
+		modal && document.body.setAttribute('style', `overflow: hidden; margin-right: 12px;`);
+		!modal && document.body.removeAttribute('style', `overflow: hidden; margin-right: 12px;`);
 	}, [modal]);
 
 	return (
