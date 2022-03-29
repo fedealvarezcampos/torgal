@@ -1,10 +1,14 @@
+import { useState } from 'react';
 import useCheckMobile from '../helpers/useCheckMobile';
 import { supabaseHost } from '../lib/constants';
 import { motion } from 'framer-motion';
+import Spinner from './spinner';
 import styles from '../styles/ArtistInfo.module.css';
 
 function ArtistInfo({ gigs, setModal }) {
 	const mobile = useCheckMobile();
+
+	const [loading, setLoading] = useState(true);
 
 	return (
 		<>
@@ -28,13 +32,20 @@ function ArtistInfo({ gigs, setModal }) {
 					className={styles.contentContainer}
 				>
 					<p className={styles.artistName}>{gigs.artist}</p>
+					{loading && (
+						<div className={`${styles.youtube} ${styles.spinner}`}>
+							<Spinner />
+						</div>
+					)}
 					{gigs?.videoIntro && (
 						<iframe
+							className={styles.youtube}
 							src={`https://www.youtube.com/embed/${gigs.videoIntro}?&mute=1&loop=1&playlist=${gigs.videoIntro}`}
 							title="YouTube video player"
 							width="100%"
 							height="100%"
 							frameBorder="0"
+							onLoad={() => setLoading(false)}
 							// allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 							mute="1"
 							// autoPlay="1"
