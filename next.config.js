@@ -40,13 +40,6 @@ const securityHeaders = [
 	},
 ];
 
-// module.exports = {
-//     i18n: {
-//         locales: ['es'],
-//         defaultLocale: 'es',
-//     },
-// };
-
 module.exports = {
 	async headers() {
 		return [

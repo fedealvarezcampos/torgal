@@ -10,6 +10,7 @@ function ArtistInfo({ gigs, setModal }) {
 	const mobile = useCheckMobile();
 
 	const [loading, setLoading] = useState(true);
+	const [isImageLoading, setImageLoading] = useState(true);
 
 	return (
 		<>
@@ -56,12 +57,13 @@ function ArtistInfo({ gigs, setModal }) {
 					{!mobile && (
 						<div className={`${styles.image}`}>
 							<Image
-								width={100}
-								height={100}
 								objectFit="cover"
 								layout="fill"
+								className={isImageLoading ? styles.imageLoading : styles.imageLoaded}
+								quality={80}
 								src={supabaseHost + gigs?.image}
 								alt="artist"
+								onLoadingComplete={() => setImageLoading(false)}
 							/>
 						</div>
 					)}
