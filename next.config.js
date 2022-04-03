@@ -10,34 +10,34 @@ const ContentSecurityPolicy = `
 `;
 
 const securityHeaders = [
-    {
-        key: 'Content-Security-Policy',
-        value: ContentSecurityPolicy.replace(/\n/g, ''),
-    },
-    {
-        key: 'Access-Control-Allow-Origin',
-        value: '*.googleapis.com *.vercel.app *.vercel.com https://maps.googleapis.com https://tumblr.us12.list-manage.com https://vitals.vercel-insights.com/v1/vitals',
-    },
-    {
-        key: 'Referrer-Policy',
-        value: 'strict-origin-when-cross-origin',
-    },
-    {
-        key: 'X-Frame-Options',
-        value: 'DENY',
-    },
-    {
-        key: 'X-Content-Type-Options',
-        value: 'nosniff',
-    },
-    {
-        key: 'X-DNS-Prefetch-Control',
-        value: 'on',
-    },
-    {
-        key: 'Permissions-Policy',
-        value: 'camera=(), microphone=(), geolocation=()',
-    },
+	{
+		key: 'Content-Security-Policy',
+		value: ContentSecurityPolicy.replace(/\n/g, ''),
+	},
+	{
+		key: 'Access-Control-Allow-Origin',
+		value: '*.googleapis.com *.vercel.app *.vercel.com https://maps.googleapis.com https://tumblr.us12.list-manage.com https://vitals.vercel-insights.com/v1/vitals',
+	},
+	{
+		key: 'Referrer-Policy',
+		value: 'strict-origin-when-cross-origin',
+	},
+	{
+		key: 'X-Frame-Options',
+		value: 'DENY',
+	},
+	{
+		key: 'X-Content-Type-Options',
+		value: 'nosniff',
+	},
+	{
+		key: 'X-DNS-Prefetch-Control',
+		value: 'on',
+	},
+	{
+		key: 'Permissions-Policy',
+		value: 'camera=(), microphone=(), geolocation=()',
+	},
 ];
 
 // module.exports = {
@@ -48,12 +48,15 @@ const securityHeaders = [
 // };
 
 module.exports = {
-    async headers() {
-        return [
-            {
-                source: '/(.*)',
-                headers: securityHeaders,
-            },
-        ];
-    },
+	async headers() {
+		return [
+			{
+				source: '/(.*)',
+				headers: securityHeaders,
+			},
+		];
+	},
+	images: {
+		domains: ['laixiqmqvlibjrxmykxq.supabase.in'],
+	},
 };
