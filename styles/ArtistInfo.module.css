@@ -43,12 +43,13 @@
 	margin-top: 0.5rem;
 	grid-row-start: 1;
 	grid-row-end: 3;
-	border-radius: 45px 20px 20px 20px;
 	background-size: cover;
 	background-position: center center;
 	width: 100%;
 	height: 450px;
+	border-radius: 45px 20px 20px 20px;
 	border: 6px solid var(--base-font);
+	overflow: hidden;
 	filter: saturate(80%);
 
 	@media (max-width: 800px) {

@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import useCheckMobile from '../helpers/useCheckMobile';
 import { supabaseHost } from '../lib/constants';
-import { motion } from 'framer-motion';
+import { motion as m } from 'framer-motion';
 import Spinner from './spinner';
 import styles from '../styles/ArtistInfo.module.css';
+import Image from 'next/image';
 
 function ArtistInfo({ gigs, setModal }) {
 	const mobile = useCheckMobile();
@@ -12,20 +13,20 @@ function ArtistInfo({ gigs, setModal }) {
 
 	return (
 		<>
-			<motion.div
+			<m.div
 				exit={{ opacity: 0 }}
 				transition={{ duration: 0.4 }}
 				className="modalContainer"
 				key={setModal}
 			>
 				{mobile && <span className="exitButton" onClick={() => setModal(false)} />}
-				<motion.div
+				<m.div
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					className="modalBG"
 					onClick={() => setModal(false)}
 				/>
-				<motion.div
+				<m.div
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					id="home"
@@ -53,10 +54,16 @@ function ArtistInfo({ gigs, setModal }) {
 						/>
 					)}
 					{!mobile && (
-						<div
-							className={`${styles.image} ${styles.vhsfilter}`}
-							style={{ backgroundImage: `url(${supabaseHost + gigs?.image})` }}
-						/>
+						<div className={`${styles.image}`}>
+							<Image
+								width={100}
+								height={100}
+								objectFit="cover"
+								layout="fill"
+								src={supabaseHost + gigs?.image}
+								alt="artist"
+							/>
+						</div>
 					)}
 					<div className={styles.bio}>{gigs.bio}</div>
 					<div className={styles.socials}>
@@ -89,8 +96,8 @@ function ArtistInfo({ gigs, setModal }) {
 							</div>
 						)}
 					</div>
-				</motion.div>
-			</motion.div>
+				</m.div>
+			</m.div>
 		</>
 	);
 }
