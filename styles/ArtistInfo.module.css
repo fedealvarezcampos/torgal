@@ -49,30 +49,28 @@
 	border: 6px solid var(--base-font);
 	overflow: hidden;
 	background-color: var(--dark-item);
+	background-image: repeating-conic-gradient(var(--light-green), black 0.00085%);
 	filter: saturate(80%);
+	animation: back 25s linear infinite;
 
-	@media (max-width: 800px) {
-		grid-row-start: 1;
-		grid-row-end: 1;
-		justify-self: start;
-		margin-top: 0;
-		border-radius: 50px 20px 20px 20px;
-		background-size: cover;
-		background-position: center center;
-		width: 100%;
-		height: auto;
-		border: 8px double var(--base-font);
+	svg {
+		z-index: -1;
+		overflow: hidden;
+	}
+
+	@media (max-width: 900px) {
+		display: none;
 	}
 
 	.imageLoading {
-		transform: scale(1.5);
-		filter: grayscale(100%) blur(60px);
+		transform: scale(1.2);
+		filter: opacity(0%) grayscale(20%) blur(10px);
 	}
 
 	.imageLoaded {
 		transform: scale(1);
-		filter: grayscale(0%) blur(0);
-		transition: all 800ms;
+		filter: opacity(100%) grayscale(0) blur(0);
+		transition: all 1s;
 	}
 }
 
@@ -174,5 +172,16 @@
 		transform: translateY(-1px);
 		filter: hue-rotate(85deg) opacity(60%) saturate(10);
 		transition: all 200ms ease-in-out;
+	}
+}
+
+/* static */
+
+@keyframes back {
+	from {
+		background-size: 100% 100%;
+	}
+	to {
+		background-size: 200% 200%;
 	}
 }

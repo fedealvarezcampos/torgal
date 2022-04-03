@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion as m } from 'framer-motion';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import back01 from '../public/images/back1.webp';
@@ -19,7 +19,7 @@ function Home() {
 	return (
 		<>
 			<div id="home" className={`${styles.container}`}>
-				<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className={styles.backImage}>
+				<m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className={styles.backImage}>
 					{randomBG && (
 						<Image
 							src={randomBG}
@@ -30,7 +30,7 @@ function Home() {
 							placeholder="blur"
 						/>
 					)}
-				</motion.div>
+				</m.div>
 				<div className={`${styles.titleContainer} fadeInLeft`}>
 					<img src="./images/stairs.png" width="455" height="456" alt="Torgal logo" />
 					<img src="./images/LOGO.svg" width="807" height="296" alt="Torgal logo" />

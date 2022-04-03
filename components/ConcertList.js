@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '../lib/supabaseClient';
 import { useClosingKey } from '../helpers/useClosingKey';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion as m, AnimatePresence } from 'framer-motion';
 import DateConverter from './date';
 import ArtistInfo from './ArtistInfo';
 import styles from '../styles/Concerts.module.css';
@@ -38,7 +38,7 @@ function ConcertList({ gigs }) {
 					{gigs.map(
 						gigs =>
 							gigs?.gigDate > dateNow && (
-								<motion.li
+								<m.li
 									initial={{ opacity: 0 }}
 									animate={{ opacity: 1 }}
 									className={styles.gigItem}
@@ -71,7 +71,7 @@ function ConcertList({ gigs }) {
 											</button>
 										)}
 									</div>
-								</motion.li>
+								</m.li>
 							)
 					)}
 				</ul>

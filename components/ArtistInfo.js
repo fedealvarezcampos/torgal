@@ -54,19 +54,17 @@ function ArtistInfo({ gigs, setModal }) {
 							allowFullScreen
 						/>
 					)}
-					{!mobile && (
-						<div className={`${styles.image}`}>
-							<Image
-								objectFit="cover"
-								layout="fill"
-								className={isImageLoading ? styles.imageLoading : styles.imageLoaded}
-								quality={80}
-								src={supabaseHost + gigs?.image}
-								alt="artist"
-								onLoadingComplete={() => setImageLoading(false)}
-							/>
-						</div>
-					)}
+					<div className={`${styles.image}`}>
+						<Image
+							objectFit="cover"
+							layout="fill"
+							className={isImageLoading ? styles.imageLoading : styles.imageLoaded}
+							quality={80}
+							src={supabaseHost + gigs?.image}
+							alt="artist"
+							onLoadingComplete={() => setImageLoading(false)}
+						/>
+					</div>
 					<div className={styles.bio}>{gigs.bio}</div>
 					<div className={styles.socials}>
 						{gigs.artistTW && (
