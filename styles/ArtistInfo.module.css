@@ -51,7 +51,17 @@
 	background-color: var(--dark-item);
 	background-image: repeating-conic-gradient(var(--light-green), black 0.00085%);
 	filter: saturate(80%);
-	animation: back 25s linear infinite;
+	will-change: auto;
+	animation: back 250ms linear infinite;
+	transition: all 500ms;
+
+	img {
+		&:hover {
+			opacity: 75%;
+			transform: skewY(0.3deg) scale(1.06);
+			transition: all 500ms ease-in-out;
+		}
+	}
 
 	svg {
 		z-index: -1;
@@ -63,12 +73,12 @@
 	}
 
 	.imageLoading {
-		transform: scale(1.2);
+		transform: scale(1.3);
 		filter: opacity(0%) grayscale(20%) blur(10px);
 	}
 
 	.imageLoaded {
-		transform: scale(1);
+		transform: scale(1.02);
 		filter: opacity(100%) grayscale(0) blur(0);
 		transition: all 1s;
 	}
@@ -182,6 +192,6 @@
 		background-size: 100% 100%;
 	}
 	to {
-		background-size: 200% 200%;
+		background-size: 250% 250%;
 	}
 }

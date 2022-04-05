@@ -22,6 +22,7 @@ function Home() {
 				<m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className={styles.backImage}>
 					{randomBG && (
 						<Image
+							draggable={false}
 							src={randomBG}
 							alt="header image"
 							quality="85"
@@ -32,8 +33,20 @@ function Home() {
 					)}
 				</m.div>
 				<div className={`${styles.titleContainer} fadeInLeft`}>
-					<img src="./images/stairs.png" width="455" height="456" alt="Torgal logo" />
-					<img src="./images/LOGO.svg" width="807" height="296" alt="Torgal logo" />
+					<img
+						draggable={false}
+						src="./images/stairs.png"
+						width="455"
+						height="456"
+						alt="Torgal logo"
+					/>
+					<img
+						draggable={false}
+						src="./images/LOGO.svg"
+						width="807"
+						height="296"
+						alt="Torgal logo"
+					/>
 				</div>
 			</div>
 		</>

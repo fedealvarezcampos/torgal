@@ -93,6 +93,11 @@ button:active {
 	z-index: 2000;
 }
 
+::selection {
+	background: var(--wallpaper);
+	color: var(--base-font);
+}
+
 ::-webkit-scrollbar {
 	width: 12px;
 }
