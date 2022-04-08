@@ -42,15 +42,13 @@ function ArtistInfo({ gigs, setModal }) {
 					{gigs?.videoIntro && (
 						<iframe
 							className={styles.youtube}
-							src={`https://www.youtube.com/embed/${gigs.videoIntro}?&mute=1&loop=1&playlist=${gigs.videoIntro}`}
-							title="YouTube video player"
+							src={`https://www.youtube.com/embed/${gigs?.videoIntro}?&loop=1&rel=0&playlist=${gigs?.videoIntro}`}
+							title="youtube player"
 							width="100%"
 							height="100%"
 							frameBorder="0"
 							onLoad={() => setLoading(false)}
-							// allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-							mute="1"
-							// autoPlay="1"
+							mute="0"
 							allowFullScreen
 						/>
 					)}
