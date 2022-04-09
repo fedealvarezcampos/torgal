@@ -10,8 +10,6 @@ function ConcertList({ gigs }) {
 	const [modal, setModal] = useState(false);
 	const [modalData, setModalData] = useState([]);
 
-	const dateNow = new Date().toISOString();
-
 	const handleModal = data => {
 		setModal(true);
 		setModalData(data);
@@ -35,45 +33,40 @@ function ConcertList({ gigs }) {
 				style={{ backgroundImage: `url(./images/wallpaperFeather.webp)` }}
 			>
 				<ul className={styles.gigList}>
-					{gigs.map(
-						gigs =>
-							gigs?.gigDate > dateNow && (
-								<m.li
-									initial={{ opacity: 0 }}
-									animate={{ opacity: 1 }}
-									className={styles.gigItem}
-									key={gigs.id}
-								>
-									<DateConverter dateString={gigs.gigDate} />
-									<span className={styles.gigArtist}>{gigs.artist}</span>
-									{gigs.bio && (
-										<button className="button" onClick={() => handleModal(gigs)}>
-											+ INFO
+					{gigs.map(gigs => (
+						<m.li
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
+							className={styles.gigItem}
+							key={gigs.id}
+						>
+							<DateConverter dateString={gigs.gigDate} />
+							<span className={styles.gigArtist}>{gigs.artist}</span>
+							{gigs.bio && (
+								<button className="button" onClick={() => handleModal(gigs)}>
+									+ INFO
+								</button>
+							)}
+							<span className={styles.gigPrice}>{gigs.gigPrice}€</span>
+							<div className={styles.gigButtonCol}>
+								{gigs.gigLink !== 'soldout' ? (
+									<a href={gigs.gigLink} target="_blank" rel="noreferrer">
+										<button
+											className={
+												gigs.soldout ? `button ${styles.gigSoldOut}` : 'button'
+											}
+										>
+											{gigs.soldout ? <span>SOLD OUT</span> : 'ENTRADAS'}
 										</button>
-									)}
-									<span className={styles.gigPrice}>{gigs.gigPrice}€</span>
-									<div className={styles.gigButtonCol}>
-										{gigs.gigLink !== 'soldout' ? (
-											<a href={gigs.gigLink} target="_blank" rel="noreferrer">
-												<button
-													className={
-														gigs.soldout
-															? `button ${styles.gigSoldOut}`
-															: 'button'
-													}
-												>
-													{gigs.soldout ? <span>SOLD OUT</span> : 'ENTRADAS'}
-												</button>
-											</a>
-										) : (
-											<button className={styles.gigSoldOut}>
-												<span>SOLD OUT</span>
-											</button>
-										)}
-									</div>
-								</m.li>
-							)
-					)}
+									</a>
+								) : (
+									<button className={styles.gigSoldOut}>
+										<span>SOLD OUT</span>
+									</button>
+								)}
+							</div>
+						</m.li>
+					))}
 				</ul>
 			</div>
 		</>

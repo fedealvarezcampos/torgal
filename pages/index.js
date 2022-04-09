@@ -19,7 +19,9 @@ export async function getStaticProps() {
 	const rescocktails = await getCocktails();
 	const cocktails = JSON.parse(JSON.stringify(rescocktails));
 
-	let { data: gigs } = await supabase.from('gigs').select('*').order('gigDate');
+	const dateNow = new Date().toISOString();
+
+	let { data: gigs } = await supabase.from('gigs').select('*').gte('gigDate', dateNow).order('gigDate');
 
 	return {
 		props: {
