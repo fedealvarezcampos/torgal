@@ -41,7 +41,7 @@ function ArtistInfo({ gigs, setModal }) {
 					)}
 					{gigs?.videoIntro && (
 						<iframe
-							className={styles.youtube}
+							className={`${styles.youtube} ${loading && styles.hidden}`}
 							src={`https://www.youtube.com/embed/${gigs?.videoIntro}?&loop=1&rel=0&playlist=${gigs?.videoIntro}`}
 							title="youtube player"
 							width="100%"
