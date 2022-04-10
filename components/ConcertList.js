@@ -15,6 +15,8 @@ function ConcertList({ gigs }) {
 		setModalData(data);
 	};
 
+	const dateNow = new Date().toISOString();
+
 	useClosingKey('Escape', modal, setModal);
 
 	useEffect(() => {
@@ -37,7 +39,7 @@ function ConcertList({ gigs }) {
 						<m.li
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
-							className={styles.gigItem}
+							className={`${styles.gigItem} ${gigs.gigDate < dateNow && styles.hidden}`}
 							key={gigs.id}
 						>
 							<DateConverter dateString={gigs.gigDate} />
