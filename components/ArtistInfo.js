@@ -3,6 +3,7 @@ import useCheckMobile from '../helpers/useCheckMobile';
 import { supabaseHost } from '../lib/constants';
 import { motion as m } from 'framer-motion';
 import Spinner from './spinner';
+import YouTube from 'react-youtube';
 import styles from '../styles/ArtistInfo.module.css';
 import Image from 'next/image';
 
@@ -11,6 +12,21 @@ function ArtistInfo({ gigs, setModal }) {
 
 	const [loading, setLoading] = useState(true);
 	const [isImageLoading, setImageLoading] = useState(true);
+
+	const youtubeOptions = {
+		height: '100%',
+		width: '100%',
+		frameBorder: '0',
+		mute: '1',
+		playerVars: {
+			// https://developers.google.com/youtube/player_parameters
+			autoplay: 0,
+			loop: 1,
+			rel: 0,
+			modestbranding: 1,
+			playlist: gigs?.videoIntro,
+		},
+	};
 
 	return (
 		<>
@@ -39,19 +55,14 @@ function ArtistInfo({ gigs, setModal }) {
 							<Spinner />
 						</div>
 					)}
-					{gigs?.videoIntro && (
-						<iframe
-							className={`${styles.youtube} ${loading && styles.hidden}`}
-							src={`https://www.youtube.com/embed/${gigs?.videoIntro}?&loop=1&rel=0&playlist=${gigs?.videoIntro}`}
-							title="youtube player"
-							width="100%"
-							height="100%"
-							frameBorder="0"
-							onLoad={() => setLoading(false)}
-							mute="0"
-							allowFullScreen
+					<div className={`${styles.youtube} ${loading && styles.hidden}`}>
+						<YouTube
+							videoId={gigs?.videoIntro}
+							title="Youtube video"
+							opts={youtubeOptions}
+							onReady={() => setLoading(false)}
 						/>
-					)}
+					</div>
 					<div className={`${styles.image}`}>
 						<Image
 							objectFit="cover"
