@@ -20,7 +20,7 @@
 		grid-column: 1 3;
 		padding: 1rem 1.2rem 0.65rem 1.2rem;
 		margin-bottom: 1.6rem;
-		width: clamp(10rem, 92vw, 900px);
+		width: clamp(10rem, 92vw, 450px);
 		border: 7px solid var(--base-font);
 		border-radius: 20px;
 	}
@@ -68,7 +68,7 @@
 		overflow: hidden;
 	}
 
-	@media (max-width: 900px) {
+	@media (max-width: 800px) {
 		display: none;
 	}
 
@@ -113,6 +113,10 @@
 	> div {
 		width: 100%;
 		height: 100%;
+	}
+
+	@media (max-width: 800px) {
+		aspect-ratio: 16 / 9;
 	}
 
 	&.spinner {
