@@ -19,6 +19,8 @@ function AddGigForm() {
 	const [images, setImages] = useState([]);
 	const [soldout, setSoldout] = useState(false);
 
+	const [formCompleted, setFormCompleted] = useState(false);
+
 	async function setPreviews(e) {
 		e.preventDefault();
 		try {
@@ -100,7 +102,22 @@ function AddGigForm() {
 
 			if (error) throw error;
 
+			setArtist('');
+			setBio('');
+			setGigDate('');
+			setTickets('');
+			setPrice(0);
+			setSite('');
+			setTwitter('');
+			setInstagram('');
+			setSpotify('');
+			setYoutubeChannel('');
+			setYoutubeCode('');
+			setImages([]);
+			setSoldout(false);
+
 			alert('¡Concierto añadido!');
+			setFormCompleted(true);
 		} catch (error) {
 			alert(error.message);
 		}

@@ -7,9 +7,12 @@ function AdminGigList() {
 	const router = useRouter();
 
 	const [concerts, setConcerts] = useState([]);
+	const [isGigDeleted, setIsGigDeleted] = useState(false);
 
 	const getConcerts = async () => {
 		try {
+			setIsGigDeleted(false);
+
 			let { data: allGigsData, error } = await supabase.from('gigs').select('*');
 			if (error) throw error;
 
@@ -21,13 +24,15 @@ function AdminGigList() {
 
 	useEffect(() => {
 		getConcerts();
-	}, []);
+	}, [isGigDeleted]);
 
 	const deleteGig = async id => {
 		try {
 			const { error } = await supabase.from('gigs').delete().eq('id', id);
 
 			if (error) throw error;
+
+			setIsGigDeleted(true);
 
 			alert('Concierto eliminado!');
 		} catch (error) {
