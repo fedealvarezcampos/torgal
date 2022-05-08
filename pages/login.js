@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/dist/client/router';
 import { supabase } from '../lib/supabaseClient';
-import AdminLoginForm from '../components/AdminLoginForm';
+import AdminLoginForm from '../components/sections/admin/AdminLoginForm';
 import styles from '../styles/login.module.css';
 
 function Login() {

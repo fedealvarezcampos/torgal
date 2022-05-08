@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import useCheckMobile from '../helpers/useCheckMobile';
-import { supabaseHost } from '../lib/constants';
+import useCheckMobile from '../../../helpers/useCheckMobile';
+import { supabaseHost } from '../../../lib/constants';
 import { motion as m } from 'framer-motion';
-import Spinner from './spinner';
+import Spinner from '../../basic/spinner';
 import YouTube from 'react-youtube';
-import styles from '../styles/ArtistInfo.module.css';
+import styles from '../../../styles/ArtistInfo.module.css';
 import Image from 'next/image';
 
 function ArtistInfo({ gigs, setModal }) {

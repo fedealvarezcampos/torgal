@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import { motion as m } from 'framer-motion';
-import { framer, framerRight } from '../styles/framer';
-import useCheckMobile from '../helpers/useCheckMobile';
-import styles from '../styles/Products.module.css';
+import { framer, framerRight } from '../../../styles/framer';
+import useCheckMobile from '../../../helpers/useCheckMobile';
+import styles from '../../../styles/Products.module.css';
 
 function Products({ products, setShowMenu }) {
 	const mobile = useCheckMobile();

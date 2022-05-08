@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { supabase } from '../lib/supabaseClient';
+import { supabase } from '../../../lib/supabaseClient';
 import Image from 'next/image';
-import styles from '../styles/AddGigForm.module.css';
+import styles from '../../../styles/AddGigForm.module.css';
 
 function AddGigForm() {
 	const [artist, setArtist] = useState('');

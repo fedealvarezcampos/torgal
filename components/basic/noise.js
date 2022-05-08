@@ -1,4 +1,4 @@
-import s from '../styles/noise.module.css';
+import s from '../../styles/noise.module.css';
 
 export const Noise = () => {
 	return (

@@ -1,4 +1,4 @@
-import styles from '../styles/Socials.module.css';
+import styles from '../../../styles/Socials.module.css';
 import { motion as m } from 'framer-motion';
 
 function Socials() {

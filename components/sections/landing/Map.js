@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { motion as m } from 'framer-motion';
 import GoogleMapReact from 'google-map-react';
-import { mapStyles } from '../styles/mapStyles';
-import styles from '../styles/Map.module.css';
+import { mapStyles } from '../../../styles/mapStyles';
+import styles from '../../../styles/Map.module.css';
 
 const InfoWindow = () => {
 	return (

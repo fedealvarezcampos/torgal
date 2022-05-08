@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { supabase } from '../lib/supabaseClient';
-import styles from '../styles/AddGigForm.module.css';
+import { supabase } from '../../../lib/supabaseClient';
+import styles from '../../../styles/AddGigForm.module.css';
 
 function AdminGigList() {
 	const router = useRouter();

@@ -1,12 +1,12 @@
 import Image from 'next/image';
 import Marquee from 'react-fast-marquee';
-import torgal01 from '../public/images/torgal01.webp';
-import torgal02 from '../public/images/torgal02.webp';
-import torgal03 from '../public/images/torgal03.webp';
-import torgal04 from '../public/images/torgal04.webp';
+import torgal01 from '../../../public/images/torgal01.webp';
+import torgal02 from '../../../public/images/torgal02.webp';
+import torgal03 from '../../../public/images/torgal03.webp';
+import torgal04 from '../../../public/images/torgal04.webp';
 import { BiFoodMenu, BiDrink } from 'react-icons/bi';
-import useCheckMobile from '../helpers/useCheckMobile';
-import styles from '../styles/Marquees.module.css';
+import useCheckMobile from '../../../helpers/useCheckMobile';
+import styles from '../../../styles/Marquees.module.css';
 
 function Marquees({ setShowMenu }) {
 	const mobile = useCheckMobile();

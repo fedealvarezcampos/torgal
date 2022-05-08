@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
-import { supabase } from '../lib/supabaseClient';
-import { useClosingKey } from '../helpers/useClosingKey';
+import { useClosingKey } from '../../../helpers/useClosingKey';
 import { motion as m, AnimatePresence } from 'framer-motion';
-import DateConverter from './date';
+import DateConverter from '../../basic/date';
 import ArtistInfo from './ArtistInfo';
-import styles from '../styles/Concerts.module.css';
+import styles from '../../../styles/Concerts.module.css';
 
 function ConcertList({ gigs }) {
 	const [modal, setModal] = useState(false);
