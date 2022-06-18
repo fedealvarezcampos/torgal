@@ -33,6 +33,10 @@
 	&.hidden {
 		display: none;
 	}
+
+	&.noGigs {
+		justify-content: center;
+	}
 }
 
 .gigItem a {

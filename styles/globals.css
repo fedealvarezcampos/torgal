@@ -171,15 +171,14 @@ button:active {
 }
 
 .modalContainer {
-	position: absolute;
+	position: fixed;
 	display: grid;
 	top: 0;
 	left: 0;
 	place-content: center;
-	position: fixed;
 	width: 100vw;
 	height: 100vh;
-	z-index: 2400;
+	z-index: 100;
 }
 
 @media (max-width: 500px) {
