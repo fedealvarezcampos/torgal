@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { supabase } from '../../../lib/supabaseClient';
 import styles from '../../../styles/AddGigForm.module.css';
 
-function AdminGigList() {
+function AdminGigList({ setData, setIsUpdateMode, formCompleted }) {
 	const router = useRouter();
 
 	const [concerts, setConcerts] = useState([]);
@@ -13,7 +13,8 @@ function AdminGigList() {
 		try {
 			setIsGigDeleted(false);
 
-			let { data: allGigsData, error } = await supabase.from('gigs').select('*');
+			const { data: allGigsData, error } = await supabase.from('gigs').select('*');
+
 			if (error) throw error;
 
 			setConcerts(allGigsData);
@@ -24,7 +25,7 @@ function AdminGigList() {
 
 	useEffect(() => {
 		getConcerts();
-	}, [isGigDeleted]);
+	}, [isGigDeleted, formCompleted]);
 
 	const deleteGig = async id => {
 		try {
@@ -35,6 +36,42 @@ function AdminGigList() {
 			setIsGigDeleted(true);
 
 			alert('Concierto eliminado!');
+		} catch (error) {
+			alert(error.message);
+		}
+	};
+
+	const updateMode = async id => {
+		try {
+			const { data: selectedGigData, error } = await supabase
+				.from('gigs')
+				.select('*')
+				.match({ id: id });
+
+			if (error) throw error;
+
+			setData({
+				id: selectedGigData[0].id,
+				image: selectedGigData[0].image,
+				artist: selectedGigData[0].artist,
+				bio: selectedGigData[0].bio,
+				videoIntro: selectedGigData[0].videoIntro,
+				artistSite: selectedGigData[0].artistSite,
+				artistTW: selectedGigData[0].artistTW,
+				artistIG: selectedGigData[0].artistIG,
+				artistYT: selectedGigData[0].artistYT,
+				artistSF: selectedGigData[0].artistSF,
+				gigPrice: selectedGigData[0].gigPrice,
+				gigLink: selectedGigData[0].gigLink,
+				gigDate: selectedGigData[0].gigDate,
+				soldout: selectedGigData[0].soldout,
+			});
+
+			setIsUpdateMode(true);
+
+			alert(
+				'Concierto seleccionado, puede modificar y enviar los datos nuevamente para actualizarlos.'
+			);
 		} catch (error) {
 			alert(error.message);
 		}
@@ -63,14 +100,15 @@ function AdminGigList() {
 			<button onClick={() => logOut()} className={styles.logOutButton}>
 				LOG OUT
 			</button>
-			<span className={styles.concertsTitle}>Conciertos añadidos: </span>
+			{concerts.length > 1 && <span className={styles.concertsTitle}>Conciertos añadidos: </span>}
 			<ul className={styles.concertListContainer}>
 				{concerts.map(e => (
 					<li key={e.id} className={styles.concertContainer}>
 						<span>{e.artist}</span>
 						<span>{e.gigDate}</span>
-						<button onClick={() => setAsSoldout(e.id)}>Marcar como soldout</button>
-						<button onClick={() => deleteGig(e.id)}>Eliminar evento</button>
+						<button onClick={() => setAsSoldout(e.id)}>Marcar soldout</button>
+						<button onClick={() => updateMode(e.id)}>Modificar</button>
+						<button onClick={() => deleteGig(e.id)}>Eliminar</button>
 					</li>
 				))}
 			</ul>

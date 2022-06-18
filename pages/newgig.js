@@ -9,6 +9,26 @@ function NewGig() {
 	const router = useRouter();
 	const user = supabase?.auth.user();
 
+	const [formCompleted, setFormCompleted] = useState(false);
+	const [isUpdateMode, setIsUpdateMode] = useState(false);
+
+	const [data, setData] = useState({
+		id: '',
+		image: [],
+		artist: '',
+		bio: '',
+		videoIntro: '',
+		artistSite: '',
+		artistTW: '',
+		artistIG: '',
+		artistYT: '',
+		artistSF: '',
+		gigPrice: '',
+		gigLink: '',
+		gigDate: '',
+		soldout: false,
+	});
+
 	const [loggedIn, setLoggedIn] = useState(false);
 
 	useEffect(() => {
@@ -20,8 +40,18 @@ function NewGig() {
 		<div className={styles.outerContainer}>
 			{loggedIn ? (
 				<>
-					<AdminGigList />
-					<AddGigForm />{' '}
+					<AdminGigList
+						setData={setData}
+						setIsUpdateMode={setIsUpdateMode}
+						formCompleted={formCompleted}
+					/>
+					<AddGigForm
+						data={data}
+						setData={setData}
+						setIsUpdateMode={setIsUpdateMode}
+						setFormCompleted={setFormCompleted}
+						isUpdateMode={isUpdateMode}
+					/>
 				</>
 			) : (
 				<div>No permission</div>

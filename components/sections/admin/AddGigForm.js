@@ -2,24 +2,29 @@ import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { supabase } from '../../../lib/supabaseClient';
 import Image from 'next/image';
-import styles from '../../../styles/AddGigForm.module.css';
+import s from '../../../styles/AddGigForm.module.css';
 
-function AddGigForm() {
-	const [artist, setArtist] = useState('');
-	const [bio, setBio] = useState('');
-	const [gigDate, setGigDate] = useState('');
-	const [tickets, setTickets] = useState('');
-	const [price, setPrice] = useState(0);
-	const [site, setSite] = useState('');
-	const [twitter, setTwitter] = useState('');
-	const [instagram, setInstagram] = useState('');
-	const [spotify, setSpotify] = useState('');
-	const [youtubeChannel, setYoutubeChannel] = useState('');
-	const [youtubeCode, setYoutubeCode] = useState('');
+function AddGigForm({ setData, data, isUpdateMode, setIsUpdateMode, setFormCompleted }) {
 	const [images, setImages] = useState([]);
-	const [soldout, setSoldout] = useState(false);
 
-	const [formCompleted, setFormCompleted] = useState(false);
+	const resetData = () => {
+		setData({
+			id: '',
+			artist: '',
+			image: [],
+			bio: '',
+			videoIntro: '',
+			artistSite: '',
+			artistTW: '',
+			artistIG: '',
+			artistYT: '',
+			artistSF: '',
+			gigPrice: '',
+			gigLink: '',
+			gigDate: '',
+			soldout: false,
+		});
+	};
 
 	async function setPreviews(e) {
 		e.preventDefault();
@@ -69,6 +74,8 @@ function AddGigForm() {
 		e.preventDefault();
 
 		try {
+			setFormCompleted(false);
+
 			let imgURL = [];
 
 			for (const image of images) {
@@ -85,36 +92,24 @@ function AddGigForm() {
 			}
 
 			const { error } = await supabase.from('gigs').insert({
-				artist: artist,
+				artist: data.artist,
 				image: imgURL,
-				bio: bio,
-				videoIntro: youtubeCode,
-				artistSite: site,
-				artistTW: twitter,
-				artistIG: instagram,
-				artistYT: youtubeChannel,
-				artistSF: spotify,
-				gigPrice: price,
-				gigLink: tickets,
-				gigDate: gigDate,
-				soldout: soldout,
+				bio: data.bio,
+				videoIntro: data.videoIntro,
+				artistSite: data.artistSite,
+				artistTW: data.artistTW,
+				artistIG: data.artistIG,
+				artistYT: data.artistYT,
+				artistSF: data.artistSF,
+				gigPrice: data.gigPrice,
+				gigLink: data.gigLink,
+				gigDate: data.gigDate,
+				soldout: data.soldout,
 			});
 
 			if (error) throw error;
 
-			setArtist('');
-			setBio('');
-			setGigDate('');
-			setTickets('');
-			setPrice(0);
-			setSite('');
-			setTwitter('');
-			setInstagram('');
-			setSpotify('');
-			setYoutubeChannel('');
-			setYoutubeCode('');
-			setImages([]);
-			setSoldout(false);
+			resetData();
 
 			alert('¡Concierto añadido!');
 			setFormCompleted(true);
@@ -123,10 +118,61 @@ function AddGigForm() {
 		}
 	};
 
+	const handleUpdate = async (e, id) => {
+		e.preventDefault();
+
+		try {
+			setFormCompleted(false);
+
+			const { error } = await supabase
+				.from('gigs')
+				.update({
+					artist: data.artist,
+					bio: data.bio,
+					videoIntro: data.videoIntro,
+					artistSite: data.artistSite,
+					artistTW: data.artistTW,
+					artistIG: data.artistIG,
+					artistYT: data.artistYT,
+					artistSF: data.artistSF,
+					gigPrice: data.gigPrice,
+					gigLink: data.gigLink,
+					gigDate: data.gigDate,
+					soldout: data.soldout,
+				})
+				.match({ id: id });
+
+			if (error) throw error;
+
+			resetData();
+
+			alert('¡Concierto actualizado!');
+			setFormCompleted(true);
+			setIsUpdateMode(false);
+		} catch (error) {
+			alert(error.message);
+		}
+	};
+
+	const cancelUpdate = async e => {
+		e.preventDefault();
+
+		try {
+			setIsUpdateMode(false);
+			resetData();
+		} catch (error) {
+			alert(error.message);
+		}
+	};
+
 	return (
-		<div className={styles.formsContainer}>
-			<h1>Añadir concierto</h1>
-			<form action="" onSubmit={e => handleSubmit(e)} className={styles.recipeForm}>
+		<div className={s.formsContainer}>
+			{!isUpdateMode ? <h1>Añadir concierto</h1> : <h1>Actualizar concierto</h1>}
+			<form
+				action=""
+				onSubmit={!isUpdateMode ? e => handleSubmit(e) : e => handleUpdate(e, data.id)}
+				className={s.recipeForm}
+			>
 				<label htmlFor="artist">
 					<span>Artista</span>
 					<input
@@ -135,24 +181,26 @@ function AddGigForm() {
 						type="text"
 						required
 						placeholder="Artista"
-						value={artist}
-						onChange={e => setArtist(e.target.value)}
+						value={data.artist}
+						onChange={e => setData({ ...data, artist: e.target.value })}
 					/>
 				</label>
-				<span className={styles.imageInputs}>
-					<label htmlFor="file">
-						<span>Subir imagen</span>
-						<input
-							type="file"
-							name="file"
-							accept="image/jpeg, image/png, image/webp"
-							id="file"
-							onChange={setPreviews}
-						/>
-					</label>
-				</span>
-				{images?.length !== 0 && (
-					<div className={styles.imageContainer}>
+				{!isUpdateMode && (
+					<span className={s.imageInputs}>
+						<label htmlFor="file">
+							<span>Subir imagen</span>
+							<input
+								type="file"
+								name="file"
+								accept="image/jpeg, image/png, image/webp"
+								id="file"
+								onChange={setPreviews}
+							/>
+						</label>
+					</span>
+				)}
+				{!isUpdateMode && images?.length !== 0 && (
+					<div className={s.imageContainer}>
 						{images?.map((image, i) => (
 							<Image
 								key={i}
@@ -175,8 +223,8 @@ function AddGigForm() {
 						required
 						maxLength={430}
 						placeholder="Biografía"
-						value={bio}
-						onChange={e => setBio(e.target.value)}
+						value={data.bio}
+						onChange={e => setData({ ...data, bio: e.target.value })}
 					/>
 				</label>
 				<label htmlFor="gigDate">
@@ -185,8 +233,8 @@ function AddGigForm() {
 						name="gigDate"
 						id="gigDate"
 						type="date"
-						value={gigDate}
-						onChange={e => setGigDate(e.target.value)}
+						value={data.gigDate}
+						onChange={e => setData({ ...data, gigDate: e.target.value })}
 					/>
 				</label>
 				<label htmlFor="tickets">
@@ -196,8 +244,8 @@ function AddGigForm() {
 						id="tickets"
 						type="url"
 						placeholder="Link a entradas"
-						value={tickets}
-						onChange={e => setTickets(e.target.value)}
+						value={data.gigLink}
+						onChange={e => setData({ ...data, gigLink: e.target.value })}
 					/>
 				</label>
 				<label htmlFor="price">
@@ -208,8 +256,8 @@ function AddGigForm() {
 						type="number"
 						required
 						placeholder="Precio"
-						value={price}
-						onChange={e => setPrice(e.target.value)}
+						value={data.gigPrice}
+						onChange={e => setData({ ...data, gigPrice: e.target.value })}
 					/>
 				</label>
 				<label htmlFor="youtubevideo">
@@ -219,8 +267,8 @@ function AddGigForm() {
 						id="youtubevideo"
 						type="text"
 						placeholder="You-Tube preview"
-						value={youtubeCode}
-						onChange={e => setYoutubeCode(e.target.value)}
+						value={data.videoIntro}
+						onChange={e => setData({ ...data, videoIntro: e.target.value })}
 					/>
 				</label>
 				<label htmlFor="site">
@@ -230,8 +278,8 @@ function AddGigForm() {
 						id="site"
 						type="url"
 						placeholder="URL"
-						value={site}
-						onChange={e => setSite(e.target.value)}
+						value={data.artistSite}
+						onChange={e => setData({ ...data, artistSite: e.target.value })}
 					/>
 				</label>
 				<label htmlFor="twitter">
@@ -241,8 +289,8 @@ function AddGigForm() {
 						id="twitter"
 						type="url"
 						placeholder="Twitter URL"
-						value={twitter}
-						onChange={e => setTwitter(e.target.value)}
+						value={data.artistTW}
+						onChange={e => setData({ ...data, artistTW: e.target.value })}
 					/>
 				</label>
 				<label htmlFor="instagram">
@@ -252,8 +300,8 @@ function AddGigForm() {
 						id="instagram"
 						type="url"
 						placeholder="Instagram URL"
-						value={instagram}
-						onChange={e => setInstagram(e.target.value)}
+						value={data.artistIG}
+						onChange={e => setData({ ...data, artistIG: e.target.value })}
 					/>
 				</label>
 				<label htmlFor="spotify">
@@ -263,8 +311,8 @@ function AddGigForm() {
 						id="spotify"
 						type="url"
 						placeholder="Spotify profile URL"
-						value={spotify}
-						onChange={e => setSpotify(e.target.value)}
+						value={data.artistSF}
+						onChange={e => setData({ ...data, artistSF: e.target.value })}
 					/>
 				</label>
 				<label htmlFor="youtubechannel">
@@ -274,8 +322,8 @@ function AddGigForm() {
 						id="youtubechannel"
 						type="url"
 						placeholder="You-Tube channel URL"
-						value={youtubeChannel}
-						onChange={e => setYoutubeChannel(e.target.value)}
+						value={data.artistYT}
+						onChange={e => setData({ ...data, artistYT: e.target.value })}
 					/>
 				</label>
 				<label htmlFor="soldout">
@@ -285,13 +333,24 @@ function AddGigForm() {
 						id="soldout"
 						type="checkbox"
 						placeholder="You-Tube channel URL"
-						value={soldout}
-						onChange={() => setSoldout(!soldout)}
+						value={data.soldout}
+						onChange={() => setData({ ...data, soldout: !data.soldout })}
 					/>
 				</label>
-				<button aria-label="save new recipe">
-					<span>save</span>
-				</button>
+				{isUpdateMode ? (
+					<div className={s.updateMode}>
+						<button aria-label="save new recipe">
+							<span>update</span>
+						</button>
+						<button onClick={e => cancelUpdate(e)} aria-label="save new recipe">
+							<span>cancel</span>
+						</button>
+					</div>
+				) : (
+					<button aria-label="save new recipe">
+						<span>save</span>
+					</button>
+				)}
 			</form>
 		</div>
 	);

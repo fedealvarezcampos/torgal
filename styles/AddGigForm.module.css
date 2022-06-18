@@ -9,6 +9,18 @@
 	color: var(--base-font);
 	font-weight: 700;
 	overflow-x: hidden;
+
+	button {
+		text-transform: uppercase;
+		width: fit-content;
+		font-size: 0.9rem;
+
+		@media (max-width: 800px) {
+			padding: 0.4rem 0.46rem;
+			font-size: 0.7rem;
+			margin-top: 0.45rem;
+		}
+	}
 }
 
 .formsContainer {
@@ -61,22 +73,26 @@
 
 		@media (max-width: 800px) {
 			gap: 0.2rem;
+			width: 60vw;
 		}
 	}
 
 	input {
-		font-size: 0.8rem;
 		color: var(--base-font);
 		border-radius: 8px;
-		padding: 0.3rem 0.6rem 0.3rem 0.6rem;
+		font-size: 0.85rem;
+		font-weight: 600;
+		font-family: 'Cabin', sans-serif;
+		padding: 0.4rem 0.45rem;
 		margin-top: 0.5rem;
 		border: 4px solid var(--base-font);
 		background-color: var(--dark-item);
 		transition: border 200ms;
 
 		@media (max-width: 800px) {
-			width: 60vw;
 			border: 3px solid var(--base-font);
+			padding: 0.35rem 0.4rem;
+			font-size: 0.8rem;
 		}
 	}
 
@@ -84,24 +100,30 @@
 		border-radius: 8px;
 		height: 8rem;
 		max-width: 100%;
-		font-size: 0.8rem;
+		font-size: 0.85rem;
+		font-weight: 600;
+		font-family: 'Cabin', sans-serif;
 		color: var(--base-font);
-		padding: 0.3rem 0.6rem 0.3rem 0.6rem;
+		padding: 0.4rem 0.45rem;
 		border: 4px solid var(--base-font);
 		background-color: var(--dark-item);
 		transition: border 200ms;
+		resize: vertical;
+		min-height: 8rem;
+		max-height: 12rem;
 
 		@media (max-width: 800px) {
 			height: 6rem;
 			width: 12rem;
 			border: 3px solid var(--base-font);
+			padding: 0.35rem 0.4rem;
+			font-size: 0.8rem;
 		}
 	}
 
-	button {
-		width: 5rem;
-		font-size: 1.2rem;
-		margin-top: 1rem;
+	.updateMode {
+		display: flex;
+		gap: 12px;
 	}
 
 	[type='file'] {
@@ -156,6 +178,9 @@
 }
 
 .concertListContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
 	margin: 0;
 	padding: 0;
 }
@@ -174,8 +199,20 @@
 	border-radius: 20px;
 	background-color: var(--dark-item);
 
+	@media (max-width: 800px) {
+		flex-direction: column;
+		gap: 5px;
+		width: 60vw;
+		padding: 1rem 1rem 1.4rem 1rem;
+		font-size: 1rem;
+	}
+
 	button:nth-child(3) {
 		margin-left: auto;
+
+		@media (max-width: 800px) {
+			margin-left: unset;
+		}
 	}
 }
 
