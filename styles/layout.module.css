@@ -1,6 +1,5 @@
 .container {
-	width: 65vw;
-	max-width: 2560px;
+	width: clamp(54rem, 65vw, 2560px);
 	padding: 0 0.8rem 2.5rem 0.8rem;
 	margin: 2.2rem auto 0;
 }
