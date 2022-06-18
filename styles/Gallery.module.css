@@ -24,10 +24,4 @@
 	.galleryContainer {
 		padding: 0.5rem 1.8rem 0.5rem 1.8rem;
 	}
-
-	.imageContainer {
-		width: 20rem;
-		background-size: cover;
-		background-position: center center;
-	}
 }

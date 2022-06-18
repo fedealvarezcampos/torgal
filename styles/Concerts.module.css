@@ -143,9 +143,13 @@ button.gigSoldOut:active {
 		width: clamp(10rem, 90vw, 20rem);
 		gap: 10px;
 		margin: 0.25rem;
-		padding: 0.5rem 0.6rem 0.5rem 0.6rem;
+		padding: 0.6rem;
 		font-size: 0.5rem;
 		border-radius: 8px;
+
+		&.noGigs {
+			font-size: 0.6rem;
+		}
 	}
 
 	.gigArtist {

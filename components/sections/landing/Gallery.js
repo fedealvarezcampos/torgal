@@ -1,14 +1,15 @@
 import Image from 'next/image';
 import Slider from 'react-slick';
 import styles from '../../../styles/Gallery.module.css';
-import slide01 from '../../../public/images/gallery/slide01.jpg';
-import slide02 from '../../../public/images/gallery/slide02.jpg';
-import slide03 from '../../../public/images/gallery/slide03.jpg';
-import slide04 from '../../../public/images/gallery/slide04.jpg';
-import slide05 from '../../../public/images/gallery/slide05.jpg';
-import slide06 from '../../../public/images/gallery/slide06.jpg';
-import slide07 from '../../../public/images/gallery/slide07.jpg';
-import slide08 from '../../../public/images/gallery/slide08.jpg';
+import nuria from '../../../public/images/gallery/slide01.jpg';
+import cupido from '../../../public/images/gallery/slide02.jpg';
+import apollo from '../../../public/images/gallery/slide03.jpg';
+import bamba from '../../../public/images/gallery/slide04.jpg';
+import wauters from '../../../public/images/gallery/slide06.jpg';
+import lamb from '../../../public/images/gallery/slide07.jpg';
+import andreu from '../../../public/images/gallery/slide09.jpg';
+import bandalos from '../../../public/images/gallery/slide10.jpg';
+import montefusco from '../../../public/images/gallery/slide11.jpg';
 
 const settings = {
 	className: 'center',
@@ -59,83 +60,61 @@ const settings = {
 	],
 };
 
+const images = [
+	{
+		src: montefusco,
+		alt: 'enric montefusco',
+	},
+	{
+		src: cupido,
+		alt: 'cupido',
+	},
+	{
+		src: bamba,
+		alt: 'y la bamba',
+	},
+	{
+		src: nuria,
+		alt: 'nuria graham',
+	},
+	{
+		src: apollo,
+		alt: 'omar apollo',
+	},
+	{
+		src: wauters,
+		alt: 'juan wauters',
+	},
+	{
+		src: lamb,
+		alt: 'lady lamb',
+	},
+	{
+		src: andreu,
+		alt: 'anna andreu',
+	},
+	{
+		src: bandalos,
+		alt: 'bandalos chinos',
+	},
+];
+
 function Gallery() {
 	return (
 		<>
 			<div className={styles.galleryContainer}>
 				<Slider {...settings}>
-					<div className={styles.imageContainer}>
-						<Image
-							src={slide04}
-							placeholder="blur"
-							layout="responsive"
-							quality={80}
-							alt="y la bamba"
-						/>
-					</div>
-					<div className={styles.imageContainer}>
-						<Image
-							src={slide02}
-							placeholder="blur"
-							layout="responsive"
-							quality={80}
-							alt="cupido"
-						/>
-					</div>
-					<div className={styles.imageContainer}>
-						<Image
-							src={slide01}
-							placeholder="blur"
-							layout="responsive"
-							quality={80}
-							alt="nuria graham"
-						/>
-					</div>
-					<div className={styles.imageContainer}>
-						<Image
-							src={slide05}
-							placeholder="blur"
-							layout="responsive"
-							quality={80}
-							alt="niño de elche"
-						/>
-					</div>
-					<div className={styles.imageContainer}>
-						<Image
-							src={slide06}
-							placeholder="blur"
-							layout="responsive"
-							quality={80}
-							alt="juan wauters"
-						/>
-					</div>
-					<div className={styles.imageContainer}>
-						<Image
-							src={slide03}
-							placeholder="blur"
-							layout="responsive"
-							quality={80}
-							alt="omar apollo"
-						/>
-					</div>
-					<div className={styles.imageContainer}>
-						<Image
-							src={slide07}
-							placeholder="blur"
-							layout="responsive"
-							quality={80}
-							alt="lady lamb"
-						/>
-					</div>
-					<div className={styles.imageContainer}>
-						<Image
-							src={slide08}
-							placeholder="blur"
-							layout="responsive"
-							quality={95}
-							alt="will johnson"
-						/>
-					</div>
+					{images.map((image, i) => (
+						<div key={i} className={styles.imageContainer}>
+							<Image
+								src={image.src}
+								placeholder="blur"
+								layout="responsive"
+								quality={95}
+								alt={image.alt}
+							/>
+						</div>
+					))}
 				</Slider>
 			</div>
 		</>
