@@ -2,7 +2,8 @@
 	position: relative;
 	display: flex;
 	align-items: center;
-	height: clamp(34rem, 35vw, 46rem);
+	height: 35vw;
+	max-height: 70rem;
 	padding: 0;
 	background-color: var(--dark-item);
 	filter: contrast(95%);

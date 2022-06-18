@@ -7,8 +7,8 @@
 
 .container {
 	padding-top: 1.6rem;
-	height: 50vw;
-	max-height: 35rem;
+	height: 32.5vw;
+	max-height: 70rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;

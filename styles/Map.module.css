@@ -1,110 +1,110 @@
 .marker {
-    width: 2.8rem;
-    transform: translate(-50%, -100%);
+	width: 2.8rem;
+	transform: translate(-50%, -100%);
 }
 
 .marker:hover {
-    cursor: pointer;
-    filter: hue-rotate(335deg) grayscale(20%);
+	cursor: pointer;
+	filter: hue-rotate(335deg) grayscale(20%);
 }
 
 .container {
-    /* padding: 0 1.6rem 1.8rem 1.6rem; */
-    height: 32vw;
-    max-height: 32rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
+	/* padding: 0 1.6rem 1.8rem 1.6rem; */
+	height: 30vw;
+	max-height: 65rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
 }
 
 .infoWindow {
-    position: absolute;
-    bottom: -25px;
-    left: 40px;
-    width: 11rem;
-    box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 0.3);
-    padding: 0.6rem;
-    font-size: 14px;
-    border-radius: 15px;
-    color: var(--base-font);
-    border: 5px solid var(--bg-color);
-    background-color: var(--dark-item);
-    z-index: 100;
+	position: absolute;
+	bottom: -25px;
+	left: 40px;
+	width: 11rem;
+	box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 0.3);
+	padding: 0.6rem;
+	font-size: 14px;
+	border-radius: 15px;
+	color: var(--base-font);
+	border: 5px solid var(--bg-color);
+	background-color: var(--dark-item);
+	z-index: 100;
 }
 
 .infoWindow img {
-    width: 5.5rem;
+	width: 5.5rem;
 }
 
 .infoWindow p {
-    margin-top: 0.1rem;
-    margin-bottom: 0.1rem;
-    font-size: 0.9rem;
-    font-family: 'Cabin', sans-serif;
+	margin-top: 0.1rem;
+	margin-bottom: 0.1rem;
+	font-size: 0.9rem;
+	font-family: 'Cabin', sans-serif;
 }
 
 .infoWindow p:first-child {
-    margin: 0;
-    letter-spacing: 0.08rem;
-    font-size: 1.4rem;
-    font-weight: 800;
-    font-feature-settings: 'kern' off;
+	margin: 0;
+	letter-spacing: 0.08rem;
+	font-size: 1.4rem;
+	font-weight: 800;
+	font-feature-settings: 'kern' off;
 }
 
 .infoWindow a {
-    text-decoration: none;
-    font-style: italic;
-    color: var(--cream);
-    font-family: 'Cabin', sans-serif;
+	text-decoration: none;
+	font-style: italic;
+	color: var(--cream);
+	font-family: 'Cabin', sans-serif;
 }
 
 @media (max-width: 500px) {
-    .container {
-        padding: 0;
-        height: 50vw;
-        max-height: 35rem;
-    }
+	.container {
+		padding: 0;
+		height: 50vw;
+		max-height: 35rem;
+	}
 
-    .marker {
-        height: 14vw;
-    }
+	.marker {
+		height: 14vw;
+	}
 
-    .marker:hover {
-        cursor: pointer;
-        filter: none;
-    }
+	.marker:hover {
+		cursor: pointer;
+		filter: none;
+	}
 
-    .marker:active {
-        cursor: pointer;
-        filter: hue-rotate(335deg) grayscale(20%);
-    }
+	.marker:active {
+		cursor: pointer;
+		filter: hue-rotate(335deg) grayscale(20%);
+	}
 
-    .infoWindow {
-        position: absolute;
-        bottom: -20px;
-        left: -40vw;
-        width: 6.5rem;
-        box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 0.3);
-        padding: 0.45rem 0.5rem 0.5rem 0.5rem;
-        font-size: 0.6rem;
-        border-radius: 15px;
-        color: var(--base-font);
-        border: 5px solid var(--bg-color);
-        background-color: var(--dark-item);
-        z-index: 100;
-    }
+	.infoWindow {
+		position: absolute;
+		bottom: -20px;
+		left: -40vw;
+		width: 6.5rem;
+		box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 0.3);
+		padding: 0.45rem 0.5rem 0.5rem 0.5rem;
+		font-size: 0.6rem;
+		border-radius: 15px;
+		color: var(--base-font);
+		border: 5px solid var(--bg-color);
+		background-color: var(--dark-item);
+		z-index: 100;
+	}
 
-    .infoWindow img {
-        width: 95%;
-    }
+	.infoWindow img {
+		width: 95%;
+	}
 
-    .infoWindow p {
-        font-size: 0.62rem;
-    }
+	.infoWindow p {
+		font-size: 0.62rem;
+	}
 
-    .infoWindow p:first-child {
-        font-size: 1rem;
-        font-weight: 600;
-    }
+	.infoWindow p:first-child {
+		font-size: 1rem;
+		font-weight: 600;
+	}
 }

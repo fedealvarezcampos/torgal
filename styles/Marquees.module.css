@@ -6,7 +6,9 @@
 	will-change: transform;
 	position: relative;
 	width: fit-content;
-	height: clamp(5rem, 22vw, 22rem);
+	/* height: clamp(5rem, 22vw, 22rem); */
+	height: 22vw;
+	max-height: 42rem;
 }
 
 .imageContainer span {
