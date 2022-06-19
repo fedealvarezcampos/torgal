@@ -100,13 +100,13 @@ function AdminGigList({ setData, setIsUpdateMode, formCompleted }) {
 			<button onClick={() => logOut()} className={styles.logOutButton}>
 				LOG OUT
 			</button>
-			{concerts.length > 1 && <span className={styles.concertsTitle}>Conciertos añadidos: </span>}
+			{concerts.length >= 1 && <span className={styles.concertsTitle}>Conciertos añadidos: </span>}
 			<ul className={styles.concertListContainer}>
 				{concerts.map(e => (
 					<li key={e.id} className={styles.concertContainer}>
 						<span>{e.artist}</span>
 						<span>{e.gigDate}</span>
-						<button onClick={() => setAsSoldout(e.id)}>Marcar soldout</button>
+						<button onClick={() => setAsSoldout(e.id)}>Soldout</button>
 						<button onClick={() => updateMode(e.id)}>Modificar</button>
 						<button onClick={() => deleteGig(e.id)}>Eliminar</button>
 					</li>

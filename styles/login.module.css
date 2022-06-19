@@ -18,6 +18,10 @@
 	background-color: var(--dark-item);
 	border-radius: 20px;
 	border: 8px solid var(--base-font);
+
+	input {
+		color: var(--dark-item);
+	}
 }
 
 .pageContainer > form > label {

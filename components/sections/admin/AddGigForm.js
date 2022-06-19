@@ -6,6 +6,7 @@ import s from '../../../styles/AddGigForm.module.css';
 
 function AddGigForm({ setData, data, isUpdateMode, setIsUpdateMode, setFormCompleted }) {
 	const [images, setImages] = useState([]);
+	const [isSending, setIsSending] = useState(false);
 
 	const resetData = () => {
 		setData({
@@ -75,7 +76,7 @@ function AddGigForm({ setData, data, isUpdateMode, setIsUpdateMode, setFormCompl
 
 		try {
 			setFormCompleted(false);
-
+			setIsSending(true);
 			let imgURL = [];
 
 			for (const image of images) {
@@ -89,6 +90,12 @@ function AddGigForm({ setData, data, isUpdateMode, setIsUpdateMode, setFormCompl
 				}
 
 				imgURL.push(fileName);
+			}
+
+			if (imgURL.length < 1) {
+				setIsSending(false);
+				alert('Es necesario subir una imagen.');
+				return;
 			}
 
 			const { error } = await supabase.from('gigs').insert({
@@ -110,10 +117,14 @@ function AddGigForm({ setData, data, isUpdateMode, setIsUpdateMode, setFormCompl
 			if (error) throw error;
 
 			resetData();
+			setImages([]);
+			setIsSending(false);
 
 			alert('¡Concierto añadido!');
 			setFormCompleted(true);
 		} catch (error) {
+			resetData();
+			setImages([]);
 			alert(error.message);
 		}
 	};
@@ -123,6 +134,7 @@ function AddGigForm({ setData, data, isUpdateMode, setIsUpdateMode, setFormCompl
 
 		try {
 			setFormCompleted(false);
+			setIsSending(true);
 
 			const { error } = await supabase
 				.from('gigs')
@@ -148,8 +160,11 @@ function AddGigForm({ setData, data, isUpdateMode, setIsUpdateMode, setFormCompl
 
 			alert('¡Concierto actualizado!');
 			setFormCompleted(true);
+			setIsSending(false);
 			setIsUpdateMode(false);
 		} catch (error) {
+			resetData();
+			setIsSending(false);
 			alert(error.message);
 		}
 	};
@@ -266,6 +281,7 @@ function AddGigForm({ setData, data, isUpdateMode, setIsUpdateMode, setFormCompl
 						name="youtubevideo"
 						id="youtubevideo"
 						type="text"
+						required
 						placeholder="You-Tube preview"
 						value={data.videoIntro}
 						onChange={e => setData({ ...data, videoIntro: e.target.value })}
@@ -340,7 +356,7 @@ function AddGigForm({ setData, data, isUpdateMode, setIsUpdateMode, setFormCompl
 				{isUpdateMode ? (
 					<div className={s.updateMode}>
 						<button aria-label="save new recipe">
-							<span>update</span>
+							<span>{isSending ? 'updating...' : 'update'}</span>
 						</button>
 						<button onClick={e => cancelUpdate(e)} aria-label="save new recipe">
 							<span>cancel</span>
@@ -348,7 +364,7 @@ function AddGigForm({ setData, data, isUpdateMode, setIsUpdateMode, setFormCompl
 					</div>
 				) : (
 					<button aria-label="save new recipe">
-						<span>save</span>
+						<span>{isSending ? 'sending...' : 'save'}</span>
 					</button>
 				)}
 			</form>
