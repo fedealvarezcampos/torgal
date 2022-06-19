@@ -35,6 +35,16 @@ function Socials() {
 				>
 					<img src="/images/social/youtube.svg" alt="torgal youtube icon" />
 				</m.a>
+				<m.a
+					whileHover={{ scale: 1.05 }}
+					href="mailto:info@cafepoptorgal.com"
+					target="_blank"
+					rel="noreferrer"
+					className={styles.socialBG}
+					alt="torgal mail"
+				>
+					<img src="/images/social/mail.svg" alt="torgal youtube icon" />
+				</m.a>
 			</div>
 		</>
 	);
