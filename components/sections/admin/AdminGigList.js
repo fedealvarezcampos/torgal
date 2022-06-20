@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { supabase } from '../../../lib/supabaseClient';
 import styles from '../../../styles/AddGigForm.module.css';
 
-function AdminGigList({ setData, setIsUpdateMode, formCompleted }) {
+function AdminGigList({ data, setData, isUpdateMode, setIsUpdateMode, formCompleted }) {
 	const router = useRouter();
 
 	const [concerts, setConcerts] = useState([]);
@@ -103,12 +103,23 @@ function AdminGigList({ setData, setIsUpdateMode, formCompleted }) {
 			{concerts.length >= 1 && <span className={styles.concertsTitle}>Conciertos añadidos: </span>}
 			<ul className={styles.concertListContainer}>
 				{concerts.map(e => (
-					<li key={e.id} className={styles.concertContainer}>
-						<span>{e.artist}</span>
-						<span>{e.gigDate}</span>
-						<button onClick={() => setAsSoldout(e.id)}>Soldout</button>
-						<button onClick={() => updateMode(e.id)}>Modificar</button>
-						<button onClick={() => deleteGig(e.id)}>Eliminar</button>
+					<li
+						key={e.id}
+						className={`${styles.concertContainer} ${e.id === data.id ? styles.selected : ''}`}
+					>
+						<div>
+							<span>{e.artist}</span>
+							<span>{e.gigDate}</span>
+						</div>
+						{isUpdateMode && e.id === data.id ? (
+							'MODIFICANDO EVENTO...'
+						) : (
+							<>
+								<button onClick={() => setAsSoldout(e.id)}>Soldout</button>
+								<button onClick={() => updateMode(e.id)}>Modificar</button>
+								<button onClick={() => deleteGig(e.id)}>Eliminar</button>
+							</>
+						)}
 					</li>
 				))}
 			</ul>

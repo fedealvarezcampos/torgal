@@ -41,16 +41,18 @@ function NewGig() {
 			{loggedIn ? (
 				<>
 					<AdminGigList
+						data={data}
 						setData={setData}
+						isUpdateMode={isUpdateMode}
 						setIsUpdateMode={setIsUpdateMode}
 						formCompleted={formCompleted}
 					/>
 					<AddGigForm
 						data={data}
 						setData={setData}
+						isUpdateMode={isUpdateMode}
 						setIsUpdateMode={setIsUpdateMode}
 						setFormCompleted={setFormCompleted}
-						isUpdateMode={isUpdateMode}
 					/>
 				</>
 			) : (
