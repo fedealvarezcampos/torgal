@@ -347,6 +347,7 @@ function AddGigForm({ setData, data, isUpdateMode, setIsUpdateMode, setFormCompl
 					<input
 						name="soldout"
 						id="soldout"
+						checked={data.soldout === true}
 						type="checkbox"
 						placeholder="You-Tube channel URL"
 						value={data.soldout}
