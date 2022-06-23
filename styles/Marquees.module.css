@@ -9,6 +9,14 @@
 	/* height: clamp(5rem, 22vw, 22rem); */
 	height: 22vw;
 	max-height: 42rem;
+
+	@media screen and (max-width: 1200px) {
+		height: 30vw;
+	}
+
+	@media screen and (max-width: 650px) {
+		height: 28vw;
+	}
 }
 
 .imageContainer span {
