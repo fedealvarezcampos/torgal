@@ -47,9 +47,9 @@
 	}
 }
 
-@media (max-width: 500px) {
+@media (max-width: 650px) {
 	.container {
-		height: 58vw;
+		height: 62vw;
 		background-position-y: -2%;
 	}
 
