@@ -73,7 +73,7 @@
 	display: flex;
 	flex-direction: column;
 	align-self: flex-end;
-	padding: 0.9rem 1.5rem 1.2rem 1.2rem;
+	padding: 0.9rem 1.5rem 1.35rem 1.2rem;
 	margin: 0 1.4rem 1.3rem 0;
 	width: fit-content;
 	font-weight: 700;
@@ -174,7 +174,10 @@
 		&:last-child {
 			margin-top: 1rem;
 			line-height: 1.2;
-			font-size: 0.5rem;
+			font-size: clamp(0.5rem, 1.2vw, 0.65rem);
+			max-width: 8rem;
+			text-align: end;
+			align-self: flex-end;
 
 			@media screen and (max-width: 1000px) {
 				margin-top: 0.6rem;
