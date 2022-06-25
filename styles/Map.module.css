@@ -62,8 +62,8 @@
 @media (max-width: 500px) {
 	.container {
 		padding: 0;
-		height: 50vw;
-		max-height: 35rem;
+		height: 55vw;
+		max-height: 38rem;
 	}
 
 	.marker {
