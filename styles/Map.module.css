@@ -10,8 +10,9 @@
 
 .container {
 	/* padding: 0 1.6rem 1.8rem 1.6rem; */
-	height: 30vw;
-	max-height: 65rem;
+	min-height: 22rem;
+	height: 32vw;
+	max-height: 42rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -63,6 +64,7 @@
 	.container {
 		padding: 0;
 		height: 55vw;
+		min-height: unset;
 		max-height: 38rem;
 	}
 

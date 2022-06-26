@@ -1,22 +1,29 @@
+.marquee_container {
+	height: clamp(22rem, 24vw, 32rem);
+	width: fit-content;
+
+	@media screen and (max-width: 1200px) {
+		height: clamp(15rem, 35vw, 32rem);
+	}
+
+	@media screen and (max-width: 650px) {
+		height: 45vw;
+	}
+}
+
 .marquee {
+	height: 100%;
 	overflow-y: hidden;
+
+	&__drinks {
+		height: 100%;
+	}
 }
 
 .imageContainer {
 	will-change: transform;
 	position: relative;
-	width: fit-content;
-	/* height: clamp(5rem, 22vw, 22rem); */
-	height: 22vw;
-	max-height: 42rem;
-
-	@media screen and (max-width: 1200px) {
-		height: 30vw;
-	}
-
-	@media screen and (max-width: 650px) {
-		height: 40vw;
-	}
+	height: 100%;
 }
 
 .imageContainer span {
@@ -37,6 +44,7 @@
 	font-weight: 800;
 	color: var(--dark-item);
 	transition: all 250ms;
+	height: clamp(1.4rem, 3.2vw, 3.2rem);
 }
 
 .drinkMenu:hover {
