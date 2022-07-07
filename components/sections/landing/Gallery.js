@@ -15,9 +15,10 @@ const settings = {
 	className: 'center',
 	centerMode: true,
 	infinite: true,
+	touchThreshold: 18,
 	centerPadding: '80px',
 	slidesToShow: 2,
-	speed: 500,
+	speed: 350,
 	responsive: [
 		{
 			breakpoint: 1500,
