@@ -4,9 +4,10 @@ export default async function handler(req, res) {
 	}
 
 	try {
-		await res.unstable_revalidate('/');
+		await res.revalidate('/');
 		return res.json({ revalidated: true });
 	} catch (error) {
+		console.log(error);
 		return res.status(500).send('Error revalidating');
 	}
 }
