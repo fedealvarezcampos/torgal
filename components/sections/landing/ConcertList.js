@@ -1,13 +1,15 @@
-import { useEffect, useState } from 'react';
-import { useClosingKey } from '../../../helpers/useClosingKey';
+import { useState } from 'react';
 import { motion as m, AnimatePresence } from 'framer-motion';
 import DateConverter from '../../basic/date';
 import ArtistInfo from './ArtistInfo';
 import s from '../../../styles/Concerts.module.css';
+import { Modal } from '../../basic/modal/modal';
 
 function ConcertList({ gigs }) {
 	const [modal, setModal] = useState(false);
 	const [modalData, setModalData] = useState([]);
+
+	const closeModal = () => setModal(false);
 
 	const handleModal = data => {
 		setModal(true);
@@ -16,17 +18,14 @@ function ConcertList({ gigs }) {
 
 	const dateNow = new Date().toISOString();
 
-	useClosingKey('Escape', modal, setModal);
-
-	useEffect(() => {
-		modal && document.body.setAttribute('style', `overflow: hidden; margin-right: 12px;`);
-		!modal && document.body.removeAttribute('style', `overflow: hidden; margin-right: 12px;`);
-	}, [modal]);
-
 	return (
 		<>
 			<AnimatePresence exitBeforeEnter>
-				{modal && <ArtistInfo gigs={modalData} key={modal} setModal={setModal} />}
+				{modal && (
+					<Modal isOpen={modal} close={closeModal}>
+						<ArtistInfo gigs={modalData} key={modal} setModal={setModal} />
+					</Modal>
+				)}
 			</AnimatePresence>
 			<div
 				id="conciertos"

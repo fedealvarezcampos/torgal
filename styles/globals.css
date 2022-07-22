@@ -170,31 +170,6 @@ button:active {
 	}
 }
 
-.modalContainer {
-	position: fixed;
-	display: grid;
-	top: 0;
-	left: 0;
-	place-content: center;
-	width: 100vw;
-	height: 100vh;
-	z-index: 100;
-}
-
-@media (max-width: 500px) {
-	.modalContainer {
-		height: 100%;
-	}
-}
-
-.modalBG {
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.5);
-	backdrop-filter: blur(2px);
-}
-
 /* Sorry, Google */
 
 .gmnoprint {

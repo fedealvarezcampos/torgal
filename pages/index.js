@@ -1,6 +1,5 @@
 import Head from 'next/head';
-import { useState, useEffect } from 'react';
-import { useClosingKey } from '../helpers/useClosingKey';
+import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { supabase } from '../lib/supabaseClient';
 import { Noise } from '../components/basic/noise';
@@ -14,6 +13,7 @@ import ConcertList from '../components/sections/landing/ConcertList';
 import NewsletterForm from '../components/sections/landing/Newsletter';
 import Layout, { siteTitle } from '../components/layout';
 import { getCocktails } from '../lib/products';
+import { Modal } from '../components/basic/modal/modal';
 
 export async function getStaticProps() {
 	const rescocktails = await getCocktails();
@@ -34,12 +34,7 @@ export async function getStaticProps() {
 export default function MainSite({ cocktails, gigs }) {
 	const [showMenu, setShowMenu] = useState(false);
 
-	useClosingKey('Escape', showMenu, setShowMenu);
-
-	useEffect(() => {
-		showMenu && document.body.setAttribute('style', `overflow: hidden; margin-right: 12px;`);
-		!showMenu && document.body.removeAttribute('style', `overflow: hidden; margin-right: 12px;`);
-	}, [showMenu]);
+	const close = () => setShowMenu(false);
 
 	return (
 		<>
@@ -57,12 +52,14 @@ export default function MainSite({ cocktails, gigs }) {
 					<About setShowMenu={setShowMenu} />
 					<AnimatePresence exitBeforeEnter>
 						{showMenu && (
-							<Products
-								products={cocktails}
-								showMenu={showMenu}
-								setShowMenu={setShowMenu}
-								key={showMenu}
-							/>
+							<Modal isOn={showMenu} close={close}>
+								<Products
+									products={cocktails}
+									showMenu={showMenu}
+									setShowMenu={setShowMenu}
+									key={showMenu}
+								/>
+							</Modal>
 						)}
 					</AnimatePresence>
 					<Gallery />
