@@ -76,23 +76,6 @@ button:active {
 	transform: translateY(2px);
 }
 
-.exitButton {
-	position: relative;
-	margin: auto;
-	margin-bottom: 10px;
-	line-height: 1;
-	color: var(--cream);
-	z-index: 2000;
-}
-
-.exitButton::before {
-	font-family: 'Roboto';
-	font-size: 1.5rem;
-	font-weight: 800;
-	content: 'X';
-	z-index: 2000;
-}
-
 ::selection {
 	background: var(--wallpaper);
 	color: var(--base-font);

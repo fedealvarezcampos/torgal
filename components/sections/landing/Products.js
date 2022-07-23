@@ -2,12 +2,9 @@ import { useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import { motion as m } from 'framer-motion';
 import { framer, framerRight } from '../../../styles/framer';
-import useCheckMobile from '../../../helpers/useCheckMobile';
 import styles from '../../../styles/Products.module.css';
 
-function Products({ products, showMenu, setShowMenu }) {
-	const mobile = useCheckMobile();
-
+function Products({ products }) {
 	const [type, setType] = useState('cocktail');
 
 	const swipeConfig = {
@@ -34,7 +31,6 @@ function Products({ products, showMenu, setShowMenu }) {
 
 	return (
 		<>
-			{mobile && <span className="exitButton" onClick={() => setShowMenu(false)} />}
 			<m.div
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}

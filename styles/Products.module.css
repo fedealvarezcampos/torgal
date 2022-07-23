@@ -1,142 +1,142 @@
 .contentContainer {
-    display: inline-block;
-    gap: 25px;
-    padding: 1rem 0 1rem 0;
-    color: var(--base-font);
-    font-weight: 600;
-    width: clamp(10rem, 65vw, 750px);
-    border: 8px solid var(--base-font);
-    transform: translate3d(0, 0, 0);
-    border-radius: 20px 20px 20px 20px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' width='100%25'%3E%3Cdefs%3E%3Cpattern id='doodad' width='30' height='30' viewBox='0 0 40 40' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'%3E%3Crect width='100%25' height='100%25' fill='rgba(43, 43, 43,1)'/%3E%3Cpath d='M-10-10h60v60h-60zM2 2v36h36v-36z' fill='rgba(39, 39, 39,1)'/%3E%3Cpath d='M-22-22h90v90h-90zM20 20v16h16v-16zM-20-20v16h16v-16zM20-20v16h16v-16zM-20 20v16h16v-16z' fill='rgba(39, 39, 39,1)'/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23doodad)' height='200%25' width='200%25'/%3E%3C/svg%3E ");
-    z-index: 1000;
+	display: inline-block;
+	gap: 25px;
+	padding: 1rem 0 1rem 0;
+	color: var(--base-font);
+	font-weight: 600;
+	width: clamp(10rem, 65vw, 750px);
+	border: 8px solid var(--base-font);
+	transform: translate3d(0, 0, 0);
+	border-radius: 20px 20px 20px 20px;
+	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' width='100%25'%3E%3Cdefs%3E%3Cpattern id='doodad' width='30' height='30' viewBox='0 0 40 40' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'%3E%3Crect width='100%25' height='100%25' fill='rgba(43, 43, 43,1)'/%3E%3Cpath d='M-10-10h60v60h-60zM2 2v36h36v-36z' fill='rgba(39, 39, 39,1)'/%3E%3Cpath d='M-22-22h90v90h-90zM20 20v16h16v-16zM-20-20v16h16v-16zM20-20v16h16v-16zM-20 20v16h16v-16z' fill='rgba(39, 39, 39,1)'/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23doodad)' height='200%25' width='200%25'/%3E%3C/svg%3E ");
+	z-index: 1000;
 }
 
 .contentContainer nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.5rem 2rem 1rem 2rem;
+	display: flex;
+	justify-content: space-between;
+	padding: 0.5rem 2rem 1rem 2rem;
 }
 
 .productList {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-    height: 45vh;
-    padding: 0;
-    margin: 0.5rem 0 0.5rem 0;
-    overflow-y: auto;
-    list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	width: 100%;
+	height: 45vh;
+	padding: 0;
+	margin: 0.5rem 0 0.5rem 0;
+	overflow-y: auto;
+	list-style: none;
 }
 
 .productItem {
-    display: grid;
-    grid: 7.6rem / 1.2fr 8rem;
-    align-items: center;
-    justify-items: center;
-    margin: 0 1.8rem 0 1.8rem;
-    padding: 1rem 1rem 1rem 1.8rem;
-    border-radius: 20px;
-    border: solid 8px #dabc7d;
-    color: var(--dark-item);
-    background-size: 7px 7px;
-    background-image: repeating-linear-gradient(45deg, #ffe7b4 0, #ffe7b4 0.7px, #f4dba4 0, #f4dba4 50%);
+	display: grid;
+	grid: 7.6rem / 1.2fr 8rem;
+	align-items: center;
+	justify-items: center;
+	margin: 0 1.8rem 0 1.8rem;
+	padding: 1rem 1rem 1rem 1.8rem;
+	border-radius: 20px;
+	border: solid 8px #dabc7d;
+	color: var(--dark-item);
+	background-size: 7px 7px;
+	background-image: repeating-linear-gradient(45deg, #ffe7b4 0, #ffe7b4 0.7px, #f4dba4 0, #f4dba4 50%);
 }
 
 .productItem img {
-    max-height: 100%;
-    mix-blend-mode: multiply;
-    max-width: 180px;
-    object-fit: cover;
+	max-height: 100%;
+	mix-blend-mode: multiply;
+	max-width: 180px;
+	object-fit: cover;
 }
 
 .productItem p {
-    font-family: 'Cabin' sans-serif;
-    margin: 0;
+	font-family: 'Cabin' sans-serif;
+	margin: 0;
 }
 
 .productInfo {
-    justify-self: start;
+	justify-self: start;
 }
 
 .productInfo > p:first-child {
-    font-style: italic;
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: -0.3rem;
+	font-style: italic;
+	font-size: 1.25rem;
+	font-weight: 700;
+	margin-bottom: -0.3rem;
 }
 
 .prices {
-    display: flex;
-    gap: 15px;
-    font-weight: 700;
-    font-size: 1rem;
+	display: flex;
+	gap: 15px;
+	font-weight: 700;
+	font-size: 1rem;
 }
 
 .prices div > p:first-child {
-    font-style: italic;
-    margin-bottom: -0.4rem;
-    font-size: 0.9rem;
+	font-style: italic;
+	margin-bottom: -0.4rem;
+	font-size: 0.9rem;
 }
 
 .prices div > p:last-child {
-    padding-left: 0.05rem;
+	padding-left: 0.05rem;
 }
 
 .prices:last-child {
-    margin-top: 0.2rem;
-    padding-left: 0.1rem;
+	margin-top: 0.2rem;
+	padding-left: 0.1rem;
 }
 
 @media (max-width: 800px) {
-    .contentContainer {
-        gap: 8px;
-        padding: 0.8rem 0 0.6rem 0;
-        width: clamp(10rem, 88vw, 900px);
-        border: 5px solid var(--base-font);
-        border-radius: 15px;
-    }
+	.contentContainer {
+		gap: 8px;
+		padding: 0.8rem 0 0.6rem 0;
+		width: clamp(16.5rem, 88vw, 450px);
+		border: 5px solid var(--base-font);
+		border-radius: 15px;
+	}
 
-    .contentContainer nav {
-        display: flex;
-        justify-content: space-between;
-        padding: 0 1rem 0.4rem 1rem;
-    }
+	.contentContainer nav {
+		display: flex;
+		justify-content: space-between;
+		padding: 0 1rem 0.4rem 1rem;
+	}
 
-    .productList::-webkit-scrollbar {
-        width: 8px;
-    }
+	.productList::-webkit-scrollbar {
+		width: 8px;
+	}
 
-    .productItem {
-        display: grid;
-        grid: 3rem / 1.2fr 4.4rem;
-        margin: 0 1.4rem 0 1.4rem;
-        padding: 0.8rem 0 0.8rem 1.2rem;
-        border-radius: 16px;
-        border: solid 5px #dabc7d;
-    }
+	.productItem {
+		display: grid;
+		grid: 3rem / 1.2fr 4.4rem;
+		margin: 0 1.4rem 0 1.4rem;
+		padding: 0.8rem 0 0.8rem 1.2rem;
+		border-radius: 16px;
+		border: solid 5px #dabc7d;
+	}
 
-    .productInfo > p:first-child {
-        font-size: 0.7rem;
-        margin-bottom: -0.2rem;
-    }
+	.productInfo > p:first-child {
+		font-size: 0.7rem;
+		margin-bottom: -0.2rem;
+	}
 
-    .productDescription {
-        font-size: 0.5rem;
-    }
+	.productDescription {
+		font-size: 0.5rem;
+	}
 
-    .prices {
-        font-size: 0.7rem;
-    }
+	.prices {
+		font-size: 0.7rem;
+	}
 
-    .prices div > p:first-child {
-        margin-bottom: -0.3rem;
-        font-size: 0.6rem;
-    }
+	.prices div > p:first-child {
+		margin-bottom: -0.3rem;
+		font-size: 0.6rem;
+	}
 
-    .prices:last-child {
-        margin-top: 0.2rem;
-        padding-left: 0.05rem;
-    }
+	.prices:last-child {
+		margin-top: 0.2rem;
+		padding-left: 0.05rem;
+	}
 }

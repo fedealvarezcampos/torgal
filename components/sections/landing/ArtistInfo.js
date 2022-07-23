@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import useCheckMobile from '../../../helpers/useCheckMobile';
 import { supabaseHost } from '../../../lib/constants';
 import { motion as m } from 'framer-motion';
 import Spinner from '../../basic/spinner';
@@ -7,9 +6,7 @@ import YouTube from 'react-youtube';
 import styles from '../../../styles/ArtistInfo.module.css';
 import Image from 'next/image';
 
-function ArtistInfo({ gigs, setModal }) {
-	const mobile = useCheckMobile();
-
+function ArtistInfo({ gigs }) {
 	const [loading, setLoading] = useState(true);
 	const [isImageLoading, setImageLoading] = useState(true);
 
@@ -30,7 +27,6 @@ function ArtistInfo({ gigs, setModal }) {
 
 	return (
 		<>
-			{mobile && <span className="exitButton" onClick={() => setModal(false)} />}
 			<m.div
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
