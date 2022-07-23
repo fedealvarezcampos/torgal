@@ -37,39 +37,33 @@ export default function MainSite({ cocktails, gigs }) {
 	const close = () => setShowMenu(false);
 
 	return (
-		<>
-			<Layout home>
-				<Head>
-					<title>{siteTitle}</title>
-					<meta property="og:title" content="Café & Pop Torgal" key="title" />
-				</Head>
-				<header>
-					<Header />
-					<Home />
-				</header>
-				<Noise />
-				<main>
-					<About setShowMenu={setShowMenu} />
-					<AnimatePresence exitBeforeEnter>
-						{showMenu && (
-							<Modal isOn={showMenu} close={close}>
-								<Products
-									products={cocktails}
-									showMenu={showMenu}
-									setShowMenu={setShowMenu}
-									key={showMenu}
-								/>
-							</Modal>
-						)}
-					</AnimatePresence>
-					<Gallery />
-					<ConcertList gigs={gigs} />
-				</main>
-				<footer>
-					<NewsletterForm />
-					<Socials />
-				</footer>
-			</Layout>
-		</>
+		<Layout home>
+			<header>
+				<Header />
+				<Home />
+			</header>
+			<Noise />
+			<main>
+				<About setShowMenu={setShowMenu} />
+				<AnimatePresence exitBeforeEnter>
+					{showMenu && (
+						<Modal isOn={showMenu} close={close}>
+							<Products
+								products={cocktails}
+								showMenu={showMenu}
+								setShowMenu={setShowMenu}
+								key={showMenu}
+							/>
+						</Modal>
+					)}
+				</AnimatePresence>
+				<Gallery />
+				<ConcertList gigs={gigs} />
+			</main>
+			<footer>
+				<NewsletterForm />
+				<Socials />
+			</footer>
+		</Layout>
 	);
 }

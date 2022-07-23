@@ -7,6 +7,7 @@ export default function Layout({ children }) {
 	return (
 		<div className={styles.container}>
 			<Head>
+				<title>{siteTitle}</title>
 				<link rel="icon" href="/favicon.ico" />
 				<meta
 					name="description"
@@ -14,7 +15,7 @@ export default function Layout({ children }) {
 				/>
 				<meta property="og:type" content="website" />
 				<meta property="og:image" content="https://torgal.vercel.app/images/ogimage.jpg" />
-				<meta name="og:title" content={siteTitle} />
+				<meta name="og:title" content={siteTitle} key="title" />
 				<meta name="twitter:card" content="summary_large_image" />
 			</Head>
 			{children}
