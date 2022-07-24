@@ -46,9 +46,9 @@
 
 .productItem img {
 	max-height: 100%;
-	mix-blend-mode: multiply;
 	max-width: 180px;
 	object-fit: cover;
+	mix-blend-mode: multiply;
 }
 
 .productItem p {
